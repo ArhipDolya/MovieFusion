@@ -22,7 +22,7 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-SITE_ID = 2
+SITE_ID = 3
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -79,7 +79,7 @@ REST_FRAMEWORK = {
 
 CORS_ORIGIN_ALLOW_ALL = True
 
-AUTH_USER_MODEL = "authentication.User"
+#AUTH_USER_MODEL = "authentication.User"
 
 ROOT_URLCONF = 'MovieFusion.urls'
 
