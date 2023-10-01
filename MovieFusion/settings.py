@@ -34,6 +34,7 @@ INSTALLED_APPS = [
 
     'googleauth',
     'authentication',
+    'movies',
 
     'rest_framework',
     'corsheaders',
