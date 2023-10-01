@@ -35,6 +35,9 @@ INSTALLED_APPS = [
     'googleauth',
     'authentication',
 
+    'rest_framework',
+    'corsheaders',
+
     'django.contrib.sites',
     'allauth',
     'allauth.account',
@@ -64,6 +67,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'allauth.account.middleware.AccountMiddleware',
 ]
 
