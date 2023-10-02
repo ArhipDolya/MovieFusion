@@ -4,6 +4,8 @@ from rest_framework import serializers
 from rest_framework.validators import UniqueValidator
 from rest_framework_simplejwt.tokens import RefreshToken
 
+from .services_authentication import UserService
+
 
 User = get_user_model()
 
@@ -26,12 +28,12 @@ class RegistrationSerializer(serializers.ModelSerializer):
         return data
 
     def create(self, validation_data):
-        user = User.objects.create(
-            username=validation_data['username'],
-            email=validation_data['email']
-        )
-        user.set_password(validation_data['password'])
-        user.save()
+        username = validation_data['username']
+        email = validation_data['email']
+        password = validation_data['password']
+
+        # Call the UserService method to register the user
+        user = UserService.register_user(username, email, password)
 
         return user
 
@@ -44,13 +46,10 @@ class LoginSerializer(serializers.Serializer):
         email = data.get('email')
         password = data.get('password')
 
-        user = User.objects.filter(email=email).first()
+        token = UserService.login_user(email, password)
 
-        if user and user.check_password(password):
-            refresh = RefreshToken.for_user(user)
-            token = str(refresh.access_token)
-
+        if token:
             return {'token': token}
         else:
-            raise serializers.ValidationError("Invalid email or password.")
+            raise serializers.ValidationError('Invalid email or password.')
 
