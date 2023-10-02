@@ -25,12 +25,18 @@ class Movie(models.Model):
         image (ImageField): An image representing the movie.
         release_date (DateField): The release date of the movie.
         category (ForeignKey to Category): The category to which the movie belongs.
+        director (CharField, optional): The director of the movie.
+        writers (CharField, optional): The writers of the movie.
+        actors (CharField, optional): The actors in the movie.
     """
 
     title = models.CharField(max_length=255)
     description = models.TextField()
     image = models.ImageField(upload_to='movie_images/')
     release_date = models.DateField()
+    director = models.CharField(max_length=64, null=True)
+    writers = models.CharField(max_length=128, null=True)
+    actors = models.CharField(max_length=256, null=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
     def __str__(self):
