@@ -1,0 +1,101 @@
+footer {
+    margin-top: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0f172a;
+    position: sticky;
+    bottom: 0;
+    padding: 1rem;
+}
+
+footer .title {
+    font-size: 1.5rem;
+    margin: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+
+
+footer ul {
+    display: flex;
+}
+
+footer ul li {
+    list-style: none;
+}
+
+footer ul li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 0.5rem;
+    margin: 0 0.5rem;
+    border-radius: 0.5rem;
+    font-weight: bold;
+}
+
+footer ul li a:not(.active):hover {
+    background-color: #172554;
+}
+
+footer .menu {
+    display: none;
+    position: absolute;
+    top: 0.75rem;
+    right: 0.5rem;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 2.25rem;
+    height: 2rem;
+}
+
+footer .menu span {
+    height: 0.4rem;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 0.2rem;
+}
+
+.footer-content p {
+    color: white;
+    text-align: center;
+}
+
+@media (max-width: 480px) {
+    footer .menu {
+        display: flex;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    footer ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 0.25rem;
+    }
+
+    footer ul.open {
+        display: flex;
+    }
+
+    footer ul li {
+        width: 100%;
+        text-align: center;
+    }
+
+    footer ul li a {
+        margin: 0.2rem 0.5rem;
+    }
+
+    .footer-content p {
+        color: white;
+        text-align: center;
+    }
+}
