@@ -37,8 +37,9 @@ class LoginView(generics.CreateAPIView):
         serializer = self.get_serializer(data=request.data)
 
         if serializer.is_valid():
-            # Log a successful login
-            logger.info(f"User logged in successfully: {serializer.validated_data['email']}")
+            # Log a successful login if 'email' exists in validated_data
+            if 'email' in serializer.validated_data:
+                logger.info(f"User logged in successfully: {serializer.validated_data['email']}")
 
             return Response(serializer.validated_data, status=status.HTTP_200_OK)
 
