@@ -1,0 +1,5 @@
+export * from './home'
+export * from './categories'
+export * from './movies'
+export * from './login'
+export * from './registration'
