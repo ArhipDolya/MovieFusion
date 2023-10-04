@@ -38,24 +38,6 @@ class App extends React.Component {
                     <Route path='/Registration' element={<Registration/>}></Route>
                 </Routes>
 
-                {Array.isArray(this.state.details) ? (
-                    this.state.details.map((movie, id) => (
-                        <div key={id}>
-                            <h2>{movie.title}</h2>
-                            <p>{movie.description}</p>
-                            <p>Category: {movie.category.name}</p>
-                            <p>Release Date: {movie.release_date}</p>
-                            <img
-                                src={movie.image}
-                                alt={movie.title}
-                                style={{ maxWidth: '100%' }}
-                            />
-                        </div>
-                    ))
-                ) : (
-                    <div></div>
-                )}
-
                 <Footer />
             </div>
         );
