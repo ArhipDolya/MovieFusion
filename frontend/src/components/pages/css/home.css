@@ -1,0 +1,23 @@
+.movie-list {
+    overflow: hidden; /* Hide the overflow of the movie-list */
+}
+
+.scrolling-container {
+  display: flex; /* Make it a flex container */
+  overflow-x: auto; /* Allow horizontal scrolling */
+  scroll-snap-type: x mandatory; /* Snap to each movie card */
+  -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS devices */
+}
+
+.movie-card {
+  flex: 0 0 auto; /* Don't flex the movie cards, they should have fixed width */
+  scroll-snap-align: start; /* Align each card to the start of the scroll area */
+  padding: 10px; /* Add spacing between cards */
+}
+
+.movie-card img {
+  max-height: 200px; /* Set a maximum height for the movie images */
+  object-fit: cover; /* Ensure the image covers the entire card */
+  margin-right: 10px; /* Add spacing between images */
+}
+  

@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import MovieDetails from '../MovieDetails/MovieDetails';
 import axios from 'axios';
-
 
 export const Movies = () => {
   const [movies, setMovies] = useState([]);
@@ -18,10 +16,20 @@ export const Movies = () => {
 
   return (
     <div>
+      <h1>Movie List</h1>
       <ul>
         {movies.map(movie => (
           <li key={movie.id}>
-            <MovieDetails movie={movie} />
+            <h2>{movie.title}</h2>
+            <p>Category: {movie.category && movie.category.name}</p>
+            <p>Release Date: {movie.release_date}</p>
+            <p>Director: {movie.director}</p>
+            <p>Actors: {movie.actors}</p>
+            <img
+              src={movie.image}
+              alt={movie.title}
+              style={{ maxWidth: "100%" }}
+            />
           </li>
         ))}
       </ul>

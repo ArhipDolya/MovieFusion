@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import Navbar from './components/navbar/Navbar';
 import { Home, Movies, Categories, Login, Registration } from './components/pages';
 import Footer from './components/footer/Footer';
+import MovieDetails from './components/MovieDetails/MovieDetails';
 import './App.css';
 
 
@@ -36,6 +37,7 @@ class App extends React.Component {
                     <Route path="/Movies" element={<Movies />}></Route>
                     <Route path="/Sign-in" element={<Login />}></Route>
                     <Route path='/Registration' element={<Registration/>}></Route>
+                    <Route path='/movie/:id' element={<MovieDetails />} />
                 </Routes>
 
                 <Footer />
