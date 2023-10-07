@@ -1,23 +1,97 @@
+/* Add some styles to the container */
+.home-container {
+  text-align: center;
+  padding: 20px;
+}
+
+/* Style the movie list container */
 .movie-list {
-    overflow: hidden; /* Hide the overflow of the movie-list */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.scrolling-container {
-  display: flex; /* Make it a flex container */
-  overflow-x: auto; /* Allow horizontal scrolling */
-  scroll-snap-type: x mandatory; /* Snap to each movie card */
-  -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS devices */
-}
-
+/* Style each movie card */
 .movie-card {
-  flex: 0 0 auto; /* Don't flex the movie cards, they should have fixed width */
-  scroll-snap-align: start; /* Align each card to the start of the scroll area */
-  padding: 10px; /* Add spacing between cards */
+  flex: 0 0 calc(33.33% - 20px); /* Adjust the width as needed */
+  margin: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  cursor: pointer;
+  overflow: hidden;
 }
 
-.movie-card img {
-  max-height: 200px; /* Set a maximum height for the movie images */
-  object-fit: cover; /* Ensure the image covers the entire card */
-  margin-right: 10px; /* Add spacing between images */
+.movie-card:hover {
+  transform: scale(1.05);
 }
-  
+
+/* Style the movie title */
+.movie-card h2 {
+  margin: 0;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+/* Style the movie image */
+.movie-card img {
+  width: 100%;
+  height: auto;
+  max-height: 300px; /* Adjust the max height as needed */
+}
+
+/* Center the text in the movie card */
+.movie-card p {
+  text-align: center;
+  padding: 10px;
+}
+
+/* Add some space at the bottom of the container */
+.home-container {
+  margin-bottom: 20px;
+}
+
+/* Style each movie card */
+.movie-card {
+  flex: 0 0 calc(33.33% - 20px); /* Adjust the width as needed */
+  margin: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative; /* Add this for positioning */
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+}
+
+/* Style the movie image */
+.movie-card img {
+  width: 100%;
+  height: auto;
+  max-height: 300px; /* Adjust the max height as needed */
+}
+
+/* Center the text in the movie card */
+.movie-card p.movie-title {
+  text-align: center;
+  padding: 10px;
+  position: absolute; /* Position the title */
+  bottom: 0; /* Place it at the bottom */
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  color: #fff;
+  margin: 0; /* Remove default margin */
+}
+
+/* Add some space at the bottom of the container */
+.home-container {
+  margin-bottom: 20px;
+}

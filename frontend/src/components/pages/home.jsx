@@ -21,7 +21,7 @@ export const Home = () => {
       });
   }, []);
 
-  return (  
+  return (
     <div className="home-container">
       <h1>Welcome to Movie World</h1>
 
@@ -29,11 +29,12 @@ export const Home = () => {
         <div className="movie-list">
           <div className="scrolling-container">
             {movies.map((movie) => (
-                <li key={movie.id}>
-                  <Link to={`/movie/${movie.id}/`}>{movie.title}
-                    <img src={movie.image} alt={movie.title} />
-                  </Link>
-                </li>
+              <div key={movie.id} className="movie-card">
+                <Link to={`/movie/${movie.id}/`}>
+                  <img src={movie.image} alt={movie.title} />
+                </Link>
+                <p className="movie-title">{movie.title}</p>
+              </div>
             ))}
           </div>
         </div>

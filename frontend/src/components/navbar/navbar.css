@@ -9,6 +9,7 @@ nav {
     background-color: #0f172a;
     position: sticky;
     top: 0;
+    z-index: 2;
 }
 
 nav .title {
