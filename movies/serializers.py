@@ -10,7 +10,7 @@ class CategorySerializer(serializers.ModelSerializer):
 
 
 class MovieSerializer(serializers.ModelSerializer):
-    category = CategorySerializer()
+    categories = CategorySerializer(many=True)
 
     class Meta:
         model = Movie

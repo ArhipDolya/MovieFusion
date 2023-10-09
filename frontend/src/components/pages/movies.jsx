@@ -19,23 +19,23 @@ export const Movies = () => {
     <div className="movies-container">
       <h1 className='movies'>Movie List</h1>
       <ul className="movie-list">
-        {movies.map(movie => (
-          <li key={movie.id} className="movie-card">
-            <div className="movie-image-container">
-              <img
-                src={movie.image}
-                alt={movie.title}
-                className="movie-image"
-              />
-            </div>
-            <div className="movie-details">
-              <h2 className="movie-title">{movie.title}</h2>
-              <p className="movie-info">Category: {movie.category && movie.category.name}</p>
-              <p className="movie-info">Release Date: {movie.release_date}</p>
-              <p className="movie-info">Director: {movie.director}</p>
-              <p className="movie-info">Actors: {movie.actors}</p>
-            </div>
-          </li>
+      {movies.map(movie => (
+        <li key={movie.id} className="movie-card">
+          <div className="movie-image-container">
+            <img
+              src={movie.image}
+              alt={movie.title}
+              className="movie-image"
+            />
+          </div>
+          <div className="movie-details">
+            <h2 className="movie-title">{movie.title}</h2>
+            <p className="movie-info">Categories: {movie.categories.map(category => category.name).join(', ')}</p>
+            <p className="movie-info">Release Date: {movie.release_date}</p>
+            <p className="movie-info">Director: {movie.director}</p>
+            <p className="movie-info">Actors: {movie.actors}</p>
+          </div>
+        </li>
         ))}
       </ul>
     </div>

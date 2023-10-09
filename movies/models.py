@@ -1,4 +1,8 @@
 from django.db import models
+from django.contrib.auth import get_user_model
+
+
+User = get_user_model()
 
 
 class Category(models.Model):
@@ -24,7 +28,7 @@ class Movie(models.Model):
         description (TextField): A detailed description of the movie.
         image (ImageField): An image representing the movie.
         release_date (DateField): The release date of the movie.
-        category (ForeignKey to Category): The category to which the movie belongs.
+        categories (ManyToManyField to Category): The categories to which the movie belongs.
         director (CharField, optional): The director of the movie.
         writers (CharField, optional): The writers of the movie.
         actors (CharField, optional): The actors in the movie.
@@ -37,7 +41,7 @@ class Movie(models.Model):
     director = models.CharField(max_length=64, null=True)
     writers = models.CharField(max_length=128, null=True)
     actors = models.CharField(max_length=256, null=True)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    categories = models.ManyToManyField(Category, related_name='movies')
 
     def __str__(self):
         return f'{self.title}'
@@ -52,6 +56,7 @@ class Rating(models.Model):
         rating (DecimalField): The rating given to the movie.
     """
 
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
     movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
     rating = models.DecimalField(max_digits=3, decimal_places=1)
 
