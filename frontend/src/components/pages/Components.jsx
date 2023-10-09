@@ -1,5 +1,16 @@
 import styled from 'styled-components';
 
+
+export const FullScreenContainer = styled.div`
+  width: 100vw; /* Take up the full viewport width */
+  height: 80vh; /* Take up the full viewport height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+`;
+
 export const Container = styled.div`
 background-color: #fff;
 border-radius: 10px;

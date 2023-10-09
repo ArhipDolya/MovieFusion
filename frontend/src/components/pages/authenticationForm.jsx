@@ -78,103 +78,105 @@ export const AuthenticationForm = () => {
   };
 
   return (
-    <Components.Container>
-      <Components.SignUpContainer signinIn={signIn}>
-        <Components.Form>
-          <Components.Title>{signIn ? 'Sign In' : 'Create Account'}</Components.Title>
-          
+    <Components.FullScreenContainer>
+      <Components.Container>
+        <Components.SignUpContainer signinIn={signIn}>
+          <Components.Form>
+            <Components.Title>{signIn ? 'Sign In' : 'Create Account'}</Components.Title>
+
+              <Components.Input
+                type='text'
+                name='username'
+                placeholder='Username'
+                value={registrationFormData.username}
+                onChange={handleRegistrationChange}
+                required
+              />
+
             <Components.Input
-              type='text'
-              name='username'
-              placeholder='Username'
-              value={registrationFormData.username}
+              type='email'
+              name='email'
+              placeholder='Email'
+              value={registrationFormData.email}
               onChange={handleRegistrationChange}
               required
             />
-
-          <Components.Input
-            type='email'
-            name='email'
-            placeholder='Email'
-            value={registrationFormData.email}
-            onChange={handleRegistrationChange}
-            required
-          />
-          <Components.Input
-            type='password'
-            name='password'
-            placeholder='Password'
-            value={registrationFormData.password}
-            onChange={handleRegistrationChange}
-            required
-          />
-          {!signIn && (
             <Components.Input
               type='password'
-              name='password2' // Use 'password2' as the name
-              placeholder='Confirm Password'
-              value={registrationFormData.password2}
+              name='password'
+              placeholder='Password'
+              value={registrationFormData.password}
               onChange={handleRegistrationChange}
               required
             />
-          )}
-          <Components.Button onClick={signIn ? handleLoginSubmit : handleRegistrationSubmit}>
-            {signIn ? 'Sign In' : 'Sign Up'}
-          </Components.Button>
-          <Components.Anchor onClick={() => toggleSignIn(!signIn)}>
-            {signIn ? 'Create an account' : 'Sign in instead'}
-          </Components.Anchor>
-        </Components.Form>
-        {error && <p className='error'>{error}</p>}
-      </Components.SignUpContainer>
+            {!signIn && (
+              <Components.Input
+                type='password'
+                name='password2' // Use 'password2' as the name
+                placeholder='Confirm Password'
+                value={registrationFormData.password2}
+                onChange={handleRegistrationChange}
+                required
+              />
+            )}
+            <Components.Button onClick={signIn ? handleLoginSubmit : handleRegistrationSubmit}>
+              {signIn ? 'Sign In' : 'Sign Up'}
+            </Components.Button>
+            <Components.Anchor onClick={() => toggleSignIn(!signIn)}>
+              {signIn ? 'Create an account' : 'Sign in instead'}
+            </Components.Anchor>
+          </Components.Form>
+          {error && <p className='error'>{error}</p>}
+        </Components.SignUpContainer>
 
-      <Components.SignInContainer signinIn={signIn}>
-        <Components.Form>
-          <Components.Title>Sign in</Components.Title>
-          <Components.Input
-            type='email'
-            name='email'
-            placeholder='Email'
-            value={loginFormData.email} // Use loginFormData for email in sign-in
-            onChange={handleLoginChange}
-            required
-          />
-          <Components.Input
-            type='password'
-            name='password'
-            placeholder='Password'
-            value={loginFormData.password} // Use loginFormData for password in sign-in
-            onChange={handleLoginChange}
-            required
-          />
-          <Components.Anchor href='#'>Forgot your password?</Components.Anchor>
-          <Components.Button onClick={handleLoginSubmit}>Sign In</Components.Button>
-        </Components.Form>
-      </Components.SignInContainer>
+        <Components.SignInContainer signinIn={signIn}>
+          <Components.Form>
+            <Components.Title>Sign in</Components.Title>
+            <Components.Input
+              type='email'
+              name='email'
+              placeholder='Email'
+              value={loginFormData.email} // Use loginFormData for email in sign-in
+              onChange={handleLoginChange}
+              required
+            />
+            <Components.Input
+              type='password'
+              name='password'
+              placeholder='Password'
+              value={loginFormData.password} // Use loginFormData for password in sign-in
+              onChange={handleLoginChange}
+              required
+            />
+            <Components.Anchor href='#'>Forgot your password?</Components.Anchor>
+            <Components.Button onClick={handleLoginSubmit}>Sign In</Components.Button>
+          </Components.Form>
+        </Components.SignInContainer>
 
-      <Components.OverlayContainer signinIn={signIn}>
-        <Components.Overlay signinIn={signIn}>
-          <Components.LeftOverlayPanel signinIn={signIn}>
-            <Components.Title>Welcome Back!</Components.Title>
-            <Components.Paragraph>
-              To keep connected with us please login with your personal info
-            </Components.Paragraph>
-            <Components.GhostButton onClick={() => toggleSignIn(true)}>
-              Sign In
-            </Components.GhostButton>
-          </Components.LeftOverlayPanel>
+        <Components.OverlayContainer signinIn={signIn}>
+          <Components.Overlay signinIn={signIn}>
+            <Components.LeftOverlayPanel signinIn={signIn}>
+              <Components.Title>Welcome Back!</Components.Title>
+              <Components.Paragraph>
+                To keep connected with us please login with your personal info
+              </Components.Paragraph>
+              <Components.GhostButton onClick={() => toggleSignIn(true)}>
+                Sign In
+              </Components.GhostButton>
+            </Components.LeftOverlayPanel>
 
-          <Components.RightOverlayPanel signinIn={signIn}>
-            <Components.Title>Hello, Friend!</Components.Title>
-            <Components.Paragraph>
-              Enter Your personal details and start the journey with us
-            </Components.Paragraph>
-            <Components.GhostButton onClick={() => toggleSignIn(false)}>
-              Sign Up
-            </Components.GhostButton>
-          </Components.RightOverlayPanel>
-        </Components.Overlay>
-      </Components.OverlayContainer>
-    </Components.Container>
+            <Components.RightOverlayPanel signinIn={signIn}>
+              <Components.Title>Hello, Friend!</Components.Title>
+              <Components.Paragraph>
+                Enter Your personal details and start the journey with us
+              </Components.Paragraph>
+              <Components.GhostButton onClick={() => toggleSignIn(false)}>
+                Sign Up
+              </Components.GhostButton>
+            </Components.RightOverlayPanel>
+          </Components.Overlay>
+        </Components.OverlayContainer>
+      </Components.Container>
+    </Components.FullScreenContainer>
   );
 };
