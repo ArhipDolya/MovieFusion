@@ -1,5 +1,5 @@
 export * from './home'
 export * from './categories'
 export * from './movies'
-export * from './login'
+export * from './authenticationForm'
 export * from './registration'

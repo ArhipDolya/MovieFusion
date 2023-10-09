@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios'
 import './css/registration.css'
 
+
 export const Registration = () => {
   const [formData, setFormData] = useState(
     {

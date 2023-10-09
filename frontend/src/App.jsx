@@ -2,13 +2,14 @@ import React from 'react';
 import axios from 'axios';
 import { Route, Routes } from 'react-router-dom';
 import Navbar from './components/navbar/Navbar';
-import { Home, Movies, Categories, Login, Registration } from './components/pages';
+import { Home, Movies, Categories, AuthenticationForm } from './components/pages';
 import Footer from './components/footer/Footer';
 import MovieDetails from './components/MovieDetails/MovieDetails';
 import './App.css';
 
 
 class App extends React.Component {
+    
     state = {
         details: [],
     };
@@ -27,23 +28,28 @@ class App extends React.Component {
             });
     }
 
+
     render() {
+    
         return (
             <div className="app-container">
                 <Navbar />
                 <Routes>
-                    <Route path="/" element={<Home />}></Route>
-                    <Route path="/Categories" element={<Categories />}></Route>
-                    <Route path="/Movies" element={<Movies />}></Route>
-                    <Route path="/Sign-in" element={<Login />}></Route>
-                    <Route path='/Registration' element={<Registration/>}></Route>
-                    <Route path='/movie/:id' element={<MovieDetails />} />
+                    <Route path="/" element={<Home />} />
+                    <Route path="/Categories" element={<Categories />} />
+                    <Route path="/Movies" element={<Movies />} />
+                    <Route path="/Sign-in" element={<AuthenticationForm />} />
+                    
+                    <Route path="/movie/:id" element={<MovieDetails />} />
                 </Routes>
-
+    
                 <Footer />
+    
+                
             </div>
         );
     }
+    
 }
 
 export default App;
