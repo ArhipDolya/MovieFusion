@@ -28,7 +28,7 @@ function Navbar() {
                     <NavLink to="/categories">Categories</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/Sign-in">Sign In</NavLink>
+                    <NavLink to="/authentication">Sign In</NavLink>
                 </li>
             </ul>
         </nav>

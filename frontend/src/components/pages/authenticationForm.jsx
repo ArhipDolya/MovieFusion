@@ -122,9 +122,6 @@ export const AuthenticationForm = () => {
             <Components.Button onClick={signIn ? handleLoginSubmit : handleRegistrationSubmit}>
               {signIn ? 'Sign In' : 'Sign Up'}
             </Components.Button>
-            <Components.Anchor onClick={() => toggleSignIn(!signIn)}>
-              {signIn ? 'Create an account' : 'Sign in instead'}
-            </Components.Anchor>
           </Components.Form>
           {error && <p className='error'>{error}</p>}
         </Components.SignUpContainer>
@@ -168,7 +165,7 @@ export const AuthenticationForm = () => {
             <Components.RightOverlayPanel signinIn={signIn}>
               <Components.Title>Hello, Friend!</Components.Title>
               <Components.Paragraph>
-                Enter Your personal details and start the journey with us
+                Enter your personal details and start the journey with us
               </Components.Paragraph>
               <Components.GhostButton onClick={() => toggleSignIn(false)}>
                 Sign Up

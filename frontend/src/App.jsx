@@ -38,11 +38,10 @@ class App extends React.Component {
                     <Route path="/" element={<Home />} />
                     <Route path="/Categories" element={<Categories />} />
                     <Route path="/Movies" element={<Movies />} />
-                    <Route path="/Sign-in" element={<AuthenticationForm />} />
-                    
+                    <Route path="/Authentication" element={<AuthenticationForm />} />
                     <Route path="/movie/:id" element={<MovieDetails />} />
                 </Routes>
-    
+            
                 <Footer />
     
                 

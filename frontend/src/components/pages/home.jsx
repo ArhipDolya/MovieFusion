@@ -23,7 +23,7 @@ export const Home = () => {
 
   return (
     <div className="home-container">
-      <h1>Welcome to Movie World</h1>
+      <h1 className="movie-world">Welcome to Movie World</h1>
 
       <section>
         <div className="movie-list">
