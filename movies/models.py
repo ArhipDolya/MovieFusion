@@ -52,12 +52,12 @@ class Rating(models.Model):
     Model representing a movie rating.
 
     Attributes:
-        movie (ForeignKey to Movie): The movie for which the rating is given.
+        movie (OneToOneField to Movie): The movie for which the rating is given.
         rating (DecimalField): The rating given to the movie.
     """
 
     user = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
-    movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
+    movie = models.OneToOneField(Movie, on_delete=models.CASCADE, related_name='rating')
     rating = models.DecimalField(max_digits=3, decimal_places=1)
 
     def __str__(self):

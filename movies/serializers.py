@@ -18,6 +18,8 @@ class MovieSerializer(serializers.ModelSerializer):
 
 
 class RatingSerializer(serializers.ModelSerializer):
+    movie = MovieSerializer()
+
     class Meta:
         model = Rating
         fields = '__all__'

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
 import { useParams } from 'react-router-dom';
-import axios from 'axios';
 
 const MovieDetails = () => {
   const { id } = useParams();
@@ -16,9 +15,17 @@ const MovieDetails = () => {
         setMovie(response.data);
 
         // Fetch movie rating
-        const ratingResponse = await axios.get(`http://localhost:8000/ratings/?movie=${id}`)
+        const ratingResponse = await Axios.get(`http://localhost:8000/ratings/?movie=${id}`)
         if (ratingResponse.data.length > 0){
-          setRating(ratingResponse.data[0].rating)
+          // Find the rating for the current movie in the response
+          const movieRating = ratingResponse.data.find(rating => rating.movie.id === parseInt(id))
+          if (movieRating) {
+            setRating(movieRating.rating)
+          } else {
+            setRating('N/A')
+          }
+        } else {
+          setRating('N/A')
         }
       } catch (error) {
         console.error('Error fetching movie details:', error);
@@ -34,16 +41,16 @@ const MovieDetails = () => {
 
   return (
     <div className="movie-details-container">
-        <p>Category: {movie.categories.map(category => category.name).join(', ')}</p>
-        <p>Release Date: {movie.release_date}</p>
-        <p>Director: {movie.director}</p>
-        <p>Actors: {movie.actors}</p>
-        <p>Rating: {rating ? rating : 'N/A'}</p>
-        <img
-          src={movie.image}
-          alt={movie.title}
-          style={{ maxWidth: "100%" }}
-        />
+      <p>Category: {movie.categories.map(category => category.name).join(', ')}</p>
+      <p>Release Date: {movie.release_date}</p>
+      <p>Director: {movie.director}</p>
+      <p>Actors: {movie.actors}</p>
+      <p>Rating: {rating}</p>
+      <img
+        src={movie.image}
+        alt={movie.title}
+        style={{ maxWidth: "100%" }}
+      />
     </div>
   );
 };
