@@ -44,19 +44,19 @@ const MovieDetails = () => {
 
   return (
     <div className="movie-details-container">
-      <h1>{movie.title}</h1>
+      <h1 className='movie-details-h1'>{movie.title}</h1>
 
-      <img
+      <img className='movie-details-img'
         src={movie.image}
         alt={movie.title}
         style={{ maxWidth: "100%" }}
       />
 
-      <p>Category: {movie.categories.map(category => category.name).join(', ')}</p>
-      <p>Release Date: {movie.release_date}</p>
-      <p>Director: {movie.director}</p>
-      <p>Actors: {movie.actors}</p>
-      <p>Rating: {rating}</p>
+      <p className='movie-details-p'>Category: {movie.categories.map(category => category.name).join(', ')}</p>
+      <p className='movie-details-p'>Release Date: {movie.release_date}</p>
+      <p className='movie-details-p'>Director: {movie.director}</p>
+      <p className='movie-details-p'>Actors: {movie.actors}</p>
+      <p className='movie-details-p'>Rating: {rating}</p>
 
     
     </div>

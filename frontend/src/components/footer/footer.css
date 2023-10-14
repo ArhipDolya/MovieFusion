@@ -6,7 +6,7 @@ footer {
     background-color: #0f172a;
     position: sticky;
     bottom: 0;
-    padding: 0.1rem; /* Reduce padding to 0.4rem for a smaller footer */
+    padding: 0.3rem; /* Reduce padding to 0.4rem for a smaller footer */
   }
   
   footer .title {
