@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './css/login.css';
-import * as Components from './Components'; // Import your styled components
+import * as Components from './Components';
 
 export const AuthenticationForm = () => {
   const [signIn, toggleSignIn] = useState(true);

@@ -1,101 +1,99 @@
 footer {
     margin-top: auto;
-
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #0f172a;
     position: sticky;
     bottom: 0;
-    padding: 0.5rem;
-}
-
-footer .title {
-    font-size: 1.5rem;
-    margin: 1rem;
+    padding: 0.1rem; /* Reduce padding to 0.4rem for a smaller footer */
+  }
+  
+  footer .title {
+    font-size: 1.2rem; /* Reduce font size to 1.2rem for better balance */
+    margin: 0.5rem; /* Reduce margin to 0.5rem for a more compact layout */
     font-weight: bold;
     text-decoration: none;
     color: white;
-}
-
-
-footer ul {
+  }
+  
+  footer ul {
     display: flex;
-}
-
-footer ul li {
+  }
+  
+  footer ul li {
     list-style: none;
-}
-
-footer ul li a {
+  }
+  
+  footer ul li a {
     display: block;
     text-decoration: none;
     color: white;
-    padding: 0.5rem;
-    margin: 0 0.5rem;
-    border-radius: 0.5rem;
+    padding: 0.4rem; /* Reduce padding to 0.4rem for a less bulky appearance */
+    margin: 0 0.4rem; /* Reduce margin to 0.4rem for a tighter layout */
+    border-radius: 0.4rem; /* Reduce border-radius to 0.4rem for consistency */
     font-weight: bold;
-}
-
-footer ul li a:not(.active):hover {
+  }
+  
+  footer ul li a:not(.active):hover {
     background-color: #172554;
-}
-
-footer .menu {
+  }
+  
+  footer .menu {
     display: none;
     position: absolute;
-    top: 0.75rem;
-    right: 0.5rem;
+    top: 0.4rem; /* Adjust top position to 0.4rem for better alignment */
+    right: 0.4rem; /* Adjust right position to 0.4rem for better alignment */
     flex-direction: column;
     justify-content: space-between;
-    width: 2.25rem;
-    height: 2rem;
-}
-
-footer .menu span {
-    height: 0.4rem;
+    width: 2rem; /* Reduce width to 2rem for a smaller menu icon */
+    height: 1.6rem; /* Reduce height to 1.6rem for a smaller menu icon */
+  }
+  
+  footer .menu span {
+    height: 0.3rem; /* Reduce height to 0.3rem for a thinner menu line */
     width: 100%;
     background-color: #fff;
     border-radius: 0.2rem;
-}
-
-.footer-content p {
+  }
+  
+  .footer-content p {
     color: white;
     text-align: center;
-}
-
-@media (max-width: 480px) {
+  }
+  
+  @media (max-width: 480px) {
     footer .menu {
-        display: flex;
+      display: flex;
     }
-
+  
     footer {
-        flex-direction: column;
-        align-items: start;
+      flex-direction: column;
+      align-items: start;
     }
-
+  
     footer ul {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        margin-bottom: 0.25rem;
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      margin-bottom: 0.2rem;
     }
-
+  
     footer ul.open {
-        display: flex;
+      display: flex;
     }
-
+  
     footer ul li {
-        width: 100%;
-        text-align: center;
+      width: 100%;
+      text-align: center;
     }
-
+  
     footer ul li a {
-        margin: 0.2rem 0.5rem;
+      margin: 0.2rem 0.4rem; /* Adjust margin to 0.2rem 0.4rem for consistency */
     }
-
+  
     .footer-content p {
-        color: white;
-        text-align: center;
+      color: white;
+      text-align: center;
     }
-}
+  }

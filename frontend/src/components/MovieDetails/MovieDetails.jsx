@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
 import { useParams } from 'react-router-dom';
 
+import './MovieDetails.css'
+
+
 const MovieDetails = () => {
   const { id } = useParams();
   const [movie, setMovie] = useState(null);
@@ -41,16 +44,21 @@ const MovieDetails = () => {
 
   return (
     <div className="movie-details-container">
-      <p>Category: {movie.categories.map(category => category.name).join(', ')}</p>
-      <p>Release Date: {movie.release_date}</p>
-      <p>Director: {movie.director}</p>
-      <p>Actors: {movie.actors}</p>
-      <p>Rating: {rating}</p>
+      <h1>{movie.title}</h1>
+
       <img
         src={movie.image}
         alt={movie.title}
         style={{ maxWidth: "100%" }}
       />
+
+      <p>Category: {movie.categories.map(category => category.name).join(', ')}</p>
+      <p>Release Date: {movie.release_date}</p>
+      <p>Director: {movie.director}</p>
+      <p>Actors: {movie.actors}</p>
+      <p>Rating: {rating}</p>
+
+    
     </div>
   );
 };

@@ -42,6 +42,7 @@ class Movie(models.Model):
     writers = models.CharField(max_length=128, null=True)
     actors = models.CharField(max_length=256, null=True)
     categories = models.ManyToManyField(Category, related_name='movies')
+    youtube_trailer_url = models.URLField(max_length=250, null=True, blank=True)
 
     def __str__(self):
         return f'{self.title}'

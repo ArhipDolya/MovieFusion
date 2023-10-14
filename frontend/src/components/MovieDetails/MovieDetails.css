@@ -1,0 +1,39 @@
+.movie-details-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%; /* Reduce width to 60% for better fit */
+    margin: 20px auto; /* Reduce margin to 20px for better spacing */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .movie-details-container:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+  }
+  
+  h1 {
+    font-size: 28px; /* Adjust font size to 28px for better balance */
+    font-weight: 700;
+    margin: 15px 0 10px;
+    color: #222;
+    text-transform: uppercase;
+  }
+  
+  p {
+    font-size: 16px; /* Adjust font size to 16px for better proportion */
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 10px 0;
+    color: #444;
+  }
+  
+  img {
+    width: 100%;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    object-fit: cover;
+  }
