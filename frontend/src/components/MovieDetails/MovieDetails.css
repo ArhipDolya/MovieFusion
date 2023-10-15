@@ -2,12 +2,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 50%; /* Reduce width to 60% for better fit */
-    margin: 20px auto; /* Reduce margin to 20px for better spacing */
+    width: 50%;
+    margin: 20px auto; 
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
     transition: all 0.3s ease-in-out;
+    padding-bottom: 50px;
   }
   
   .movie-details-container:hover {
@@ -15,7 +16,7 @@
   }
   
   .movie-details-h1 {
-    font-size: 28px; /* Adjust font size to 28px for better balance */
+    font-size: 28px;
     font-weight: 700;
     margin: 15px 0 10px;
     color: #222;
@@ -23,7 +24,7 @@
   }
   
   .movie-details-p {
-    font-size: 16px; /* Adjust font size to 16px for better proportion */
+    font-size: 16px;
     font-weight: 400;
     line-height: 1.5;
     margin: 10px 0;

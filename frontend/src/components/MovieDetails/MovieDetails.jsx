@@ -30,6 +30,7 @@ const MovieDetails = () => {
         } else {
           setRating('N/A')
         }
+
       } catch (error) {
         console.error('Error fetching movie details:', error);
       }
@@ -58,7 +59,16 @@ const MovieDetails = () => {
       <p className='movie-details-p'>Actors: {movie.actors}</p>
       <p className='movie-details-p'>Rating: {rating}</p>
 
-    
+      { movie.youtube_trailer_url && (
+        <iframe
+          width="560"
+          height="315"
+          src={movie.youtube_trailer_url}
+          allowFullScreen
+          title={movie.title}
+        />
+      )}
+
     </div>
   );
 };

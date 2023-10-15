@@ -32,6 +32,7 @@ class Movie(models.Model):
         director (CharField, optional): The director of the movie.
         writers (CharField, optional): The writers of the movie.
         actors (CharField, optional): The actors in the movie.
+        youtube_trailer_url (URLFIeld, optional): The movie trailer
     """
 
     title = models.CharField(max_length=255)

@@ -6,12 +6,12 @@ footer {
     background-color: #0f172a;
     position: sticky;
     bottom: 0;
-    padding: 0.3rem; /* Reduce padding to 0.4rem for a smaller footer */
+    padding: 0.3rem;
   }
   
   footer .title {
-    font-size: 1.2rem; /* Reduce font size to 1.2rem for better balance */
-    margin: 0.5rem; /* Reduce margin to 0.5rem for a more compact layout */
+    font-size: 1.2rem; 
+    margin: 0.5rem;
     font-weight: bold;
     text-decoration: none;
     color: white;
@@ -29,9 +29,9 @@ footer {
     display: block;
     text-decoration: none;
     color: white;
-    padding: 0.4rem; /* Reduce padding to 0.4rem for a less bulky appearance */
-    margin: 0 0.4rem; /* Reduce margin to 0.4rem for a tighter layout */
-    border-radius: 0.4rem; /* Reduce border-radius to 0.4rem for consistency */
+    padding: 0.4rem;
+    margin: 0 0.4rem;
+    border-radius: 0.4rem;
     font-weight: bold;
   }
   
@@ -42,16 +42,16 @@ footer {
   footer .menu {
     display: none;
     position: absolute;
-    top: 0.4rem; /* Adjust top position to 0.4rem for better alignment */
-    right: 0.4rem; /* Adjust right position to 0.4rem for better alignment */
+    top: 0.4rem;
+    right: 0.4rem; 
     flex-direction: column;
     justify-content: space-between;
-    width: 2rem; /* Reduce width to 2rem for a smaller menu icon */
-    height: 1.6rem; /* Reduce height to 1.6rem for a smaller menu icon */
+    width: 2rem;
+    height: 1.6rem;
   }
   
   footer .menu span {
-    height: 0.3rem; /* Reduce height to 0.3rem for a thinner menu line */
+    height: 0.3rem;
     width: 100%;
     background-color: #fff;
     border-radius: 0.2rem;
@@ -89,7 +89,7 @@ footer {
     }
   
     footer ul li a {
-      margin: 0.2rem 0.4rem; /* Adjust margin to 0.2rem 0.4rem for consistency */
+      margin: 0.2rem 0.4rem;
     }
   
     .footer-content p {
