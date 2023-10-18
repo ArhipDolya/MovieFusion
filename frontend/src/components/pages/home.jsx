@@ -30,7 +30,7 @@ export const Home = () => {
           <div className="scrolling-container">
             {movies.map((movie) => (
               <div key={movie.id} className="movie-card">
-                <Link to={`/movie/${movie.id}/`}>
+                <Link to={`/movie/${movie.slug}/`}>
                   <img src={movie.image} alt={movie.title} />
                 </Link>
                 <p className="movie-title">{movie.title}</p>

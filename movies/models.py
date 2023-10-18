@@ -25,6 +25,7 @@ class Movie(models.Model):
 
     Attributes:
         title (CharField): The title of the movie.
+        slug (SlugField): The slug of the movie.
         description (TextField): A detailed description of the movie.
         image (ImageField): An image representing the movie.
         release_date (DateField): The release date of the movie.

@@ -58,7 +58,7 @@ export const Categories = () => {
           {filteredMovies.map((movie) => (
             <li key={movie.id} className="custom-movie-card">
               <div className="custom-movie-image-container">
-                <Link to={`/movie/${movie.id}/`}>
+                <Link to={`/movie/${movie.slug}/`}>
                   <img
                     src={movie.image}
                     alt={movie.title}
