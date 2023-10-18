@@ -4,7 +4,6 @@ import { useParams } from 'react-router-dom';
 
 import './MovieDetails.css'
 
-
 const MovieDetails = () => {
   const { id } = useParams();
   const [movie, setMovie] = useState(null);
@@ -41,44 +40,44 @@ const MovieDetails = () => {
 
   if (!movie) {
     return <div></div>;
-    }
+  }
 
-    return (
-      <div className="movie-details-container">
-        <h1 className="movie-details-h1">{movie.title}</h1>
-        <img className="movie-details-img" src={movie.image} alt={movie.title} />
-        <div className="movie-details">
-          <h3 className="movie-details-heading">Category:</h3>
-          <p className="movie-details-info">{movie.categories.map(category => category.name).join(', ')}</p>
-    
-          <h3 className="movie-details-heading">Release Date:</h3>
-          <p className="movie-details-info">{movie.release_date}</p>
-    
-          <h3 className="movie-details-heading">Director:</h3>
-          <p className="movie-details-info">{movie.director}</p>
-    
-          <h3 className="movie-details-heading">Actors:</h3>
-          <p className="movie-details-info">{movie.actors}</p>
-    
-          <h3 className="movie-details-heading">Rating:</h3>
-          <p className="movie-details-info">{rating}</p>
-    
-          {movie.youtube_trailer_url && (
-            <div className="movie-trailer-container">
-              <iframe
-                width="515"
-                height="300"
-                className="movie-trailer-iframe"
-                src={movie.youtube_trailer_url}
-                allowFullScreen
-                title={movie.title}
-              />
-            </div>
-          )}
-        </div>
+  return (
+    <div className="movie-details-container">
+      <h1 className="movie-details-h1">{movie.title}</h1>
+      <img className="movie-details-img" src={movie.image} alt={movie.title} />
+      <div className="movie-details">
+        <h3 className="movie-details-heading">Category:</h3>
+        <p className="movie-details-info">{movie.categories.map(category => category.name).join(', ')}</p>
+
+        <h3 className="movie-details-heading">Release Date:</h3>
+        <p className="movie-details-info">{movie.release_date}</p>
+
+        <h3 className="movie-details-heading">Director:</h3>
+        <p className="movie-details-info">{movie.director}</p>
+
+        <h3 className="movie-details-heading">Actors:</h3>
+        <p className="movie-details-info">{movie.actors}</p>
+
+        <h3 className="movie-details-heading">Rating:</h3>
+        <p className="movie-details-info">{rating}</p>
+
+        {movie.youtube_trailer_url && (
+          <div className="movie-trailer-container">
+            <iframe
+              width="515"
+              height="300"
+              className="movie-trailer-iframe"
+              src={movie.youtube_trailer_url}
+              allowFullScreen
+              title={movie.title}
+            />
+          </div>
+        )}
       </div>
-    );
-    
+    </div>
+  );
+
 };
 
 export default MovieDetails;
