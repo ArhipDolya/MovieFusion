@@ -28,12 +28,12 @@ class RatingListView(ListAPIView):
 class MovieDetailsView(RetrieveAPIView):
     queryset = Movie.objects.all()
     serializer_class = MovieSerializer
-    lookup_field = 'id'
+    lookup_field = 'slug'
 
     # Include the rating data when retrieving a movie
     def get_serializer_context(self):
         context = super().get_serializer_context()
-        movie_id = self.kwargs.get('id')
-        context['ratings'] = Rating.objects.filter(movie_id=movie_id)
+        movie_slug = self.kwargs.get('slug')
+        context['ratings'] = Rating.objects.filter(movie__slug=movie_slug)
         return context
 

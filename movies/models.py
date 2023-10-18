@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth import get_user_model
-
+from django.utils.text import slugify
 
 User = get_user_model()
 
@@ -36,6 +36,7 @@ class Movie(models.Model):
     """
 
     title = models.CharField(max_length=255)
+    slug = models.SlugField(max_length=255, unique=True, db_index=True)
     description = models.TextField()
     image = models.ImageField(upload_to='movie_images/')
     release_date = models.DateField()

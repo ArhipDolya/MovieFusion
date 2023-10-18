@@ -43,7 +43,7 @@ export const Movies = () => {
         {searchResults.map((movie) => (
           <li key={movie.id} className={`movie-card ${searchQuery ? 'visible' : ''}`}>
             <div className="movie-image-container">
-              <Link to={`/movie/${movie.id}/`}>
+              <Link to={`/movie/${movie.slug}/`}>
                 <img
                   src={movie.image}
                   alt={movie.title}
