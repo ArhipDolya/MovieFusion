@@ -97,3 +97,40 @@ border: 2px solid #fff;
   transform: translateY(0);
 }
 
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.page-numbers {
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+
+.page-numbers li {
+  margin: 0 5px;
+}
+
+.page-numbers button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.page-numbers button.active {
+  background-color: #ff5733;
+}
+
+.page-numbers button:hover {
+  background-color: #333;
+}
