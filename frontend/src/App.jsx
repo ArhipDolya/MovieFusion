@@ -1,10 +1,8 @@
 import React from 'react';
 import axios from 'axios';
-import { Route, Routes } from 'react-router-dom';
 import Navbar from './components/navbar/Navbar';
-import { Home, Movies, Categories, AuthenticationForm } from './components/pages';
 import Footer from './components/footer/Footer';
-import MovieDetails from './components/MovieDetails/MovieDetails';
+import AppRouter from './components/pages/appRouter';
 import './App.css';
 
 
@@ -34,17 +32,11 @@ class App extends React.Component {
         return (
             <div className="app-container">
                 <Navbar />
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/Categories" element={<Categories />} />
-                    <Route path="/Movies" element={<Movies />} />
-                    <Route path="/Authentication" element={<AuthenticationForm />} />
-                    <Route path="/movie/:id" element={<MovieDetails />} />
-                </Routes>
+                
+                <AppRouter />
             
                 <Footer />
     
-                
             </div>
         );
     }
