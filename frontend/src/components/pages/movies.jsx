@@ -14,41 +14,48 @@ export const Movies = () => {
 
   const moviesPerPage = 9;
 
+
   useEffect(() => {
     axios
       .get('http://localhost:8000/movies/')
       .then((response) => {
         setMovies(response.data);
-        setIsLoading(false)
+        setIsLoading(false);
       })
       .catch((error) => {
         console.error('Error fetching movie data:', error);
-        setIsLoading(false)
+        setIsLoading(false);
       });
-  }, []);
+  }, []); // Empty dependency array to run the effect only once
 
+  // useEffect hook to filter movies based on search query
   useEffect(() => {
     const filteredMovies = movies.filter((movie) =>
       movie.title.toLowerCase().includes(searchQuery.toLowerCase())
     );
 
-    setSearchResults(filteredMovies);
-  }, [searchQuery, movies]);
+    setSearchResults(filteredMovies); // Update filtered results state
+  }, [searchQuery, movies]); // Dependencies: searchQuery and movies
 
+  // Function to handle page change
   const goToPage = (pageNumber) => {
-    setCurrentPage(pageNumber);
+    setCurrentPage(pageNumber); // Update current page state
   };
 
+  // Calculate the start and end index for the current page
   const startIndex = (currentPage - 1) * moviesPerPage;
   const endIndex = Math.min(startIndex + moviesPerPage, searchResults.length);
+
+  // Slice the filtered results to get the movies for the current page
   const currentMovies = searchResults.slice(startIndex, endIndex);
 
+  // Generate an array of page numbers
   const pageNumbers = Array.from({ length: Math.ceil(searchResults.length / moviesPerPage) }, (_, i) => i + 1);
 
 
   if (isLoading) {
     return (
-      <div className="loading-spinner"> 
+      <div className="loading-spinner">
         <LoadingSpinner />
       </div>
     );
@@ -68,7 +75,6 @@ export const Movies = () => {
 
       <MovieList movies={currentMovies} searchQuery={searchQuery} />
       <Pagination pageNumbers={pageNumbers} currentPage={currentPage} goToPage={goToPage} />
-
     </div>
   );
 };
