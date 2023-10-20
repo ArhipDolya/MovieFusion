@@ -3,12 +3,14 @@ import axios from 'axios';
 import './css/movies.css';
 import MovieList from './movieList';
 import Pagination from './pagination';
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 
 export const Movies = () => {
   const [movies, setMovies] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
+  const [isLoading, setIsLoading] = useState(true);
 
   const moviesPerPage = 9;
 
@@ -17,9 +19,11 @@ export const Movies = () => {
       .get('http://localhost:8000/movies/')
       .then((response) => {
         setMovies(response.data);
+        setIsLoading(false)
       })
       .catch((error) => {
         console.error('Error fetching movie data:', error);
+        setIsLoading(false)
       });
   }, []);
 
@@ -41,6 +45,15 @@ export const Movies = () => {
 
   const pageNumbers = Array.from({ length: Math.ceil(searchResults.length / moviesPerPage) }, (_, i) => i + 1);
 
+
+  if (isLoading) {
+    return (
+      <div className="loading-spinner"> 
+        <LoadingSpinner />
+      </div>
+    );
+  }
+
   return (
     <div className="movies-container">
       <h1 className="movies">Movie List</h1>
@@ -55,6 +68,7 @@ export const Movies = () => {
 
       <MovieList movies={currentMovies} searchQuery={searchQuery} />
       <Pagination pageNumbers={pageNumbers} currentPage={currentPage} goToPage={goToPage} />
+
     </div>
   );
 };

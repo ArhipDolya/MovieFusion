@@ -4,32 +4,45 @@ import { useParams } from 'react-router-dom';
 
 import MovieRating from './MovieRating';
 
+import loader from '../LoadingSpinner/images/loader.gif'
+
 import './MovieDetails.css';
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 
 const MovieDetails = () => {
-  // Get the movie ID from the URL using useParams hook
   const { id } = useParams();
   const [movie, setMovie] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchMovieDetails = async () => {
       try {
         const response = await axios.get(`http://localhost:8000/movie/${id}`);
-        
-        setMovie(response.data);
+        const movieData = response.data;
+        setMovie(movieData);
+        setIsLoading(false);
       } catch (error) {
         console.error('Error fetching movie details:', error);
+        setIsLoading(false);
       }
     };
 
-    // Trigger the fetchMovieDetails function
     fetchMovieDetails();
-  }, [id]); // Only re-fetch when ID changes
+  }, [id]);
 
-  // Conditionally render based on movie state
-  if (!movie) {
-    return <div></div>; // Show placeholder until movie data is fetched
+  if (isLoading) {
+    return (
+      <div className="loading-spinner"> 
+        <LoadingSpinner />
+      </div>
+    );
+  } else if (!movie) {
+    return (
+      <div>
+        There are no movies
+      </div>);
   }
+
 
   return (
     <div className="movie-details-container">

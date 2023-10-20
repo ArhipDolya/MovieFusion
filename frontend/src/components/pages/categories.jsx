@@ -2,23 +2,28 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-import './css/categories.css'
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 
+import './css/categories.css'
 
 export const Categories = () => {
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [movies, setMovies] = useState([]);
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     axios.get('http://localhost:8000/categories/')
       .then(response => {
         setCategories(response.data);
+        setIsLoading(false)
       })
       .catch(error => {
         console.error('Error fetching categories:', error);
+        setIsLoading(false)
       });
 
+    // Fetch movies from API on component mount
     axios.get('http://localhost:8000/movies/')
       .then(response => {
         setMovies(response.data);
@@ -26,19 +31,28 @@ export const Categories = () => {
       .catch(error => {
         console.error('Error fetching movies:', error);
       });
-  }, []);
+  }, []); // Empty dependency array, runs only on mount
 
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);
   };
 
+  // Filter movies based on selected category
   const filteredMovies = movies.filter((movie) => {
     if (!selectedCategory) {
-        return [];
+      return []; // Return empty array if no category selected
     }
 
-    return movie.categories.some((category) => category.id === selectedCategory.id);
+    return movie.categories.some((category) => category.id === selectedCategory.id); // Filter movies by category ID
   });
+
+  if (isLoading) {
+    return (
+      <div>
+        <LoadingSpinner />
+      </div>
+    )
+  }
 
   return (
     <div>

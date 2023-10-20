@@ -3,9 +3,11 @@ import axios from "axios";
 import "./css/home.css";
 import { Link } from "react-router-dom";
 
+import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
+
 export const Home = () => {
   const [movies, setMovies] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
   const [moviesToShow, setMoviesToShow] = useState(9);
   const [visibleMovies, setVisibleMovies] = useState([]);
 
@@ -15,11 +17,11 @@ export const Home = () => {
       .get("http://localhost:8000/movies/")
       .then((res) => {
         setMovies(res.data);
-        setLoading(false);
+        setIsLoading(false);
       })
       .catch((error) => {
         console.error("Error fetching movies:", error);
-        setLoading(false);
+        setIsLoading(false);
       });
   }, []);
 
@@ -31,6 +33,14 @@ export const Home = () => {
   const loadMoreMovies = () => {
     // Increase the number of movies to show
     setMoviesToShow((prevCount) => prevCount + 9)
+  }
+
+  if (isLoading) {
+    return (
+      <div className="loading-spinner"> 
+        <LoadingSpinner />
+      </div>
+    );
   }
 
   return (
