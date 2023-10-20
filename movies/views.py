@@ -2,6 +2,7 @@ from rest_framework.generics import ListAPIView, RetrieveAPIView
 
 from .models import Movie, Category, Rating
 from .serializers import MovieSerializer, CategorySerializer, RatingSerializer
+from .services_movies import get_movie_ratings
 
 
 class MovieListView(ListAPIView):
@@ -34,6 +35,6 @@ class MovieDetailsView(RetrieveAPIView):
     def get_serializer_context(self):
         context = super().get_serializer_context()
         movie_slug = self.kwargs.get('slug')
-        context['ratings'] = Rating.objects.filter(movie__slug=movie_slug)
+        context['ratings'] = get_movie_ratings(movie_slug)
         return context
 

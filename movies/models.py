@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib.auth import get_user_model
-from django.utils.text import slugify
 
 User = get_user_model()
 
@@ -12,7 +11,6 @@ class Category(models.Model):
     Attributes:
         name (CharField): The name of the category.
     """
-
     name = models.CharField(max_length=100)
 
     def __str__(self):
@@ -33,7 +31,7 @@ class Movie(models.Model):
         director (CharField, optional): The director of the movie.
         writers (CharField, optional): The writers of the movie.
         actors (CharField, optional): The actors in the movie.
-        youtube_trailer_url (URLFIeld, optional): The movie trailer
+        youtube_trailer_url (URLField, optional): The movie trailer
     """
 
     title = models.CharField(max_length=255)
