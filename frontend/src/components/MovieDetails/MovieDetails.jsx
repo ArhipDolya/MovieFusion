@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
 import { useParams } from 'react-router-dom';
 
-import './MovieDetails.css'
+import './MovieDetails.css';
 
 const MovieDetails = () => {
   const { id } = useParams();
@@ -17,19 +17,18 @@ const MovieDetails = () => {
         setMovie(response.data);
 
         // Fetch movie rating
-        const ratingResponse = await Axios.get(`http://localhost:8000/ratings/?movie=${id}`)
-        if (ratingResponse.data.length > 0){
-          // Find the rating for the current movie in the response
-          const movieRating = ratingResponse.data.find(rating => rating.movie.id === parseInt(id))
+        const ratingResponse = await Axios.get(`http://localhost:8000/ratings/`);
+        if (ratingResponse.data.length > 0) {
+          // Find the rating for the current movie based on the movie's slug
+          const movieRating = ratingResponse.data.find(rating => rating.movie.slug === response.data.slug);
           if (movieRating) {
-            setRating(movieRating.rating)
+            setRating(movieRating.rating);
           } else {
-            setRating('N/A')
+            setRating('N/A');
           }
         } else {
-          setRating('N/A')
+          setRating('N/A');
         }
-
       } catch (error) {
         console.error('Error fetching movie details:', error);
       }
@@ -77,7 +76,6 @@ const MovieDetails = () => {
       </div>
     </div>
   );
-
 };
 
 export default MovieDetails;
