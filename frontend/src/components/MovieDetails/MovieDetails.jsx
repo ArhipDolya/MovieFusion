@@ -1,44 +1,34 @@
 import React, { useState, useEffect } from 'react';
-import Axios from 'axios';
+import axios from 'axios';
 import { useParams } from 'react-router-dom';
+
+import MovieRating from './MovieRating';
 
 import './MovieDetails.css';
 
 const MovieDetails = () => {
+  // Get the movie ID from the URL using useParams hook
   const { id } = useParams();
   const [movie, setMovie] = useState(null);
-  const [rating, setRating] = useState(null);
 
   useEffect(() => {
     const fetchMovieDetails = async () => {
       try {
-        // Fetch movie details
-        const response = await Axios.get(`http://localhost:8000/movie/${id}`);
+        const response = await axios.get(`http://localhost:8000/movie/${id}`);
+        
         setMovie(response.data);
-
-        // Fetch movie rating
-        const ratingResponse = await Axios.get(`http://localhost:8000/ratings/`);
-        if (ratingResponse.data.length > 0) {
-          // Find the rating for the current movie based on the movie's slug
-          const movieRating = ratingResponse.data.find(rating => rating.movie.slug === response.data.slug);
-          if (movieRating) {
-            setRating(movieRating.rating);
-          } else {
-            setRating('N/A');
-          }
-        } else {
-          setRating('N/A');
-        }
       } catch (error) {
         console.error('Error fetching movie details:', error);
       }
     };
 
+    // Trigger the fetchMovieDetails function
     fetchMovieDetails();
-  }, [id]);
+  }, [id]); // Only re-fetch when ID changes
 
+  // Conditionally render based on movie state
   if (!movie) {
-    return <div></div>;
+    return <div></div>; // Show placeholder until movie data is fetched
   }
 
   return (
@@ -59,7 +49,7 @@ const MovieDetails = () => {
         <p className="movie-details-info">{movie.actors}</p>
 
         <h3 className="movie-details-heading">Rating:</h3>
-        <p className="movie-details-info">{rating}</p>
+        <MovieRating movieSlug={movie.slug} />
 
         {movie.youtube_trailer_url && (
           <div className="movie-trailer-container">
