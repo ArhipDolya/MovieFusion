@@ -38,7 +38,7 @@ class Movie(models.Model):
     slug = models.SlugField(max_length=255, unique=True, db_index=True)
     description = models.TextField()
     image = models.ImageField(upload_to='movie_images/')
-    release_date = models.DateField()
+    release_date = models.DateField(db_index=True)
     director = models.CharField(max_length=64, null=True)
     writers = models.CharField(max_length=128, null=True)
     actors = models.CharField(max_length=256, null=True)

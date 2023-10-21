@@ -11,7 +11,7 @@ User = get_user_model()
 class RegistrationTests(TestCase):
     def setUp(self):
         self.client = APIClient()
-        self.register_url = reverse('register')  # Assuming you have URL patterns defined
+        self.register_url = reverse('register')
         self.login_url = reverse('login')
         self.user_data = {
             'username': 'testuser',
