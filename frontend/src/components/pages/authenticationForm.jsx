@@ -3,6 +3,9 @@ import axios from 'axios';
 import './css/login.css';
 import * as Components from './Components';
 
+import ReCAPTCHA from 'react-google-recaptcha';
+
+
 export const AuthenticationForm = () => {
   const [signIn, toggleSignIn] = useState(true);
   const [loginFormData, setLoginFormData] = useState({ email: '', password: '' });
@@ -14,6 +17,8 @@ export const AuthenticationForm = () => {
   });
   const [error, setError] = useState('');
   const [token, setToken] = useState('');
+  const [recaptchaToken, setRecaptchaToken] = useState('');
+  const [formSubmitted, setFormSubmitted] = useState(false);
 
   const handleLoginChange = (event) => {
     const { name, value } = event.target;
@@ -25,11 +30,15 @@ export const AuthenticationForm = () => {
     setRegistrationFormData({ ...registrationFormData, [name]: value });
   };
 
+  const handleRecaptchaChange = (token) => {
+    setRecaptchaToken(token);
+  }
+
   const handleLoginSubmit = (event) => {
     event.preventDefault();
 
     axios
-      .post('http://localhost:8000/login/', loginFormData)
+      .post('http://localhost:8000/api/v1/login/', loginFormData)
       .then((res) => {
         if (res.status === 200) {
           setToken(res.data.access);
@@ -48,8 +57,19 @@ export const AuthenticationForm = () => {
   const handleRegistrationSubmit = (event) => {
     event.preventDefault();
 
+    // Check if reCAPTCHA has been completed
+    if (!recaptchaToken) {
+      setFormSubmitted(true);
+      return;
+    }
+
+    const registrationData = {
+      ...registrationFormData,
+      recaptchaToken: recaptchaToken,
+    }
+
     axios
-      .post('http://localhost:8000/register/', registrationFormData)
+      .post('http://localhost:8000/api/v1/register/', registrationData)
       .then((res) => {
         if (res.status === 201) {
           toggleSignIn(true);
@@ -112,6 +132,14 @@ export const AuthenticationForm = () => {
                     required
                   />
                 )}
+
+                <ReCAPTCHA className='recaptcha-container'
+                  sitekey='6LcOOr8oAAAAAD3YScusJhiClf928fUkzIYsycoB'
+                  onChange={handleRecaptchaChange}
+                />
+
+                {!recaptchaToken && formSubmitted && <p className="error">Please complete the reCAPTCHA verification.</p>}
+
                 <Components.Button onClick={signIn ? handleLoginSubmit : handleRegistrationSubmit}>
                   {signIn ? 'Sign In' : 'Sign Up'}
                 </Components.Button>

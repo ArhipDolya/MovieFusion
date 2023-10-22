@@ -40,7 +40,7 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'corsheaders',
-    "debug_toolbar",
+    'debug_toolbar',
 
     'django.contrib.sites',
     'allauth',
