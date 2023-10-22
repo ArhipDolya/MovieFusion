@@ -8,7 +8,7 @@ const MovieRating = ({ movieSlug }) => {
     // Fetch the movie rating when the movieSlug prop changes
     const fetchRating = async () => {
       try {
-        const ratingResponse = await axios.get(`http://localhost:8000/ratings/`);
+        const ratingResponse = await axios.get(`http://localhost:8000/api/v1/ratings/`);
 
         // Check if there are any ratings
         if (ratingResponse.data.length > 0) {

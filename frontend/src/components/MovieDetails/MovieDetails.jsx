@@ -4,8 +4,6 @@ import { useParams } from 'react-router-dom';
 
 import MovieRating from './MovieRating';
 
-import loader from '../LoadingSpinner/images/loader.gif'
-
 import './MovieDetails.css';
 import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 
@@ -17,7 +15,7 @@ const MovieDetails = () => {
   useEffect(() => {
     const fetchMovieDetails = async () => {
       try {
-        const response = await axios.get(`http://localhost:8000/movie/${id}`);
+        const response = await axios.get(`http://localhost:8000/api/v1/movie/${id}`);
         const movieData = response.data;
         setMovie(movieData);
         setIsLoading(false);
@@ -38,8 +36,8 @@ const MovieDetails = () => {
     );
   } else if (!movie) {
     return (
-      <div>
-        There are no movies
+      <div className="no-movie-container">
+        There is no movie
       </div>);
   }
 

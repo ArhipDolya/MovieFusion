@@ -139,9 +139,6 @@ export const AuthenticationForm = () => {
                   required
                 />
                 <Components.Button onClick={handleLoginSubmit}>Sign In</Components.Button>
-                <p>
-                  <a href="/forgot-password">Did you forget your password?</a>
-                </p>
               </Components.Form>
             </Components.SignInContainer>
 

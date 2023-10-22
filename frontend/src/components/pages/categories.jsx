@@ -13,7 +13,7 @@ export const Categories = () => {
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    axios.get('http://localhost:8000/categories/')
+    axios.get('http://localhost:8000/api/v1/categories/')
       .then(response => {
         setCategories(response.data);
         setIsLoading(false)
@@ -24,7 +24,7 @@ export const Categories = () => {
       });
 
     // Fetch movies from API on component mount
-    axios.get('http://localhost:8000/movies/')
+    axios.get('http://localhost:8000/api/v1/movies/')
       .then(response => {
         setMovies(response.data);
       })

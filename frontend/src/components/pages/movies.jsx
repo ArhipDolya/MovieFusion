@@ -17,7 +17,7 @@ export const Movies = () => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:8000/movies/')
+      .get('http://localhost:8000/api/v1/movies/')
       .then((response) => {
         setMovies(response.data);
         setIsLoading(false);

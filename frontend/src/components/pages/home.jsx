@@ -14,7 +14,7 @@ export const Home = () => {
   useEffect(() => {
     // Fetch Movies
     axios
-      .get("http://localhost:8000/movies/")
+      .get("http://localhost:8000/api/v1/movies/")
       .then((res) => {
         setMovies(res.data);
         setIsLoading(false);
