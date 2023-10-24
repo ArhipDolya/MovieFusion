@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'movies',
 
     'rest_framework',
+    'drf_yasg',
     'corsheaders',
     'debug_toolbar',
 
@@ -86,6 +87,12 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.BasicAuthentication',
     ),
+}
+
+SWAGGER_SETTINGS = {
+    'USE_SESSION_AUTH': False,
+    'api_version': '1.0',
+    'enabled_methods': ['get', 'post', 'put', 'patch', 'delete'],
 }
 
 CORS_ORIGIN_ALLOW_ALL = True
