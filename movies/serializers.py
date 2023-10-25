@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import Movie, Category, Rating
+from .models import Movie, Category, Rating, FavoriteMovie
 
 
 class CategorySerializer(serializers.ModelSerializer):
@@ -22,4 +22,12 @@ class RatingSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Rating
+        fields = '__all__'
+
+
+class FavoriteMovieSerializer(serializers.ModelSerializer):
+    movie = MovieSerializer()
+
+    class Meta:
+        model = FavoriteMovie
         fields = '__all__'

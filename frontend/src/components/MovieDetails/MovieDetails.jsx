@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 import MovieRating from './MovieRating';
 
@@ -11,6 +11,9 @@ const MovieDetails = () => {
   const { id } = useParams();
   const [movie, setMovie] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [isFavorite, setIsFavorite] = useState(false);
+
+  const navigate = useNavigate()
 
   useEffect(() => {
     const fetchMovieDetails = async () => {
@@ -41,6 +44,26 @@ const MovieDetails = () => {
       </div>);
   }
 
+  const handleAddToFavorites = async () => {
+    try {
+      const storedAccessToken = localStorage.getItem('access_token');
+      if (storedAccessToken) {
+        const config = {
+          headers: {
+            Authorization: `Bearer ${storedAccessToken}`,
+          },
+        };
+        await axios.post(`http://localhost:8000/api/v1/favorite-movies/`, { movie_slug: movie.slug }, config);
+        setIsFavorite(true);
+      } else {
+        // Redirect to the login page
+        navigate('/authentication');
+      }
+    } catch (error) {
+      console.error('Error adding movie to favorites:', error);
+    }
+  };
+
 
   return (
     <div className="movie-details-container">
@@ -61,6 +84,8 @@ const MovieDetails = () => {
 
         <h3 className="movie-details-heading">Rating:</h3>
         <MovieRating movieSlug={movie.slug} />
+
+        <button onClick={handleAddToFavorites}>Add to Favorites</button>
 
         {movie.youtube_trailer_url && (
           <div className="movie-trailer-container">
