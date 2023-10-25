@@ -54,6 +54,12 @@ class FavoriteMovieViewSet(viewsets.ModelViewSet):
         except Movie.DoesNotExist:
             raise NotFound('Movie not found')
 
+        # Check if the movie is already in the user's favorites
+        existing_favorite_movie = FavoriteMovie.objects.filter(user=request.user, movie=movie).first()
+
+        if existing_favorite_movie:
+            return Response({'detail': 'Movie is already in favorites.'}, status=status.HTTP_400_BAD_REQUEST)
+
         favorite_movie = FavoriteMovie.objects.create(user=request.user, movie=movie)
         return Response(FavoriteMovieSerializer(favorite_movie).data, status=status.HTTP_201_CREATED)
 
