@@ -48,7 +48,7 @@ class LoginSerializer(serializers.Serializer):
         token = UserService.login_user(email, password)
 
         if token:
-            return {'token': token}
+            return {'email': email, 'password': password, 'token': token}
         else:
             raise serializers.ValidationError('Invalid email or password.')
 

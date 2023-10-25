@@ -41,8 +41,10 @@ export const AuthenticationForm = () => {
       .post('http://localhost:8000/api/v1/login/', loginFormData)
       .then((res) => {
         if (res.status === 200) {
-          setToken(res.data.access);
-          localStorage.setItem('token', res.data.access);
+          // Store the tokens in local storage
+          localStorage.setItem('access_token', res.data.access_token);
+          localStorage.setItem('refresh_token', res.data.refresh_token);
+
           window.location.href = '/';
         } else {
           setError('Invalid email or password');
@@ -85,9 +87,9 @@ export const AuthenticationForm = () => {
   };
 
   useEffect(() => {
-    const storedToken = localStorage.getItem('token');
-    if (storedToken) {
-      setToken(storedToken);
+    const storedAccessToken = localStorage.getItem('access_token');
+    if (storedAccessToken) {
+      setToken(storedAccessToken);
     }
   }, []);
 
