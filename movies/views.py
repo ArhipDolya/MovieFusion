@@ -77,3 +77,8 @@ class FavoriteMovieViewSet(viewsets.ModelViewSet):
             return Response(status=status.HTTP_204_NO_CONTENT)
         else:
             raise NotFound('Movie not in favorites')
+
+    def list(self, request, *args, **kwargs):
+        favorite_movies = FavoriteMovie.objects.filter(user=request.user)
+        serializer = FavoriteMovieSerializer(favorite_movies, many=True)
+        return Response(serializer.data)

@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import Navbar from './components/navbar/Navbar';
+import Navbar from './components/navbar/navbar'
 import Footer from './components/footer/Footer';
 import AppRouter from './components/pages/appRouter';
 import './App.css';
