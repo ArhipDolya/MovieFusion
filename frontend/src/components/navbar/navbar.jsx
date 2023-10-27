@@ -22,6 +22,9 @@ function Navbar() {
             </div>
             <ul className={menuOpen ? "open" : ""}>
                 <li>
+                    <NavLink to="/favorite-movies">Favorite Movies</NavLink>
+                </li>
+                <li>
                     <NavLink to="/movies">Movies</NavLink>
                 </li>
                 <li>
