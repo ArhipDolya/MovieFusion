@@ -49,8 +49,8 @@ const FavoriteMovies = () => {
   return (
     <div className="mt-5">
       <h2 className="text-3xl font-semibold text-white text-center custom-background p-3" style={{marginTop: '-20px', backgroundColor: '#333333'}}>
-  Favorite Movies
-</h2>
+        Favorite Movies
+      </h2>
 
       {isLoading ? (
         <div className="flex justify-center items-center h-screen">

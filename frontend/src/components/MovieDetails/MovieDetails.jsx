@@ -85,7 +85,11 @@ const MovieDetails = () => {
         <h3 className="movie-details-heading">Rating:</h3>
         <MovieRating movieSlug={movie.slug} />
 
-        <button onClick={handleAddToFavorites}>Add to Favorites</button>
+        <button
+          onClick={handleAddToFavorites}
+          className="bg-gradient-to-r from-blue-500 to-blue-600 text-white py-2 px-4 rounded-lg hover:from-blue-600 hover:to-blue-700 transition duration-300 ease-in-out transform hover:scale-105">
+          Add to Favorites 
+        </button>
 
         {movie.youtube_trailer_url && (
           <div className="movie-trailer-container">
