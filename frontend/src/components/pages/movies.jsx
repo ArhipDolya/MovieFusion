@@ -63,14 +63,16 @@ export const Movies = () => {
 
   return (
     <div className="movies-container">
-      <h1 className="movies">Movie List</h1>
-
+      <h1 className="text-3xl font-semibold text-white text-center custom-background p-3 mt-0 -mb-1" style={{backgroundColor: '#333333'}}>
+        Movie List
+      </h1>
+      
       <input
         type="text"
         placeholder="Search by movie title"
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
-        className="search-bar"
+        className="search-bar mt-3 mb-5 p-2 border border-gray-300 rounded-md text-sm"
       />
 
       <MovieList movies={currentMovies} searchQuery={searchQuery} />

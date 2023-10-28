@@ -14,13 +14,13 @@
 
 .spinner-wrapper {
     position: relative;
-    width: 50px;
+    width: 60px;
     height: 50px;
 }
 
 .spinner-image {
-    width: 80px;
-    height: 70px; 
+    width: 120px;
+    height: 60px; 
     animation: spinner 1s infinite linear;
 }
 
