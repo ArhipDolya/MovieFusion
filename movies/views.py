@@ -5,7 +5,7 @@ from rest_framework.response import Response
 
 from .models import Movie, Category, Rating, FavoriteMovie
 from .serializers import MovieSerializer, CategorySerializer, RatingSerializer, FavoriteMovieSerializer
-from .services_movies import get_movie_ratings
+from .services_movies import get_movie_ratings, add_movie_to_favorites, remove_movie_from_favorites, get_user_favorite_movie
 
 
 class MovieListView(ListAPIView):
@@ -49,36 +49,23 @@ class FavoriteMovieViewSet(viewsets.ModelViewSet):
     # Override create method to handle adding a movie to favorites
     def create(self, request, *args, **kwargs):
         movie_slug = request.data.get('movie_slug')
-        try:
-            movie = Movie.objects.get(slug=movie_slug)
-        except Movie.DoesNotExist:
-            raise NotFound('Movie not found')
+        success, result = add_movie_to_favorites(user=request.user, movie_slug=movie_slug)
 
-        # Check if the movie is already in the user's favorites
-        existing_favorite_movie = FavoriteMovie.objects.filter(user=request.user, movie=movie).first()
+        if success:
+            favorite_movie = FavoriteMovieSerializer(result).data
+            return Response(favorite_movie, status=status.HTTP_201_CREATED)
+        else:
+            return Response({'detail': result}, status=status.HTTP_400_BAD_REQUEST)
 
-        if existing_favorite_movie:
-            return Response({'detail': 'Movie is already in favorites.'}, status=status.HTTP_400_BAD_REQUEST)
-
-        favorite_movie = FavoriteMovie.objects.create(user=request.user, movie=movie)
-        return Response(FavoriteMovieSerializer(favorite_movie).data, status=status.HTTP_201_CREATED)
-
-    # Override destroy method to handle removing a movie from favorites
     def destroy(self, request, *args, **kwargs):
         movie_slug = request.data.get('movie_slug')
-        try:
-            movie = Movie.objects.get(slug=movie_slug)
-        except Movie.DoesNotExist:
-            raise NotFound('Movie not found')
+        success, result = remove_movie_from_favorites(user=request.user, movie_slug=movie_slug)
 
-        favorite_movie = FavoriteMovie.objects.filter(user=request.user, movie=movie).first()
-        if favorite_movie:
-            favorite_movie.delete()
+        if success:
             return Response(status=status.HTTP_204_NO_CONTENT)
         else:
-            raise NotFound('Movie not in favorites')
+            return NotFound(result)
 
     def list(self, request, *args, **kwargs):
-        favorite_movies = FavoriteMovie.objects.filter(user=request.user)
-        serializer = FavoriteMovieSerializer(favorite_movies, many=True)
-        return Response(serializer.data)
+        favorite_movies = get_user_favorite_movie(user=request.user)
+        return Response(favorite_movies)
