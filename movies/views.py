@@ -9,11 +9,21 @@ from .services_movies import get_movie_ratings, add_movie_to_favorites, remove_m
 
 
 class MovieListView(ListAPIView):
+    """
+    List and retrieve movies.
+    """
+
     queryset = Movie.objects.all()
     serializer_class = MovieSerializer
 
 
 class CategoryListView(ListAPIView):
+    """
+    List movie categories.
+
+    This view provides a list of all available movie categories.
+    """
+
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
 
@@ -22,6 +32,12 @@ class CategoryListView(ListAPIView):
 
 
 class RatingListView(ListAPIView):
+    """
+    List movie ratings.
+
+    This view provides a list of all movie ratings.
+    """
+
     queryset = Rating.objects.all()
     serializer_class = RatingSerializer
 
@@ -30,11 +46,18 @@ class RatingListView(ListAPIView):
 
 
 class MovieDetailsView(RetrieveAPIView):
+    """
+    Retrieve movie details.
+
+    This view allows you to retrieve detailed information about a specific movie based on its slug.
+
+    Returns detailed information about a specific movie, including its title, description, categories, and ratings.
+    """
+
     queryset = Movie.objects.all()
     serializer_class = MovieSerializer
     lookup_field = 'slug'
 
-    # Include the rating data when retrieving a movie
     def get_serializer_context(self):
         context = super().get_serializer_context()
         movie_slug = self.kwargs.get('slug')
@@ -43,10 +66,24 @@ class MovieDetailsView(RetrieveAPIView):
 
 
 class FavoriteMovieViewSet(viewsets.ModelViewSet):
+    """
+    Manage favorite movies.
+
+    This viewset allows users to add, remove, and get their favorite movies.
+
+    # Add Movie to Favorites
+    Adds a movie to the user's list of favorite movies. Requires the 'movie_slug' in the request data.
+
+    # Remove Movie from Favorites
+    Removes a movie from the user's list of favorite movies. Requires the 'movie_slug' in the request data.
+
+    # List Favorite Movies
+    Lists all movies that the user has marked as favorites.
+    """
+
     queryset = FavoriteMovie.objects.all()
     serializer_class = FavoriteMovieSerializer
 
-    # Override create method to handle adding a movie to favorites
     def create(self, request, *args, **kwargs):
         movie_slug = request.data.get('movie_slug')
         success, result = add_movie_to_favorites(user=request.user, movie_slug=movie_slug)

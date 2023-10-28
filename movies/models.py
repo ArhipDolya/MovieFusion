@@ -1,3 +1,4 @@
+from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db import models
 from django.contrib.auth import get_user_model
 
@@ -60,7 +61,7 @@ class Rating(models.Model):
 
     user = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
     movie = models.OneToOneField(Movie, on_delete=models.CASCADE, related_name='rating')
-    rating = models.DecimalField(max_digits=3, decimal_places=1)
+    rating = models.DecimalField(max_digits=3, decimal_places=1, validators=[MinValueValidator(0), MaxValueValidator(5)])
 
     def __str__(self):
         return f'Rating for {self.movie.title} by {self.user.username}'
@@ -75,8 +76,8 @@ class FavoriteMovie(models.Model):
         movie (ForeignKey to Movie): The movie added to the user's favorites.
     """
 
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, db_index=True)
+    movie = models.ForeignKey(Movie, on_delete=models.CASCADE, db_index=True)
 
     def __str__(self):
         return f'{self.user.username} - {self.movie.title}'
