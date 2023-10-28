@@ -25,6 +25,8 @@ class MovieListViewTests(TestCase):
         expected_data = json.loads(json.dumps(serializer.data))  # Convert to dictionary
 
         self.assertEqual(response_data, [expected_data])
+
+
 class CategoryListViewTests(TestCase):
     def setUp(self):
         self.client = APIClient()

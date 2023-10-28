@@ -67,6 +67,14 @@ class Rating(models.Model):
 
 
 class FavoriteMovie(models.Model):
+    """
+    Model representing a favorite movie.
+
+    Attributes:
+        user (ForeignKey to User): The user who added the movie to their favorites.
+        movie (ForeignKey to Movie): The movie added to the user's favorites.
+    """
+
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
 
