@@ -1,4 +1,5 @@
 from django.contrib.auth import get_user_model
+from rest_framework.exceptions import ValidationError
 from rest_framework_simplejwt.tokens import RefreshToken
 
 
@@ -23,4 +24,4 @@ class UserService:
             token = str(refresh.access_token)
             return token
 
-        return None
+        raise ValidationError("Invalid email or password.")

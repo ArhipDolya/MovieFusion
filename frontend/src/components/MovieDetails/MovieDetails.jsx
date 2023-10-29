@@ -18,7 +18,7 @@ const MovieDetails = () => {
   useEffect(() => {
     const fetchMovieDetails = async () => {
       try {
-        const response = await axios.get(`http://localhost:8000/api/v1/movie/${id}`);
+        const response = await axios.get(`http://localhost:8000/api/v1/movies/${id}`);
         const movieData = response.data;
         setMovie(movieData);
         setIsLoading(false);

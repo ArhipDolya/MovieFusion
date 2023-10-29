@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Routes, Navigate } from 'react-router-dom';
 import { Home, Movies, Categories, AuthenticationForm } from './index'
 import MovieDetails from "../MovieDetails/MovieDetails";
-import FavoriteMovies from "./favoriteMovies";
+import FavoriteMovies from "./favoriteMoviesPage/favoriteMovies";
 
 const AppRouter = () => {
     return (

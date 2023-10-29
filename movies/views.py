@@ -2,6 +2,7 @@ from rest_framework import viewsets, status
 from rest_framework.exceptions import NotFound
 from rest_framework.generics import ListAPIView, RetrieveAPIView
 from rest_framework.response import Response
+from rest_framework.permissions import IsAuthenticated
 
 from .models import Movie, Category, Rating, FavoriteMovie
 from .serializers import MovieSerializer, CategorySerializer, RatingSerializer, FavoriteMovieSerializer
@@ -83,6 +84,7 @@ class FavoriteMovieViewSet(viewsets.ModelViewSet):
 
     queryset = FavoriteMovie.objects.all()
     serializer_class = FavoriteMovieSerializer
+    permission_classes = [IsAuthenticated]
 
     def create(self, request, *args, **kwargs):
         movie_slug = request.data.get('movie_slug')
