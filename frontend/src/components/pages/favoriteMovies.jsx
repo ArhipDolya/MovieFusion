@@ -5,6 +5,7 @@ import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 import 'tailwindcss/tailwind.css';
 import { Link } from "react-router-dom";
 
+
 const FavoriteMovies = () => {
   const [favoriteMovies, setFavoriteMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(true);

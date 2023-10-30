@@ -32,18 +32,32 @@ class CategoryListView(ListAPIView):
         return super().list(request, *args, **kwargs)
 
 
-class RatingListView(ListAPIView):
-    """
-    List movie ratings.
-
-    This view provides a list of all movie ratings.
-    """
-
+class RatingViewSet(viewsets.ModelViewSet):
     queryset = Rating.objects.all()
     serializer_class = RatingSerializer
 
-    def get(self, request, *args, **kwargs):
-        return super().list(request, *args, **kwargs)
+    def create(self, request, *args, **kwargs):
+        user = request.user
+        movie_slug = request.data.get('movie')
+        rating = request.data.get('rating')
+
+        try:
+            movie = Movie.objects.get(slug=movie_slug)
+        except Movie.DoesNotExist:
+            return Response({'detail': 'Movie not found'}, status=status.HTTP_400_BAD_REQUEST)
+
+        existing_rating = Rating.objects.filter(user=user, movie=movie).first()
+        if existing_rating:
+            # Update the existing rating
+            existing_rating.rating = rating
+            existing_rating.save()
+            serializer = RatingSerializer(existing_rating)
+        else:
+            # Create a new rating
+            new_rating = Rating.objects.create(user=user, movie=movie, rating=rating)
+            serializer = RatingSerializer(new_rating)
+
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 
 class MovieDetailsView(RetrieveAPIView):

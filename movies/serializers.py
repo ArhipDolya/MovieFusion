@@ -1,6 +1,7 @@
+from django.core.validators import MinValueValidator, MaxValueValidator
 from rest_framework import serializers
 
-from .models import Movie, Category, Rating, FavoriteMovie
+from .models import Movie, Category, Rating, FavoriteMovie, User
 
 
 class CategorySerializer(serializers.ModelSerializer):
@@ -11,6 +12,7 @@ class CategorySerializer(serializers.ModelSerializer):
 
 class MovieSerializer(serializers.ModelSerializer):
     categories = CategorySerializer(many=True)
+    average_rating = serializers.ReadOnlyField()
 
     class Meta:
         model = Movie
@@ -18,7 +20,9 @@ class MovieSerializer(serializers.ModelSerializer):
 
 
 class RatingSerializer(serializers.ModelSerializer):
+    user = serializers.PrimaryKeyRelatedField(queryset=User.objects.all())
     movie = MovieSerializer()
+    rating = serializers.DecimalField(max_digits=3, decimal_places=1, validators=[MinValueValidator(0), MaxValueValidator(5)])
 
     class Meta:
         model = Rating

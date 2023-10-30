@@ -60,7 +60,7 @@ class Rating(models.Model):
     """
 
     user = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
-    movie = models.OneToOneField(Movie, on_delete=models.CASCADE, related_name='rating')
+    movie = models.ForeignKey(Movie, on_delete=models.CASCADE, related_name='rating')
     rating = models.DecimalField(max_digits=3, decimal_places=1, validators=[MinValueValidator(0), MaxValueValidator(5)])
 
     def __str__(self):

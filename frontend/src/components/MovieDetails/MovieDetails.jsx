@@ -7,11 +7,15 @@ import MovieRating from './MovieRating';
 import './MovieDetails.css';
 import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 
+import { Rating } from 'react-simple-star-rating';
+
+
 const MovieDetails = () => {
   const { id } = useParams();
   const [movie, setMovie] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [isFavorite, setIsFavorite] = useState(false);
+  const [rating, setRating] = useState(0);
 
   const navigate = useNavigate()
 
@@ -64,6 +68,52 @@ const MovieDetails = () => {
     }
   };
 
+  const handleRatingChange = async (newRating) => {
+  try {
+      const ratingValue = newRating.toString(); // Convert rating to a string
+      const storedAccessToken = localStorage.getItem('access_token');
+
+      const headers = {
+        Authorization: `Bearer ${storedAccessToken}`,
+      }
+      console.log(movie.id)
+      console.log(ratingValue)
+      const response = await axios.post('http://localhost:8000/api/v1/ratings/', {
+        movie: movie.slug,
+        rating: ratingValue,
+      }, { headers });
+      console.log('Rating sent to the backend:', response.data);
+    } catch (error) {
+      console.error('Error sending rating to the backend:', error);
+    }
+  };
+
+
+  const tooltipArray = [
+    "Terrible",
+    "Terrible+",
+    "Bad",
+    "Bad+",
+    "Average",
+    "Average+",
+    "Great",
+    "Great+",
+    "Awesome",
+    "Awesome+"
+  ];
+
+  const fillColorArray = [
+    "#f17a45",
+    "#f17a45",
+    "#f19745",
+    "#f19745",
+    "#f1a545",
+    "#f1a545",
+    "#f1b345",
+    "#f1b345",
+    "#f1d045",
+    "#f1d045"
+  ];
 
   return (
     <div className="movie-details-container">
@@ -82,8 +132,18 @@ const MovieDetails = () => {
         <h3 className="movie-details-heading">Actors:</h3>
         <p className="movie-details-info">{movie.actors}</p>
 
-        <h3 className="movie-details-heading">Rating:</h3>
-        <MovieRating movieSlug={movie.slug} />
+        <div className="rating">
+          <Rating
+            onClick={handleRatingChange}
+            size={50}
+            transition
+            allowFraction
+            showTooltip
+            tooltipArray={tooltipArray}
+            fillColorArray={fillColorArray}
+            SVGstyle={ { 'display':'inline' } }
+          />
+        </div>
 
         <button
           onClick={handleAddToFavorites}
