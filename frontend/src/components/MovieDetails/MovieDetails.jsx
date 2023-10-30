@@ -154,13 +154,12 @@ const MovieDetails = () => {
         <p className="movie-details-info">{movie.director}</p>
 
         <h3 className="movie-details-heading">Actors:</h3>
-        <p className="movie-details-info">{movie.actors}</p>
-
-        <div className="rating">
-          <div className="average-rating">
-            <h3 className="movie-details-heading">Average Rating: {averageRating}</h3>
-          </div>
+        <p className="movie-details-info mb-4">{movie.actors}</p>
           
+        <div className="rating bg-gray-100 p-4 rounded-lg shadow-lg mb-4">
+          <div className="average-rating">
+            <h3 className="text-lg font-semibold text-gray-800">Average Rating: {averageRating}</h3>
+          </div>
           <Rating
             initialValue={rating}
             onClick={handleRatingChange}
@@ -173,7 +172,7 @@ const MovieDetails = () => {
             SVGstyle={{ 'display': 'inline' }}
           />
         </div>
-
+          
         <button
           onClick={handleAddToFavorites}
           className="bg-gradient-to-r from-blue-500 to-blue-600 text-white py-2 px-4 rounded-lg hover:from-blue-600 hover:to-blue-700 transition duration-300 ease-in-out transform hover:scale-105">

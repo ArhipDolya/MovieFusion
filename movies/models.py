@@ -59,7 +59,8 @@ class Rating(models.Model):
     Model representing a movie rating.
 
     Attributes:
-        movie (OneToOneField to Movie): The movie for which the rating is given.
+        user (ForeignKey to User model): The user which the rating is given.
+        movie (ForeignKey to Movie model): The movie for which the rating is given.
         rating (DecimalField): The rating given to the movie.
     """
 

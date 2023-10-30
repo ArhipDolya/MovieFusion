@@ -1,8 +1,9 @@
 from django.shortcuts import get_object_or_404
 
-from .serializers import FavoriteMovieSerializer
+from .serializers import FavoriteMovieSerializer, RatingSerializer
 
 from .models import Movie, FavoriteMovie, Rating
+from .exceptions import MovieNotFoundException
 
 
 def get_movie_ratings(movie_slug):
@@ -42,3 +43,23 @@ def get_user_favorite_movie(user):
 
     return serializer.data
 
+
+class RatingService:
+    def create_or_update_rating(self, user, movie_slug, rating):
+        try:
+            movie = Movie.objects.get(slug=movie_slug)
+        except Movie.DoesNotExist:
+            raise MovieNotFoundException("Movie not found")
+
+        existing_rating = Rating.objects.filter(user=user, movie=movie).first()
+        if existing_rating:
+            # Update the existing rating
+            existing_rating.rating = rating
+            existing_rating.save()
+            serializer = RatingSerializer(existing_rating)
+        else:
+            # Create a new rating
+            new_rating = Rating.objects.create(user=user, movie=movie, rating=rating)
+            serializer = RatingSerializer(new_rating)
+
+        return serializer.data

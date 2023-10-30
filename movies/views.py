@@ -5,9 +5,11 @@ from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.views import APIView
 
+from .exceptions import MovieNotFoundException
 from .models import Movie, Category, Rating, FavoriteMovie
 from .serializers import MovieSerializer, CategorySerializer, RatingSerializer, FavoriteMovieSerializer
-from .services_movies import get_movie_ratings, add_movie_to_favorites, remove_movie_from_favorites, get_user_favorite_movie
+from .services_movies import get_movie_ratings, add_movie_to_favorites, remove_movie_from_favorites, \
+    get_user_favorite_movie, RatingService
 
 
 class MovieListView(ListAPIView):
@@ -34,6 +36,19 @@ class CategoryListView(ListAPIView):
 
 
 class RatingViewSet(viewsets.ModelViewSet):
+    """Manage movie ratings.
+
+    Allows users to create or update ratings for movies.
+
+    Attributes:
+        queryset (QuerySet): All ratings.
+        serializer_class (Serializer): Rating serializer.
+
+    Methods:
+        create(request, *args, **kwargs): Create/update a rating for a movie.
+
+    """
+
     queryset = Rating.objects.all()
     serializer_class = RatingSerializer
 
@@ -42,23 +57,13 @@ class RatingViewSet(viewsets.ModelViewSet):
         movie_slug = request.data.get('movie')
         rating = request.data.get('rating')
 
+        rating_service = RatingService()
+
         try:
-            movie = Movie.objects.get(slug=movie_slug)
-        except Movie.DoesNotExist:
-            return Response({'detail': 'Movie not found'}, status=status.HTTP_400_BAD_REQUEST)
-
-        existing_rating = Rating.objects.filter(user=user, movie=movie).first()
-        if existing_rating:
-            # Update the existing rating
-            existing_rating.rating = rating
-            existing_rating.save()
-            serializer = RatingSerializer(existing_rating)
-        else:
-            # Create a new rating
-            new_rating = Rating.objects.create(user=user, movie=movie, rating=rating)
-            serializer = RatingSerializer(new_rating)
-
-        return Response(serializer.data, status=status.HTTP_201_CREATED)
+            serializer_data = rating_service.create_or_update_rating(user, movie_slug, rating)
+            return Response(serializer_data, status=status.HTTP_201_CREATED)
+        except MovieNotFoundException as exception:
+            return Response({'detail': str(exception)}, status=status.HTTP_400_BAD_REQUEST)
 
 
 class MovieDetailsView(RetrieveAPIView):
