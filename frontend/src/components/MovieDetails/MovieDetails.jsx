@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
 
-import MovieRating from './MovieRating';
-
 import './MovieDetails.css';
 import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 
@@ -26,6 +24,17 @@ const MovieDetails = () => {
         const movieData = response.data;
         setMovie(movieData);
         setIsLoading(false);
+
+        const storedRating = localStorage.getItem(`movieRating_${id}`)
+        console.log("Stored rating from localStorage:", storedRating);
+
+        if (storedRating !== null) {
+          setRating(Number(storedRating));
+          console.log("Setting rating from localStorage:", Number(storedRating));
+        } else {
+          setRating(0);
+          console.log("Setting rating to 0");
+        }
       } catch (error) {
         console.error('Error fetching movie details:', error);
         setIsLoading(false);
@@ -76,12 +85,16 @@ const MovieDetails = () => {
       const headers = {
         Authorization: `Bearer ${storedAccessToken}`,
       }
-      console.log(movie.id)
-      console.log(ratingValue)
+
+      setRating(newRating)
+
+      localStorage.setItem(`movieRating_${id}`, ratingValue)
+
       const response = await axios.post('http://localhost:8000/api/v1/ratings/', {
         movie: movie.slug,
         rating: ratingValue,
       }, { headers });
+
       console.log('Rating sent to the backend:', response.data);
     } catch (error) {
       console.error('Error sending rating to the backend:', error);
@@ -134,6 +147,7 @@ const MovieDetails = () => {
 
         <div className="rating">
           <Rating
+            initialValue={rating}
             onClick={handleRatingChange}
             size={50}
             transition
@@ -141,7 +155,7 @@ const MovieDetails = () => {
             showTooltip
             tooltipArray={tooltipArray}
             fillColorArray={fillColorArray}
-            SVGstyle={ { 'display':'inline' } }
+            SVGstyle={{ 'display': 'inline' }}
           />
         </div>
 

@@ -12,7 +12,7 @@ class CategorySerializer(serializers.ModelSerializer):
 
 class MovieSerializer(serializers.ModelSerializer):
     categories = CategorySerializer(many=True)
-    average_rating = serializers.ReadOnlyField()
+    average_rating = serializers.ReadOnlyField(source='calculating_average_rating')
 
     class Meta:
         model = Movie
