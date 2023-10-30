@@ -12,5 +12,6 @@ urlpatterns = [
     path('api/v1/movies/<slug:slug>', views.MovieDetailsView.as_view(), name='movie-by-slug'),
     path('api/v1/categories/', views.CategoryListView.as_view(), name='category-list'),
     path('', include(router.urls)),
+    path('api/v1/movies/<slug:slug>/average-ratings/', views.AverageRatingView.as_view(), name='movie-average-rating'),
     path('api/v1/favorite-movies/', views.FavoriteMovieViewSet.as_view({'post': 'create', 'delete': 'destroy', 'get': 'list'}), name='favorite-movie'),
 ]

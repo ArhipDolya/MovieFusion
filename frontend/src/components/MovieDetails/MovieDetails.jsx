@@ -14,6 +14,7 @@ const MovieDetails = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [isFavorite, setIsFavorite] = useState(false);
   const [rating, setRating] = useState(0);
+  const [averageRating, setAverageRating] = useState(0);
 
   const navigate = useNavigate()
 
@@ -39,10 +40,20 @@ const MovieDetails = () => {
         console.error('Error fetching movie details:', error);
         setIsLoading(false);
       }
+      fetchAverageRating();
     };
 
     fetchMovieDetails();
   }, [id]);
+
+  const fetchAverageRating = async () => {
+    try {
+      const response = await axios.get(`http://localhost:8000/api/v1/movies/${id}/average-ratings/`);
+      setAverageRating(response.data.average_rating)
+    } catch (error) {
+      console.error('Error fetching average rating:', error);
+    }
+  }
 
   if (isLoading) {
     return (
@@ -146,6 +157,10 @@ const MovieDetails = () => {
         <p className="movie-details-info">{movie.actors}</p>
 
         <div className="rating">
+          <div className="average-rating">
+            <h3 className="movie-details-heading">Average Rating: {averageRating}</h3>
+          </div>
+          
           <Rating
             initialValue={rating}
             onClick={handleRatingChange}

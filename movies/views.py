@@ -3,6 +3,7 @@ from rest_framework.exceptions import NotFound
 from rest_framework.generics import ListAPIView, RetrieveAPIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
+from rest_framework.views import APIView
 
 from .models import Movie, Category, Rating, FavoriteMovie
 from .serializers import MovieSerializer, CategorySerializer, RatingSerializer, FavoriteMovieSerializer
@@ -122,3 +123,13 @@ class FavoriteMovieViewSet(viewsets.ModelViewSet):
     def list(self, request, *args, **kwargs):
         favorite_movies = get_user_favorite_movie(user=request.user)
         return Response(favorite_movies)
+
+
+class AverageRatingView(APIView):
+    def get(self, request, slug):
+        try:
+            movie = Movie.objects.get(slug=slug)
+            average_rating = movie.calculating_average_rating()
+            return Response({"average_rating": average_rating})
+        except Movie.DoesNotExist:
+            return Response({"average_rating": 0})
