@@ -4,6 +4,8 @@ import './css/login.css';
 import * as Components from './Components';
 
 import ReCAPTCHA from 'react-google-recaptcha';
+import { registerUser } from '../../api/authApi/register';
+import { loginUser } from '../../api/authApi/login';
 
 
 export const AuthenticationForm = () => {
@@ -37,8 +39,7 @@ export const AuthenticationForm = () => {
   const handleLoginSubmit = (event) => {
     event.preventDefault();
 
-    axios
-      .post('http://localhost:8000/api/v1/login/', loginFormData)
+    loginUser(loginFormData)
       .then((res) => {
         if (res.status === 200) {
           // Store the tokens in local storage
@@ -70,20 +71,19 @@ export const AuthenticationForm = () => {
       recaptchaToken: recaptchaToken,
     }
 
-    axios
-      .post('http://localhost:8000/api/v1/register/', registrationData)
-      .then((res) => {
-        if (res.status === 201) {
-          toggleSignIn(true);
-          setError('Registration successful. Please sign in.');
-        } else {
-          setError('Registration failed. Please check your input.');
-        }
-      })
-      .catch((error) => {
-        setError('An error occurred. Please try again later.');
-        console.error('Error registering user:', error);
-      });
+      registerUser(registrationData)
+        .then((res) => {
+          if (res.status === 201) {
+            toggleSignIn(true);
+            setError('Registration successful. Please sign in.');
+          } else {
+            setError('Registration failed. Please check your input.');
+          }
+        })
+        .catch((error) => {
+          setError('An error occurred. Please try again later.');
+          console.error('Error registering user:', error);
+        });
   };
 
   useEffect(() => {

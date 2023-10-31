@@ -110,10 +110,9 @@ class FavoriteMovieViewSet(viewsets.ModelViewSet):
     serializer_class = FavoriteMovieSerializer
     permission_classes = [IsAuthenticated]
 
-    def create(self, request, *args, **kwargs) -> Response:
-        movie_slug: str = request.data.get('movie_slug')
-        success: bool
-        result = add_movie_to_favorites(user=request.user, movie_slug=movie_slug)
+    def create(self, request, *args, **kwargs):
+        movie_slug = request.data.get('movie_slug')
+        success, result = add_movie_to_favorites(user=request.user, movie_slug=movie_slug)
 
         if success:
             favorite_movie = FavoriteMovieSerializer(result).data
@@ -121,17 +120,16 @@ class FavoriteMovieViewSet(viewsets.ModelViewSet):
         else:
             return Response({'detail': result}, status=status.HTTP_400_BAD_REQUEST)
 
-    def destroy(self, request, *args, **kwargs) -> Response:
-        movie_slug: str = request.data.get('movie_slug')
-        success: bool
-        result = remove_movie_from_favorites(user=request.user, movie_slug=movie_slug)
+    def destroy(self, request, *args, **kwargs):
+        movie_slug = request.data.get('movie_slug')
+        success, result = remove_movie_from_favorites(user=request.user, movie_slug=movie_slug)
 
         if success:
             return Response(status=status.HTTP_204_NO_CONTENT)
         else:
             return NotFound(result)
 
-    def list(self, request, *args, **kwargs) -> Response:
+    def list(self, request, *args, **kwargs):
         favorite_movies = get_user_favorite_movie(user=request.user)
         return Response(favorite_movies)
 

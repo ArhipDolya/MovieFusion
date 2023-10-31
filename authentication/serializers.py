@@ -10,7 +10,6 @@ User = get_user_model()
 
 
 class RegistrationSerializer(serializers.ModelSerializer):
-    
     email = serializers.EmailField(
         required=True,
         validators=[UniqueValidator(queryset=User.objects.all())]
