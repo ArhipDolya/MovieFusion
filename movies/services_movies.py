@@ -1,3 +1,6 @@
+from typing import Tuple, Optional, Union
+
+from django.db.models import Model, QuerySet
 from django.shortcuts import get_object_or_404
 
 from .serializers import FavoriteMovieSerializer, RatingSerializer
@@ -6,12 +9,12 @@ from .models import Movie, FavoriteMovie, Rating
 from .exceptions import MovieNotFoundException
 
 
-def get_movie_ratings(movie_slug):
+def get_movie_ratings(movie_slug: str) -> QuerySet[Rating]:
     ratings = Rating.objects.filter(movie__slug=movie_slug)
     return ratings
 
 
-def add_movie_to_favorites(user, movie_slug):
+def add_movie_to_favorites(user: Model, movie_slug: str) -> Tuple[bool, Union[str, FavoriteMovie]]:
     movie = get_object_or_404(Movie, slug=movie_slug)
 
     # Check if the movie is already in the user's favorites
@@ -25,7 +28,7 @@ def add_movie_to_favorites(user, movie_slug):
     return True, favorite_movie
 
 
-def remove_movie_from_favorites(user, movie_slug):
+def remove_movie_from_favorites(user: Model, movie_slug: str) -> Tuple[bool, Optional[str]]:
     movie = get_object_or_404(Movie, slug=movie_slug)
 
     favorite_movie = FavoriteMovie.objects.filter(user=user, movie=movie).first()
@@ -37,7 +40,7 @@ def remove_movie_from_favorites(user, movie_slug):
     return False, 'Movie not in favorites'
 
 
-def get_user_favorite_movie(user):
+def get_user_favorite_movie(user: Model) -> dict:
     favorite_movie = FavoriteMovie.objects.filter(user=user)
     serializer = FavoriteMovieSerializer(favorite_movie, many=True)
 
@@ -45,7 +48,7 @@ def get_user_favorite_movie(user):
 
 
 class RatingService:
-    def create_or_update_rating(self, user, movie_slug, rating):
+    def create_or_update_rating(self, user: Model, movie_slug: str, rating: str) -> dict:
         try:
             movie = Movie.objects.get(slug=movie_slug)
         except Movie.DoesNotExist:
