@@ -4,6 +4,7 @@ import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 
 import 'tailwindcss/tailwind.css';
 import { Link } from "react-router-dom";
+import { deleteFavoriteMovie, fetchFavoriteMovies } from "../../api/moviesApi/movies";
 
 
 const FavoriteMovies = () => {
@@ -11,40 +12,22 @@ const FavoriteMovies = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const fetchFavoriteMovies = async () => {
-      try {
-        const response = await axios.get("http://localhost:8000/api/v1/favorite-movies/", {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("access_token")}`,
-          },
-        });
-        setFavoriteMovies(response.data);
-        setIsLoading(false);
-      } catch (error) {
-        console.error(`Error fetching favorite movies: ${error}`);
-        setIsLoading(false);
-      }
+    const fetchFavoriteMoviesAsync = async () => {
+      const accessToken = localStorage.getItem("access_token");
+      const favoriteMovies = await fetchFavoriteMovies(accessToken);
+      setFavoriteMovies(favoriteMovies);
+      setIsLoading(false);
     };
-
-    fetchFavoriteMovies();
+  
+    fetchFavoriteMoviesAsync();
   }, [localStorage.getItem("access_token")]);
 
   const removeFavoriteMovie = async (movieSlug) => {
-    try {
-      await axios.delete("http://localhost:8000/api/v1/favorite-movies/", {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("access_token")}`,
-        },
-        data: {
-          movie_slug: movieSlug,
-        },
-      });
-
-      // Remove the deleted movie from the list
-      setFavoriteMovies(favoriteMovies.filter(movie => movie.movie.slug !== movieSlug));
-    } catch (error) {
-      console.error(`Error removing favorite movie: ${error}`);
-    }
+    const accessToken = localStorage.getItem("access_token");
+    await deleteFavoriteMovie(accessToken, movieSlug);
+  
+    // Remove the deleted movie from the list
+    setFavoriteMovies(favoriteMovies.filter(movie => movie.movie.slug !== movieSlug));
   };
 
   return (

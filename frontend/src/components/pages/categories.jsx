@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 
 import './css/categories.css'
+import { getMovies } from '../../api/moviesApi/movies';
+import { getCategories } from '../../api/categoriesApi/categoriesApi';
+
 
 export const Categories = () => {
   const [categories, setCategories] = useState([]);
@@ -13,7 +15,8 @@ export const Categories = () => {
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    axios.get('http://localhost:8000/api/v1/categories/')
+    // Fetch categories from API on component mount
+    getCategories()
       .then(response => {
         setCategories(response.data);
         setIsLoading(false)
@@ -24,7 +27,7 @@ export const Categories = () => {
       });
 
     // Fetch movies from API on component mount
-    axios.get('http://localhost:8000/api/v1/movies/')
+    getMovies()
       .then(response => {
         setMovies(response.data);
       })

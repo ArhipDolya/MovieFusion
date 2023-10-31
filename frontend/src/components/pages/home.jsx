@@ -4,6 +4,7 @@ import "./css/home.css";
 import { Link } from "react-router-dom";
 
 import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
+import { getMovies } from "../../api/moviesApi/movies";
 
 export const Home = () => {
   const [movies, setMovies] = useState([]);
@@ -13,8 +14,7 @@ export const Home = () => {
 
   useEffect(() => {
     // Fetch Movies
-    axios
-      .get("http://localhost:8000/api/v1/movies/")
+    getMovies()
       .then((res) => {
         setMovies(res.data);
         setIsLoading(false);

@@ -4,6 +4,7 @@ import './css/movies.css';
 import MovieList from './movieList';
 import Pagination from './pagination';
 import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
+import { getMovies } from '../../api/moviesApi/movies';
 
 export const Movies = () => {
   const [movies, setMovies] = useState([]);
@@ -16,8 +17,7 @@ export const Movies = () => {
 
 
   useEffect(() => {
-    axios
-      .get('http://localhost:8000/api/v1/movies/')
+    getMovies()
       .then((response) => {
         setMovies(response.data);
         setIsLoading(false);
