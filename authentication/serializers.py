@@ -5,6 +5,8 @@ from rest_framework.validators import UniqueValidator
 
 from .services_authentication import UserService
 
+from .models import Comment
+
 
 User = get_user_model()
 
@@ -52,3 +54,9 @@ class LoginSerializer(serializers.Serializer):
         else:
             raise serializers.ValidationError('Invalid email or password.')
 
+
+class CommentSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Comment
+        fields = ['id', 'author', 'movie', 'text', 'created_at']

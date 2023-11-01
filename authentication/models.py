@@ -14,3 +14,13 @@ class User(AbstractUser):
 
     def __str__(self):
         return self.username
+
+
+class Comment(models.Model):
+    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='comments')
+    movie = models.ForeignKey('movies.Movie', on_delete=models.CASCADE, related_name='comments')
+    text = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.text

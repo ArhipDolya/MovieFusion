@@ -13,7 +13,7 @@ from .serializers import MovieSerializer, CategorySerializer, RatingSerializer, 
 from .services_movies import get_movie_ratings, add_movie_to_favorites, remove_movie_from_favorites, \
     get_user_favorite_movie, RatingService
 
-from typing import Any, Dict, List, Type
+from typing import Any, Dict, Type
 
 
 class MovieListView(ListAPIView):
@@ -43,13 +43,6 @@ class RatingViewSet(viewsets.ModelViewSet):
     """Manage movie ratings.
 
     Allows users to create or update ratings for movies.
-
-    Attributes:
-        queryset (QuerySet): All ratings.
-        serializer_class (Serializer): Rating serializer.
-
-    Methods:
-        create(request, *args, **kwargs): Create/update a rating for a movie.
 
     """
 

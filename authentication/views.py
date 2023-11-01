@@ -6,8 +6,10 @@ from rest_framework import generics
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework_simplejwt.tokens import RefreshToken
+from rest_framework import viewsets
 
-from .serializers import RegistrationSerializer, LoginSerializer
+from .serializers import RegistrationSerializer, LoginSerializer, CommentSerializer
+from .models import Comment
 
 
 logger = logging.getLogger(__name__)
@@ -61,3 +63,7 @@ class LoginView(generics.CreateAPIView):
         logger.error("Login failed")
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+
+class CommentViewSet(viewsets.ModelViewSet):
+    queryset = Comment.objects.all()
+    serializer_class = CommentSerializer
