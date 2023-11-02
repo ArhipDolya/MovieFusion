@@ -3,6 +3,8 @@ import logging
 from django.contrib.auth import get_user_model
 
 from rest_framework import generics
+from rest_framework.decorators import api_view
+from rest_framework.generics import get_object_or_404
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework_simplejwt.tokens import RefreshToken
@@ -10,7 +12,6 @@ from rest_framework import viewsets
 
 from .serializers import RegistrationSerializer, LoginSerializer, CommentSerializer
 from .models import Comment
-
 
 logger = logging.getLogger(__name__)
 
@@ -67,3 +68,14 @@ class LoginView(generics.CreateAPIView):
 class CommentViewSet(viewsets.ModelViewSet):
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer
+
+
+@api_view(['GET'])
+def get_comments_for_movie(request, movie_slug):
+    try:
+        # Retrieve comments for the specified movie slug
+        comments = Comment.objects.filter(movie__slug=movie_slug)
+        serialized_comments = CommentSerializer(comments, many=True)
+        return Response(serialized_comments.data)
+    except Comment.DoesNotExist:
+        return Response(status=404)

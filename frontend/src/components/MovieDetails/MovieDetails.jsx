@@ -9,6 +9,8 @@ import apiConfig from '../../utils/apiConfig';
 import { getMovieDetails, addToFavorites } from '../../api/MovieDetailsApi/movies';
 import { addRating, getAverageRating } from '../../api/MovieDetailsApi/rating';
 
+import axios from 'axios';
+
 
 const tooltipArray = ["Terrible", "Terrible+", "Bad", "Bad+", "Average", "Average+", "Great", "Great+", "Awesome", "Awesome+"];
 const fillColorArray = ["#f17a45", "#f17a45", "#f19745", "#f19745", "#f1a545", "#f1a545", "#f1b345", "#f1b345", "#f1d045", "#f1d045"];
@@ -21,7 +23,9 @@ const MovieDetails = () => {
   const [isFavorite, setIsFavorite] = useState(false);
   const [rating, setRating] = useState(0);
   const [averageRating, setAverageRating] = useState(0);
-
+  const [comments, setComments] = useState([]);
+  const [newComment, setNewComment] = useState('');
+  
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -30,6 +34,12 @@ const MovieDetails = () => {
         const response = await getMovieDetails(id)
         const movieData = response.data;
         setMovie(movieData);
+
+        const commentsResponse = await fetchCommentsForMovie(id);
+        console.log(commentsResponse)
+        console.log(id)
+        setComments(commentsResponse);
+
         setIsLoading(false);
 
         const storedRating = localStorage.getItem(`movieRating_${id}`)
@@ -50,6 +60,15 @@ const MovieDetails = () => {
 
     fetchMovieDetails();
   }, [id]);
+
+  const fetchCommentsForMovie = async (movieId) => {
+    try {
+      const response = await axios.get(`http://localhost:8000/api/v1/movie/comments/${movieId}/`);
+      return response.data;
+    } catch (error) {
+      console.error('Error fetching comments:', error);
+    }
+  };
 
   const fetchAverageRating = async () => {
     try {
@@ -162,6 +181,53 @@ const MovieDetails = () => {
             />
           </div>
         )}
+
+        <div className="w-full bg-white rounded-lg border p-2 my-4  mt-20">
+          
+          <h3 className="font-bold">Comments</h3>
+
+          <form>
+
+            <div className="flex flex-col">
+              {comments &&
+                comments.map((comment) => (
+                  <div className="border rounded-md p-3 ml-3 my-3" key={comment.id}>
+                    <div className="flex gap-3 items-center">
+                      <img
+                        src="https://avatars.githubusercontent.com/u/22263436?v=4"
+                        className="object-cover w-8 h-8 rounded-full border-2 border-emerald-400 shadow-emerald-400"
+                        alt="User Avatar"
+                      />
+                      <h3 className="font-bold">{comment.author}</h3>
+                    </div>
+                    <p className="text-gray-600 mt-2">{comment.text}</p>
+                  </div>
+                ))}
+            </div>
+
+            <div className="w-full px-3 my-2">
+              <textarea
+                className="bg-gray-100 rounded border border-gray-400 leading-normal resize-none w-full h-20 py-2 px-3 font-medium placeholder-gray-700 focus:outline-none focus:bg-white"
+                name="body"
+                placeholder="Type Your Comment"
+                required
+              ></textarea>
+            </div>
+
+            <div className="w-full flex justify-end px-3">
+              <input
+                type="submit"
+                className="px-2.5 py-1.5 rounded-md text-white text-sm bg-indigo-500"
+                value="Post Comment"
+              />
+            </div>
+
+          </form>
+
+        </div>
+
+
+
       </div>
     </div>
   );
