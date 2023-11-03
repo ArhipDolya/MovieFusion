@@ -56,7 +56,8 @@ class LoginSerializer(serializers.Serializer):
 
 
 class CommentSerializer(serializers.ModelSerializer):
+    author_username = serializers.ReadOnlyField(source='author.username')
 
     class Meta:
         model = Comment
-        fields = ['id', 'author', 'movie', 'text', 'created_at']
+        fields = ['id', 'author', 'movie', 'text', 'created_at', 'author_username']

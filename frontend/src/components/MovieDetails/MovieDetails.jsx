@@ -26,7 +26,7 @@ const MovieDetails = () => {
   const [averageRating, setAverageRating] = useState(0);
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState('');
-  
+
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -257,15 +257,16 @@ const MovieDetails = () => {
                         className="object-cover w-8 h-8 rounded-full border-2 border-emerald-400 shadow-emerald-400"
                         alt="User Avatar"
                       />
-                      <h3 className="font-bold">{comment.author}</h3>
+                      <h3 className="font-bold">{comment.author_username}</h3>
                     </div>
                     <p className="text-gray-600 mt-2">{comment.text}</p>
                     
                     <button
-    onClick={() => handleDeleteComment(comment.id)}
-    className="text-red-500 hover:text-red-700 cursor-pointer mt-2">
-    Delete
-  </button>
+                      onClick={() => handleDeleteComment(comment.id)}
+                      className="text-red-500 hover:text-red-700 cursor-pointer mt-2">
+                      Delete
+                    </button>
+
                   </div>
                 ))}
             </div>
