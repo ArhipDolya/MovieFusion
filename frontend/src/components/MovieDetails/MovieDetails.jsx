@@ -114,12 +114,8 @@ const MovieDetails = () => {
       }
   };
 
-  const createComment = async (event) => {
+  const handleCreateComment = async (event) => {
     event.preventDefault()
-
-    if (!comments) {
-      return
-    }
 
     try {
       const storedAccessToken = localStorage.getItem('access_token')
@@ -155,6 +151,25 @@ const MovieDetails = () => {
     } catch (error) {
       console.error('Error creating comment:', error);
     } 
+  }
+
+  const handleDeleteComment = async (commentId) => {
+    try {
+      const storedAccessToken = localStorage.getItem('access_token')
+      if (storedAccessToken) {
+        const headers = apiConfig.createHeaders(storedAccessToken)
+
+        await axios.delete(`http://localhost:8000/api/v1/comments/${commentId}/`, {
+          headers,
+        })
+
+        // Update the comments state by filtering out the deleted comment
+        const updatedComments = comments.filter((comment) => comment.id !== commentId);
+        setComments(updatedComments);
+      }
+    } catch (error) {
+      console.error('Error deleting comment:', error);
+    }
   }
 
   if (isLoading) {
@@ -230,7 +245,7 @@ const MovieDetails = () => {
           
           <h3 className="font-bold">Comments</h3>
 
-          <form onSubmit={createComment}>
+          <form onSubmit={handleCreateComment}>
 
             <div className="flex flex-col">
               {comments &&
@@ -245,6 +260,12 @@ const MovieDetails = () => {
                       <h3 className="font-bold">{comment.author}</h3>
                     </div>
                     <p className="text-gray-600 mt-2">{comment.text}</p>
+                    
+                    <button
+    onClick={() => handleDeleteComment(comment.id)}
+    className="text-red-500 hover:text-red-700 cursor-pointer mt-2">
+    Delete
+  </button>
                   </div>
                 ))}
             </div>
