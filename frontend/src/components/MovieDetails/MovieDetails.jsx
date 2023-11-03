@@ -10,6 +10,7 @@ import { getMovieDetails, addToFavorites } from '../../api/MovieDetailsApi/movie
 import { addRating, getAverageRating } from '../../api/MovieDetailsApi/rating';
 
 import axios from 'axios';
+import { jwtDecode } from "jwt-decode";
 
 
 const tooltipArray = ["Terrible", "Terrible+", "Bad", "Bad+", "Average", "Average+", "Great", "Great+", "Awesome", "Awesome+"];
@@ -113,6 +114,49 @@ const MovieDetails = () => {
       }
   };
 
+  const createComment = async (event) => {
+    event.preventDefault()
+
+    if (!comments) {
+      return
+    }
+
+    try {
+      const storedAccessToken = localStorage.getItem('access_token')
+      if (storedAccessToken) {       
+        const headers = apiConfig.createHeaders(storedAccessToken)
+        const decodedToken = jwtDecode(storedAccessToken)
+
+        const userComment = {
+          author: decodedToken.user_id,
+          movie: movie.slug,
+          text: newComment
+        }
+
+        const updatedComments = [...comments, userComment]
+        setComments(updatedComments)
+
+        const response = axios.post(
+          "http://localhost:8000/api/v1/comments/",
+          userComment,
+          {
+            headers: {
+              ...headers,
+              "Content-Type": "application/json",
+            }
+          }
+        );
+
+        console.log('Comment created:', response.data);
+        setNewComment('');
+      } else {
+        navigate('/authentication')
+      }
+    } catch (error) {
+      console.error('Error creating comment:', error);
+    } 
+  }
+
   if (isLoading) {
     return (
       <div className="loading-spinner"> 
@@ -186,7 +230,7 @@ const MovieDetails = () => {
           
           <h3 className="font-bold">Comments</h3>
 
-          <form>
+          <form onSubmit={createComment}>
 
             <div className="flex flex-col">
               {comments &&
@@ -194,7 +238,7 @@ const MovieDetails = () => {
                   <div className="border rounded-md p-3 ml-3 my-3" key={comment.id}>
                     <div className="flex gap-3 items-center">
                       <img
-                        src="https://avatars.githubusercontent.com/u/22263436?v=4"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrmaYAWRAbOZOfFEX8mnY1G9lBIVLZq4DKog&usqp=CAU"
                         className="object-cover w-8 h-8 rounded-full border-2 border-emerald-400 shadow-emerald-400"
                         alt="User Avatar"
                       />
@@ -211,6 +255,8 @@ const MovieDetails = () => {
                 name="body"
                 placeholder="Type Your Comment"
                 required
+                value={newComment}
+                onChange={(e) => setNewComment(e.target.value)}
               ></textarea>
             </div>
 

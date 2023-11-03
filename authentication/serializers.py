@@ -56,11 +56,7 @@ class LoginSerializer(serializers.Serializer):
 
 
 class CommentSerializer(serializers.ModelSerializer):
-    author = serializers.SerializerMethodField()
 
     class Meta:
         model = Comment
         fields = ['id', 'author', 'movie', 'text', 'created_at']
-
-    def get_author(self, obj):
-        return obj.author.username
