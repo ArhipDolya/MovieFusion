@@ -14,6 +14,10 @@ from .services_movies import get_movie_ratings, add_movie_to_favorites, remove_m
     get_user_favorite_movie, RatingService
 
 from typing import Any, Dict, Type
+from loguru import logger
+
+
+logger.add('debug.log', format="{time} {level} {message}", level="DEBUG", rotation="10 MB", compression="zip")
 
 
 class MovieListView(ListAPIView):
