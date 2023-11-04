@@ -11,6 +11,7 @@ import { addRating, getAverageRating } from '../../api/MovieDetailsApi/rating';
 
 import axios from 'axios';
 import { jwtDecode } from "jwt-decode";
+import { deleteComment, getComments, createComment } from '../../api/MovieDetailsApi/comments';
 
 
 const tooltipArray = ["Terrible", "Terrible+", "Bad", "Bad+", "Average", "Average+", "Great", "Great+", "Awesome", "Awesome+"];
@@ -62,15 +63,6 @@ const MovieDetails = () => {
     fetchMovieDetails();
   }, [id]);
 
-  const fetchCommentsForMovie = async (movieId) => {
-    try {
-      const response = await axios.get(`http://localhost:8000/api/v1/movie/comments/${movieId}/`);
-      return response.data;
-    } catch (error) {
-      console.error('Error fetching comments:', error);
-    }
-  };
-
   const fetchAverageRating = async () => {
     try {
       const response = await getAverageRating(id);
@@ -98,7 +90,7 @@ const MovieDetails = () => {
 
   const handleRatingChange = async (newRating) => {
     try {
-        const ratingValue = newRating.toString(); // Convert rating to a string
+        const ratingValue = newRating.toString();
         const storedAccessToken = localStorage.getItem('access_token');
         const headers = apiConfig.createHeaders(storedAccessToken)
 
@@ -114,13 +106,19 @@ const MovieDetails = () => {
       }
   };
 
-  const handleCreateComment = async (event) => {
-    event.preventDefault()
+  const fetchCommentsForMovie = async (movieId) => {
+    try {
+      const response = await getComments(movieId)
+      return response.data;
+    } catch (error) {
+      console.error('Error fetching comments:', error);
+    }
+  };
 
+  const handleCreateComment = async () => {
     try {
       const storedAccessToken = localStorage.getItem('access_token')
       if (storedAccessToken) {       
-        const headers = apiConfig.createHeaders(storedAccessToken)
         const decodedToken = jwtDecode(storedAccessToken)
 
         const userComment = {
@@ -132,16 +130,7 @@ const MovieDetails = () => {
         const updatedComments = [...comments, userComment]
         setComments(updatedComments)
 
-        const response = axios.post(
-          "http://localhost:8000/api/v1/comments/",
-          userComment,
-          {
-            headers: {
-              ...headers,
-              "Content-Type": "application/json",
-            }
-          }
-        );
+        const response = await createComment(storedAccessToken, userComment)
 
         console.log('Comment created:', response.data);
         setNewComment('');
@@ -155,18 +144,11 @@ const MovieDetails = () => {
 
   const handleDeleteComment = async (commentId) => {
     try {
-      const storedAccessToken = localStorage.getItem('access_token')
-      if (storedAccessToken) {
-        const headers = apiConfig.createHeaders(storedAccessToken)
-
-        await axios.delete(`http://localhost:8000/api/v1/comments/${commentId}/`, {
-          headers,
-        })
-
-        // Update the comments state by filtering out the deleted comment
-        const updatedComments = comments.filter((comment) => comment.id !== commentId);
-        setComments(updatedComments);
-      }
+      await deleteComment(commentId);
+      
+      // Update the comments state by filtering out the deleted comment
+      const updatedComments = comments.filter((comment) => comment.id !== commentId);
+      setComments(updatedComments);
     } catch (error) {
       console.error('Error deleting comment:', error);
     }
@@ -292,8 +274,6 @@ const MovieDetails = () => {
           </form>
 
         </div>
-
-
 
       </div>
     </div>
