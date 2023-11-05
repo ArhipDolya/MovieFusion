@@ -1,4 +1,6 @@
 from django.db.models import QuerySet
+from django.core.cache import cache
+
 from rest_framework import viewsets, status
 from rest_framework.exceptions import NotFound
 from rest_framework.generics import ListAPIView, RetrieveAPIView
@@ -32,11 +34,23 @@ class MovieListView(ListAPIView):
 class CategoryListView(ListAPIView):
     queryset = Category.objects.all()
     serializer_class: Type[Serializer] = CategorySerializer
+    cache_key = 'movie_categories'
 
     def list(self, request, *args: Any, **kwargs: Any) -> Response:
+        # Try to get the data from the cache
+        cached_data = cache.get(self.cache_key)
+
+        if cached_data is not None:
+            logger.info("Using cached movie categories data")
+            return Response(cached_data)
+
         logger.info("Request for list of movie categories")
         response = super().list(request, *args, **kwargs)
         logger.info("Response for list of movie categories")
+        
+        # Cache the data for future use
+        cache.set(self.cache_key, response.data, timeout=260)
+
         return response
 
 

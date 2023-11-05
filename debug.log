@@ -16,3 +16,75 @@
 2023-11-05T08:09:41.320301+0000 INFO Response for list of movie categories
 2023-11-05T08:09:41.355654+0000 INFO Request for list of movie categories
 2023-11-05T08:09:41.378212+0000 INFO Response for list of movie categories
+2023-11-05T08:50:29.766925+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T08:50:29.881832+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T08:50:49.678380+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T08:50:49.910537+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T08:51:44.887429+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T08:51:45.267045+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T08:51:53.381325+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T08:51:53.847225+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T09:29:45.626763+0000 INFO Get comments from AnonymousUser
+2023-11-05T09:29:45.626763+0000 INFO Get comments from AnonymousUser
+2023-11-05T09:29:45.702071+0000 INFO Get comments from AnonymousUser
+2023-11-05T09:29:45.702071+0000 INFO Get comments from AnonymousUser
+2023-11-05T09:29:45.787093+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T09:29:45.787093+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T09:29:45.873761+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T09:29:45.873761+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T09:29:50.787806+0000 INFO Get comments from AnonymousUser
+2023-11-05T09:29:50.787806+0000 INFO Get comments from AnonymousUser
+2023-11-05T09:29:50.902535+0000 INFO Get comments from AnonymousUser
+2023-11-05T09:29:50.902535+0000 INFO Get comments from AnonymousUser
+2023-11-05T09:29:50.971280+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T09:29:50.971280+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T09:29:51.203128+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T09:29:51.203128+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T09:29:54.528221+0000 INFO Request for list of movie categories
+2023-11-05T09:29:54.528221+0000 INFO Request for list of movie categories
+2023-11-05T09:29:54.559392+0000 INFO Response for list of movie categories
+2023-11-05T09:29:54.559392+0000 INFO Response for list of movie categories
+2023-11-05T09:29:54.593606+0000 INFO Using cached movie categories data
+2023-11-05T09:29:54.593606+0000 INFO Using cached movie categories data
+2023-11-05T09:30:26.285293+0000 INFO Get comments from AnonymousUser
+2023-11-05T09:30:26.285293+0000 INFO Get comments from AnonymousUser
+2023-11-05T09:30:26.427360+0000 INFO Get comments from AnonymousUser
+2023-11-05T09:30:26.427360+0000 INFO Get comments from AnonymousUser
+2023-11-05T09:30:26.504681+0000 INFO Retrieved average rating for movie 'Schindler-list': 0
+2023-11-05T09:30:26.504681+0000 INFO Retrieved average rating for movie 'Schindler-list': 0
+2023-11-05T09:30:26.683661+0000 INFO Retrieved average rating for movie 'Schindler-list': 0
+2023-11-05T09:30:26.683661+0000 INFO Retrieved average rating for movie 'Schindler-list': 0
+2023-11-05T09:30:28.945451+0000 INFO Using cached movie categories data
+2023-11-05T09:30:28.945451+0000 INFO Using cached movie categories data
+2023-11-05T09:30:28.960227+0000 INFO Using cached movie categories data
+2023-11-05T09:30:28.960227+0000 INFO Using cached movie categories data
+2023-11-05T09:40:52.424633+0000 INFO Get comments from AnonymousUser
+2023-11-05T09:40:52.424633+0000 INFO Get comments from AnonymousUser
+2023-11-05T09:40:52.514245+0000 INFO Get comments from AnonymousUser
+2023-11-05T09:40:52.514245+0000 INFO Get comments from AnonymousUser
+2023-11-05T09:40:52.545087+0000 INFO Retrieved average rating for movie 'hateful-eight': 0
+2023-11-05T09:40:52.545087+0000 INFO Retrieved average rating for movie 'hateful-eight': 0
+2023-11-05T09:40:52.675372+0000 INFO Retrieved average rating for movie 'hateful-eight': 0
+2023-11-05T09:40:52.675372+0000 INFO Retrieved average rating for movie 'hateful-eight': 0
+2023-11-05T09:43:39.292200+0000 INFO Get comments from AnonymousUser
+2023-11-05T09:43:39.292200+0000 INFO Get comments from AnonymousUser
+2023-11-05T09:43:39.490579+0000 INFO Get comments from AnonymousUser
+2023-11-05T09:43:39.490579+0000 INFO Get comments from AnonymousUser
+2023-11-05T09:43:39.555230+0000 INFO Retrieved average rating for movie 'hateful-eight': 0
+2023-11-05T09:43:39.555230+0000 INFO Retrieved average rating for movie 'hateful-eight': 0
+2023-11-05T09:43:39.700078+0000 INFO Retrieved average rating for movie 'hateful-eight': 0
+2023-11-05T09:43:39.700078+0000 INFO Retrieved average rating for movie 'hateful-eight': 0
+2023-11-05T09:44:29.244164+0000 INFO Request for list of movie categories
+2023-11-05T09:44:29.244164+0000 INFO Request for list of movie categories
+2023-11-05T09:44:29.278874+0000 INFO Response for list of movie categories
+2023-11-05T09:44:29.278874+0000 INFO Response for list of movie categories
+2023-11-05T09:44:29.310007+0000 INFO Using cached movie categories data
+2023-11-05T09:44:29.310007+0000 INFO Using cached movie categories data
+2023-11-05T09:44:42.174578+0000 INFO Get comments from AnonymousUser
+2023-11-05T09:44:42.174578+0000 INFO Get comments from AnonymousUser
+2023-11-05T09:44:42.266124+0000 INFO Get comments from AnonymousUser
+2023-11-05T09:44:42.266124+0000 INFO Get comments from AnonymousUser
+2023-11-05T09:44:42.310604+0000 INFO Retrieved average rating for movie 'oppenheimer': 0
+2023-11-05T09:44:42.310604+0000 INFO Retrieved average rating for movie 'oppenheimer': 0
+2023-11-05T09:44:42.439392+0000 INFO Retrieved average rating for movie 'oppenheimer': 0
+2023-11-05T09:44:42.439392+0000 INFO Retrieved average rating for movie 'oppenheimer': 0

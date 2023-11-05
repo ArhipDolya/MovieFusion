@@ -13,7 +13,10 @@ from rest_framework import viewsets
 from .serializers import RegistrationSerializer, LoginSerializer, CommentSerializer
 from .models import Comment
 
-logger = logging.getLogger(__name__)
+from loguru import logger
+
+
+logger.add('debug.log', format="{time} {level} {message}", level="DEBUG", rotation="10 MB", compression="zip")
 
 
 User = get_user_model()
@@ -53,6 +56,7 @@ class LoginView(generics.CreateAPIView):
 
             if user and user.check_password(password):
                 refresh = RefreshToken.for_user(user)
+                logger.info(f"User {user} successfully registered")
                 return Response({
                     'access_token': str(refresh.access_token),
                     'refresh_token': str(refresh)
@@ -76,6 +80,8 @@ def get_comments_for_movie(request, movie_slug):
         # Retrieve comments for the specified movie slug
         comments = Comment.objects.filter(movie__slug=movie_slug)
         serialized_comments = CommentSerializer(comments, many=True)
+        logger.info(f"Get comments from {request.user}")
         return Response(serialized_comments.data)
     except Comment.DoesNotExist:
+        logger.error(f"Failed to retrieve comments for movie slug {movie_slug}: {e}")
         return Response(status=404)
