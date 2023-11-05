@@ -2,6 +2,7 @@ from typing import Tuple, Optional, Union
 
 from django.db.models import Model, QuerySet
 from django.shortcuts import get_object_or_404
+from django.core.cache import cache
 
 from .serializers import FavoriteMovieSerializer, RatingSerializer
 
@@ -10,7 +11,17 @@ from .exceptions import MovieNotFoundException
 
 
 def get_movie_ratings(movie_slug: str) -> QuerySet[Rating]:
+    cache_key = f'movie_ratings_{movie_slug}'
+
+    cached_ratings = cache.get(cache_key)
+
+    if cached_ratings is not None:
+        return cached_ratings
+
     ratings = Rating.objects.filter(movie__slug=movie_slug)
+
+    cache.set(cache_key, ratings, 120)
+
     return ratings
 
 
@@ -43,8 +54,9 @@ def remove_movie_from_favorites(user: Model, movie_slug: str) -> Tuple[bool, Opt
 def get_user_favorite_movie(user: Model) -> dict:
     favorite_movie = FavoriteMovie.objects.filter(user=user)
     serializer = FavoriteMovieSerializer(favorite_movie, many=True)
+    favorite_movie_data = serializer.data
 
-    return serializer.data
+    return favorite_movie_data
 
 
 class RatingService:

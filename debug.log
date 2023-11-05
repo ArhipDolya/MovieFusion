@@ -88,3 +88,395 @@
 2023-11-05T09:44:42.310604+0000 INFO Retrieved average rating for movie 'oppenheimer': 0
 2023-11-05T09:44:42.439392+0000 INFO Retrieved average rating for movie 'oppenheimer': 0
 2023-11-05T09:44:42.439392+0000 INFO Retrieved average rating for movie 'oppenheimer': 0
+2023-11-05T09:47:19.108752+0000 INFO Get comments from AnonymousUser
+2023-11-05T09:47:19.108752+0000 INFO Get comments from AnonymousUser
+2023-11-05T09:47:19.213048+0000 INFO Get comments from AnonymousUser
+2023-11-05T09:47:19.213048+0000 INFO Get comments from AnonymousUser
+2023-11-05T09:47:19.280860+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T09:47:19.280860+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T09:47:19.413611+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T09:47:19.413611+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T09:47:28.060499+0000 INFO Get comments from AnonymousUser
+2023-11-05T09:47:28.060499+0000 INFO Get comments from AnonymousUser
+2023-11-05T09:47:28.243198+0000 INFO Get comments from AnonymousUser
+2023-11-05T09:47:28.243198+0000 INFO Get comments from AnonymousUser
+2023-11-05T09:47:28.384598+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T09:47:28.384598+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T09:47:28.562477+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T09:47:28.562477+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T09:59:35.150603+0000 INFO Get comments from AnonymousUser
+2023-11-05T09:59:35.150603+0000 INFO Get comments from AnonymousUser
+2023-11-05T09:59:35.231463+0000 INFO Get comments from AnonymousUser
+2023-11-05T09:59:35.231463+0000 INFO Get comments from AnonymousUser
+2023-11-05T09:59:35.281181+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T09:59:35.281181+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T09:59:35.472211+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T09:59:35.472211+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T09:59:38.879650+0000 INFO Rating created by user Arhip for movie Interstellar
+2023-11-05T09:59:38.879650+0000 INFO Rating created by user Arhip for movie Interstellar
+2023-11-05T09:59:40.386394+0000 INFO Get comments from AnonymousUser
+2023-11-05T09:59:40.386394+0000 INFO Get comments from AnonymousUser
+2023-11-05T09:59:40.458784+0000 INFO Get comments from AnonymousUser
+2023-11-05T09:59:40.458784+0000 INFO Get comments from AnonymousUser
+2023-11-05T09:59:40.507770+0000 INFO Retrieved average rating for movie 'Interstellar': 4.5000000000000000
+2023-11-05T09:59:40.507770+0000 INFO Retrieved average rating for movie 'Interstellar': 4.5000000000000000
+2023-11-05T09:59:40.753009+0000 INFO Retrieved average rating for movie 'Interstellar': 4.5000000000000000
+2023-11-05T09:59:40.753009+0000 INFO Retrieved average rating for movie 'Interstellar': 4.5000000000000000
+2023-11-05T10:00:12.840901+0000 INFO Rating created by user Arhip for movie Interstellar
+2023-11-05T10:00:12.840901+0000 INFO Rating created by user Arhip for movie Interstellar
+2023-11-05T10:00:14.016567+0000 INFO Get comments from AnonymousUser
+2023-11-05T10:00:14.016567+0000 INFO Get comments from AnonymousUser
+2023-11-05T10:00:14.129035+0000 INFO Get comments from AnonymousUser
+2023-11-05T10:00:14.129035+0000 INFO Get comments from AnonymousUser
+2023-11-05T10:00:14.205115+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T10:00:14.205115+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T10:00:14.345711+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T10:00:14.345711+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T10:00:18.189022+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:00:18.189022+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:00:18.305055+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:00:18.305055+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:00:19.036405+0000 INFO Get comments from AnonymousUser
+2023-11-05T10:00:19.036405+0000 INFO Get comments from AnonymousUser
+2023-11-05T10:00:19.129955+0000 INFO Get comments from AnonymousUser
+2023-11-05T10:00:19.129955+0000 INFO Get comments from AnonymousUser
+2023-11-05T10:00:19.165791+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T10:00:19.165791+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T10:00:19.277404+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T10:00:19.277404+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T10:00:21.865580+0000 ERROR Failed to add movie 'Interstellar' to favorites for user 'Arhip': Movie is already in favorites.
+2023-11-05T10:00:21.865580+0000 ERROR Failed to add movie 'Interstellar' to favorites for user 'Arhip': Movie is already in favorites.
+2023-11-05T10:00:25.923800+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:00:25.923800+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:00:25.997273+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:00:25.997273+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:00:28.290817+0000 INFO Get comments from AnonymousUser
+2023-11-05T10:00:28.290817+0000 INFO Get comments from AnonymousUser
+2023-11-05T10:00:28.398942+0000 INFO Get comments from AnonymousUser
+2023-11-05T10:00:28.398942+0000 INFO Get comments from AnonymousUser
+2023-11-05T10:00:28.518606+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T10:00:28.518606+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T10:00:28.655233+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T10:00:28.655233+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T10:08:04.036516+0000 INFO Get comments from AnonymousUser
+2023-11-05T10:08:04.036516+0000 INFO Get comments from AnonymousUser
+2023-11-05T10:08:04.129670+0000 INFO Get comments from AnonymousUser
+2023-11-05T10:08:04.129670+0000 INFO Get comments from AnonymousUser
+2023-11-05T10:08:04.182220+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T10:08:04.182220+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T10:08:04.289182+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T10:08:04.289182+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T10:08:05.608441+0000 ERROR Failed to add movie 'Interstellar' to favorites for user 'Arhip': Movie is already in favorites.
+2023-11-05T10:08:05.608441+0000 ERROR Failed to add movie 'Interstellar' to favorites for user 'Arhip': Movie is already in favorites.
+2023-11-05T10:08:07.310469+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:08:07.310469+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:08:07.365833+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:08:07.365833+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:08:08.487062+0000 INFO Movie 'Interstellar' removed from favorites for user 'Arhip'
+2023-11-05T10:08:08.487062+0000 INFO Movie 'Interstellar' removed from favorites for user 'Arhip'
+2023-11-05T10:08:11.215012+0000 INFO Get comments from AnonymousUser
+2023-11-05T10:08:11.215012+0000 INFO Get comments from AnonymousUser
+2023-11-05T10:08:11.343438+0000 INFO Get comments from AnonymousUser
+2023-11-05T10:08:11.343438+0000 INFO Get comments from AnonymousUser
+2023-11-05T10:08:11.346798+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T10:08:11.346798+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T10:08:11.568653+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T10:08:11.568653+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T10:08:12.266119+0000 INFO Movie 'Interstellar' added to favorites for user 'Arhip'
+2023-11-05T10:08:12.266119+0000 INFO Movie 'Interstellar' added to favorites for user 'Arhip'
+2023-11-05T10:08:13.055452+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:08:13.055452+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:08:13.099473+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:08:13.099473+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:08:17.927386+0000 INFO Get comments from AnonymousUser
+2023-11-05T10:08:17.927386+0000 INFO Get comments from AnonymousUser
+2023-11-05T10:08:17.987936+0000 INFO Get comments from AnonymousUser
+2023-11-05T10:08:17.987936+0000 INFO Get comments from AnonymousUser
+2023-11-05T10:08:18.041882+0000 INFO Retrieved average rating for movie 'pulp-fiction': 5.0000000000000000
+2023-11-05T10:08:18.041882+0000 INFO Retrieved average rating for movie 'pulp-fiction': 5.0000000000000000
+2023-11-05T10:08:18.130815+0000 INFO Retrieved average rating for movie 'pulp-fiction': 5.0000000000000000
+2023-11-05T10:08:18.130815+0000 INFO Retrieved average rating for movie 'pulp-fiction': 5.0000000000000000
+2023-11-05T10:08:20.083197+0000 INFO Movie 'pulp-fiction' added to favorites for user 'Arhip'
+2023-11-05T10:08:20.083197+0000 INFO Movie 'pulp-fiction' added to favorites for user 'Arhip'
+2023-11-05T10:08:21.006903+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:08:21.006903+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:08:21.062275+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:08:21.062275+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:08:26.675901+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:08:26.675901+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:08:26.756507+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:08:26.756507+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:08:29.651092+0000 INFO Get comments from AnonymousUser
+2023-11-05T10:08:29.651092+0000 INFO Get comments from AnonymousUser
+2023-11-05T10:08:29.733412+0000 INFO Get comments from AnonymousUser
+2023-11-05T10:08:29.733412+0000 INFO Get comments from AnonymousUser
+2023-11-05T10:08:29.764452+0000 INFO Retrieved average rating for movie 'pulp-fiction': 5.0000000000000000
+2023-11-05T10:08:29.764452+0000 INFO Retrieved average rating for movie 'pulp-fiction': 5.0000000000000000
+2023-11-05T10:08:29.942178+0000 INFO Retrieved average rating for movie 'pulp-fiction': 5.0000000000000000
+2023-11-05T10:08:29.942178+0000 INFO Retrieved average rating for movie 'pulp-fiction': 5.0000000000000000
+2023-11-05T10:08:31.070971+0000 ERROR Failed to add movie 'pulp-fiction' to favorites for user 'Arhip': Movie is already in favorites.
+2023-11-05T10:08:31.070971+0000 ERROR Failed to add movie 'pulp-fiction' to favorites for user 'Arhip': Movie is already in favorites.
+2023-11-05T10:08:31.825636+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:08:31.825636+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:08:31.873982+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:08:31.873982+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:09:06.316838+0000 INFO Get comments from AnonymousUser
+2023-11-05T10:09:06.316838+0000 INFO Get comments from AnonymousUser
+2023-11-05T10:09:06.406798+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T10:09:06.406798+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T10:09:06.489677+0000 INFO Get comments from AnonymousUser
+2023-11-05T10:09:06.489677+0000 INFO Get comments from AnonymousUser
+2023-11-05T10:09:06.733182+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T10:09:06.733182+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T10:09:07.545892+0000 ERROR Failed to add movie 'Interstellar' to favorites for user 'Arhip': Movie is already in favorites.
+2023-11-05T10:09:07.545892+0000 ERROR Failed to add movie 'Interstellar' to favorites for user 'Arhip': Movie is already in favorites.
+2023-11-05T10:09:08.110657+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:09:08.110657+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:09:08.156693+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:09:08.156693+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:09:09.417411+0000 INFO Get comments from AnonymousUser
+2023-11-05T10:09:09.417411+0000 INFO Get comments from AnonymousUser
+2023-11-05T10:09:09.515425+0000 INFO Get comments from AnonymousUser
+2023-11-05T10:09:09.515425+0000 INFO Get comments from AnonymousUser
+2023-11-05T10:09:09.568906+0000 INFO Retrieved average rating for movie 'pulp-fiction': 5.0000000000000000
+2023-11-05T10:09:09.568906+0000 INFO Retrieved average rating for movie 'pulp-fiction': 5.0000000000000000
+2023-11-05T10:09:09.699809+0000 INFO Retrieved average rating for movie 'pulp-fiction': 5.0000000000000000
+2023-11-05T10:09:09.699809+0000 INFO Retrieved average rating for movie 'pulp-fiction': 5.0000000000000000
+2023-11-05T10:09:10.655242+0000 ERROR Failed to add movie 'pulp-fiction' to favorites for user 'Arhip': Movie is already in favorites.
+2023-11-05T10:09:10.655242+0000 ERROR Failed to add movie 'pulp-fiction' to favorites for user 'Arhip': Movie is already in favorites.
+2023-11-05T10:09:11.408516+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:09:11.408516+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:09:11.458966+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:09:11.458966+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:09:17.688151+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:09:17.688151+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:09:17.759671+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:09:17.759671+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:09:19.330176+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:09:19.330176+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:09:19.413176+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:09:19.413176+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:09:20.498765+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:09:20.498765+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:09:20.649433+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:09:20.649433+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:09:30.752483+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:09:30.752483+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:09:30.821276+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:09:30.821276+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:09:32.936365+0000 INFO Get comments from AnonymousUser
+2023-11-05T10:09:32.936365+0000 INFO Get comments from AnonymousUser
+2023-11-05T10:09:33.018066+0000 INFO Get comments from AnonymousUser
+2023-11-05T10:09:33.018066+0000 INFO Get comments from AnonymousUser
+2023-11-05T10:09:33.079455+0000 INFO Retrieved average rating for movie 'pulp-fiction': 5.0000000000000000
+2023-11-05T10:09:33.079455+0000 INFO Retrieved average rating for movie 'pulp-fiction': 5.0000000000000000
+2023-11-05T10:09:33.181412+0000 INFO Retrieved average rating for movie 'pulp-fiction': 5.0000000000000000
+2023-11-05T10:09:33.181412+0000 INFO Retrieved average rating for movie 'pulp-fiction': 5.0000000000000000
+2023-11-05T10:09:34.265056+0000 ERROR Failed to add movie 'pulp-fiction' to favorites for user 'Arhip': Movie is already in favorites.
+2023-11-05T10:09:34.265056+0000 ERROR Failed to add movie 'pulp-fiction' to favorites for user 'Arhip': Movie is already in favorites.
+2023-11-05T10:09:40.441126+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:09:40.441126+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:09:40.492129+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:09:40.492129+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:10:22.592633+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:10:22.592633+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:10:22.683933+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:10:22.683933+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:10:24.833123+0000 INFO Get comments from AnonymousUser
+2023-11-05T10:10:24.833123+0000 INFO Get comments from AnonymousUser
+2023-11-05T10:10:24.934138+0000 INFO Get comments from AnonymousUser
+2023-11-05T10:10:24.934138+0000 INFO Get comments from AnonymousUser
+2023-11-05T10:10:24.983222+0000 INFO Retrieved average rating for movie 'hateful-eight': 0
+2023-11-05T10:10:24.983222+0000 INFO Retrieved average rating for movie 'hateful-eight': 0
+2023-11-05T10:10:25.098510+0000 INFO Retrieved average rating for movie 'hateful-eight': 0
+2023-11-05T10:10:25.098510+0000 INFO Retrieved average rating for movie 'hateful-eight': 0
+2023-11-05T10:10:26.144254+0000 INFO Movie 'hateful-eight' added to favorites for user 'Arhip'
+2023-11-05T10:10:26.144254+0000 INFO Movie 'hateful-eight' added to favorites for user 'Arhip'
+2023-11-05T10:10:26.964106+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:10:26.964106+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:10:27.082481+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T10:10:27.082481+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T13:38:44.405047+0000 INFO Get comments from AnonymousUser
+2023-11-05T13:38:44.405047+0000 INFO Get comments from AnonymousUser
+2023-11-05T13:38:44.492301+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T13:38:44.492301+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T13:38:44.542771+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T13:38:44.542771+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T13:38:44.666669+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T13:38:44.666669+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T13:38:47.476313+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T13:38:47.476313+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T13:38:47.499811+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T13:38:47.499811+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T13:38:47.555476+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T13:38:47.555476+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T13:38:47.663888+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T13:38:47.663888+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T13:38:52.454015+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T13:38:52.454015+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T13:38:52.514710+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T13:38:52.514710+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T13:38:52.670310+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T13:38:52.670310+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T13:38:52.780787+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T13:38:52.780787+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T13:38:58.743499+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T13:38:58.743499+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T13:38:58.873845+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T13:38:58.873845+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T13:38:58.887559+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T13:38:58.887559+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T13:38:59.027890+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T13:38:59.027890+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T13:39:01.862811+0000 INFO Get comments from AnonymousUser
+2023-11-05T13:39:01.862811+0000 INFO Get comments from AnonymousUser
+2023-11-05T13:39:01.976711+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T13:39:01.976711+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T13:39:02.068838+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T13:39:02.068838+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T13:39:02.127083+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T13:39:02.127083+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T13:52:55.321570+0000 INFO Get comments from AnonymousUser
+2023-11-05T13:52:55.321570+0000 INFO Get comments from AnonymousUser
+2023-11-05T13:52:55.386350+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T13:52:55.386350+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T13:52:55.497777+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T13:52:55.497777+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T13:52:55.639158+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T13:52:55.639158+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T13:52:58.543115+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T13:52:58.543115+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T13:52:58.696356+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T13:52:58.696356+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T13:52:58.799585+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T13:52:58.799585+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T13:52:58.939682+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T13:52:58.939682+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T13:53:07.079523+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T13:53:07.079523+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T13:53:07.141474+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T13:53:07.141474+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T13:53:07.241571+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T13:53:07.241571+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T13:53:07.455689+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T13:53:07.455689+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T13:59:30.310052+0000 INFO Get comments from AnonymousUser
+2023-11-05T13:59:30.310052+0000 INFO Get comments from AnonymousUser
+2023-11-05T13:59:30.383835+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T13:59:30.383835+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T13:59:30.436316+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T13:59:30.436316+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T13:59:30.629950+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T13:59:30.629950+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T13:59:33.989511+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T13:59:33.989511+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T13:59:34.125426+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T13:59:34.125426+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T13:59:34.187615+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T13:59:34.187615+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T13:59:34.351543+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T13:59:34.351543+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T13:59:40.437747+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T13:59:40.437747+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T13:59:40.563200+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T13:59:40.563200+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T13:59:40.582570+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T13:59:40.582570+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T13:59:40.754342+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T13:59:40.754342+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T14:00:06.807947+0000 INFO Get comments from AnonymousUser
+2023-11-05T14:00:06.807947+0000 INFO Get comments from AnonymousUser
+2023-11-05T14:00:06.883350+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T14:00:06.883350+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T14:00:06.916816+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T14:00:06.916816+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T14:00:07.025516+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T14:00:07.025516+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T14:00:13.542591+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T14:00:13.542591+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T14:00:13.658216+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T14:00:13.658216+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T14:00:13.705947+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T14:00:13.705947+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T14:00:13.807911+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T14:00:13.807911+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T14:00:22.805077+0000 INFO Get comments from AnonymousUser
+2023-11-05T14:00:22.805077+0000 INFO Get comments from AnonymousUser
+2023-11-05T14:00:22.927024+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T14:00:22.927024+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T14:00:23.020527+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T14:00:23.020527+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T14:00:23.217131+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T14:00:23.217131+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T14:00:27.258983+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T14:00:27.258983+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T14:00:27.384043+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T14:00:27.384043+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T14:00:27.410451+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T14:00:27.410451+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T14:00:27.659683+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T14:00:27.659683+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T14:01:23.728858+0000 INFO Get comments from AnonymousUser
+2023-11-05T14:01:23.728858+0000 INFO Get comments from AnonymousUser
+2023-11-05T14:01:23.749354+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T14:01:23.749354+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T14:01:23.914392+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T14:01:23.914392+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T14:01:24.128903+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T14:01:24.128903+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T14:01:30.314669+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T14:01:30.314669+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T14:01:30.431022+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T14:01:30.431022+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T14:01:30.509969+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T14:01:30.509969+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T14:01:30.692217+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T14:01:30.692217+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T14:05:04.591723+0000 INFO Get comments from AnonymousUser
+2023-11-05T14:05:04.591723+0000 INFO Get comments from AnonymousUser
+2023-11-05T14:05:04.660682+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T14:05:04.660682+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T14:05:04.693640+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T14:05:04.693640+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T14:05:04.777644+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T14:05:04.777644+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T14:05:10.175620+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T14:05:10.175620+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T14:05:10.216890+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T14:05:10.216890+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T14:05:10.251415+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T14:05:10.251415+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T14:05:10.410423+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T14:05:10.410423+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T14:05:16.667684+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T14:05:16.667684+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T14:05:16.685755+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T14:05:16.685755+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T14:05:16.729122+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T14:05:16.729122+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T14:05:16.815582+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T14:05:16.815582+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T14:06:00.097294+0000 INFO Get comments from AnonymousUser
+2023-11-05T14:06:00.097294+0000 INFO Get comments from AnonymousUser
+2023-11-05T14:06:00.154488+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T14:06:00.154488+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T14:06:00.204450+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T14:06:00.204450+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T14:06:00.468317+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T14:06:00.468317+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T14:06:04.563152+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T14:06:04.563152+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T14:06:04.638458+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T14:06:04.638458+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T14:06:04.679024+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T14:06:04.679024+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T14:06:04.945816+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T14:06:04.945816+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T14:06:48.788312+0000 INFO Get comments from AnonymousUser
+2023-11-05T14:06:48.788312+0000 INFO Get comments from AnonymousUser
+2023-11-05T14:06:48.848314+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T14:06:48.848314+0000 INFO Retrieved comments for Interstellar from cache
+2023-11-05T14:06:48.880146+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T14:06:48.880146+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T14:06:49.064030+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T14:06:49.064030+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000

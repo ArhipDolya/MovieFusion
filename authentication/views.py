@@ -1,10 +1,8 @@
-import logging
-
 from django.contrib.auth import get_user_model
+from django.core.cache import cache
 
 from rest_framework import generics
 from rest_framework.decorators import api_view
-from rest_framework.generics import get_object_or_404
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework_simplejwt.tokens import RefreshToken
@@ -12,6 +10,7 @@ from rest_framework import viewsets
 
 from .serializers import RegistrationSerializer, LoginSerializer, CommentSerializer
 from .models import Comment
+from .tasks import process_and_publish_new_comments
 
 from loguru import logger
 
@@ -73,15 +72,35 @@ class CommentViewSet(viewsets.ModelViewSet):
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer
 
+    def create(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        if serializer.is_valid():
+            comment = serializer.save()
+
+            # Assuming that the movie_slug is provided in the request
+            movie_slug = comment.movie.slug
+
+            # Enqueue the Celery task to update the cache
+            process_and_publish_new_comments.delay(movie_slug)
+
+            # Retrieve the latest comments for the specified movie slug
+            comments = Comment.objects.filter(movie__slug=movie_slug)
+            serialized_comments = CommentSerializer(comments, many=True).data
+
+            return Response(serialized_comments, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 
 @api_view(['GET'])
 def get_comments_for_movie(request, movie_slug):
     try:
-        # Retrieve comments for the specified movie slug
+        # Retrieve comments for the specified movie slug from the database
         comments = Comment.objects.filter(movie__slug=movie_slug)
-        serialized_comments = CommentSerializer(comments, many=True)
+        serialized_comments = CommentSerializer(comments, many=True).data
         logger.info(f"Get comments from {request.user}")
-        return Response(serialized_comments.data)
+
+        return Response(serialized_comments)
+    
     except Comment.DoesNotExist:
         logger.error(f"Failed to retrieve comments for movie slug {movie_slug}: {e}")
         return Response(status=404)
