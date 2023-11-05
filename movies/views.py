@@ -30,17 +30,14 @@ class MovieListView(ListAPIView):
 
 
 class CategoryListView(ListAPIView):
-    """
-    List movie categories.
-
-    This view provides a list of all available movie categories.
-    """
-
     queryset = Category.objects.all()
     serializer_class: Type[Serializer] = CategorySerializer
 
-    def get(self, request, *args: Any, **kwargs: Any) -> Response:
-        return super().list(request, *args, **kwargs)
+    def list(self, request, *args: Any, **kwargs: Any) -> Response:
+        logger.info("Request for list of movie categories")
+        response = super().list(request, *args, **kwargs)
+        logger.info("Response for list of movie categories")
+        return response
 
 
 class RatingViewSet(viewsets.ModelViewSet):
@@ -62,8 +59,12 @@ class RatingViewSet(viewsets.ModelViewSet):
 
         try:
             serializer_data: Dict[str, Any] = rating_service.create_or_update_rating(user, movie_slug, rating)
+
+            logger.info(f"Rating created by user {user} for movie {movie_slug}")
+
             return Response(serializer_data, status=status.HTTP_201_CREATED)
         except MovieNotFoundException as exception:
+            logger.error(f"Movie not found: {exception}")
             return Response({'detail': str(exception)}, status=status.HTTP_400_BAD_REQUEST)
 
 
@@ -113,8 +114,10 @@ class FavoriteMovieViewSet(viewsets.ModelViewSet):
 
         if success:
             favorite_movie = FavoriteMovieSerializer(result).data
+            logger.info(f"Movie '{movie_slug}' added to favorites for user '{request.user}'")
             return Response(favorite_movie, status=status.HTTP_201_CREATED)
         else:
+            logger.error(f"Failed to add movie '{movie_slug}' to favorites for user '{request.user}': {result}")
             return Response({'detail': result}, status=status.HTTP_400_BAD_REQUEST)
 
     def destroy(self, request, *args, **kwargs):
@@ -122,12 +125,15 @@ class FavoriteMovieViewSet(viewsets.ModelViewSet):
         success, result = remove_movie_from_favorites(user=request.user, movie_slug=movie_slug)
 
         if success:
+            logger.info(f"Movie '{movie_slug}' removed from favorites for user '{request.user}'")
             return Response(status=status.HTTP_204_NO_CONTENT)
         else:
+            logger.error(f"Failed to remove movie '{movie_slug}' from favorites for user '{request.user}': {result}")
             return NotFound(result)
 
     def list(self, request, *args, **kwargs):
         favorite_movies = get_user_favorite_movie(user=request.user)
+        logger.info(f"Retrieved favorite movies for user '{request.user}'")
         return Response(favorite_movies)
 
 
@@ -136,6 +142,8 @@ class AverageRatingView(APIView):
         try:
             movie = Movie.objects.get(slug=slug)
             average_rating: float = movie.calculating_average_rating()
+            logger.info(f"Retrieved average rating for movie '{slug}': {average_rating}")
             return Response({"average_rating": average_rating})
         except Movie.DoesNotExist:
+            logger.warning(f"Movie with slug '{slug}' not found.")
             return Response({"average_rating": 0})

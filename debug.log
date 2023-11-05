@@ -1,0 +1,18 @@
+2023-11-05T08:08:40.609892+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T08:08:40.719649+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T08:08:53.889152+0000 INFO Rating created by user Arhip for movie Interstellar
+2023-11-05T08:09:00.436827+0000 INFO Retrieved average rating for movie 'Interstellar': 4.0000000000000000
+2023-11-05T08:09:00.865323+0000 INFO Retrieved average rating for movie 'Interstellar': 4.0000000000000000
+2023-11-05T08:09:04.107906+0000 INFO Rating created by user Arhip for movie Interstellar
+2023-11-05T08:09:09.570977+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T08:09:09.674631+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T08:09:10.746802+0000 INFO Movie 'Interstellar' removed from favorites for user 'Arhip'
+2023-11-05T08:09:19.166963+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T08:09:19.269156+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-05T08:09:20.400774+0000 INFO Movie 'Interstellar' added to favorites for user 'Arhip'
+2023-11-05T08:09:21.490948+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T08:09:21.552996+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-05T08:09:41.289988+0000 INFO Request for list of movie categories
+2023-11-05T08:09:41.320301+0000 INFO Response for list of movie categories
+2023-11-05T08:09:41.355654+0000 INFO Request for list of movie categories
+2023-11-05T08:09:41.378212+0000 INFO Response for list of movie categories
