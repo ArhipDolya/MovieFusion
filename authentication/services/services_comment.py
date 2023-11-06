@@ -22,7 +22,7 @@ class CommentService:
 
     @staticmethod
     def get_comments(movie_slug):
-        comments = Comment.objects.filter(movie__slug=movie_slug)
+        comments = Comment.objects.filter(movie__slug=movie_slug).prefetch_related('movie')
         serialized_comments = CommentSerializer(comments, many=True).data
 
         return serialized_comments

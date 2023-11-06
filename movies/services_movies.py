@@ -18,7 +18,7 @@ def get_movie_ratings(movie_slug: str) -> QuerySet[Rating]:
     if cached_ratings is not None:
         return cached_ratings
 
-    ratings = Rating.objects.filter(movie__slug=movie_slug)
+    ratings = Rating.objects.filter(movie__slug=movie_slug).prefetch_related('movie')
 
     cache.set(cache_key, ratings, 120)
     
@@ -52,7 +52,7 @@ def remove_movie_from_favorites(user: Model, movie_slug: str) -> Tuple[bool, Opt
 
 
 def get_user_favorite_movie(user: Model) -> dict:
-    favorite_movie = FavoriteMovie.objects.filter(user=user)
+    favorite_movie = FavoriteMovie.objects.filter(user=user).prefetch_related('movie')
     serializer = FavoriteMovieSerializer(favorite_movie, many=True)
     favorite_movie_data = serializer.data
 
@@ -62,7 +62,7 @@ def get_user_favorite_movie(user: Model) -> dict:
 class RatingService:
     def create_or_update_rating(self, user: Model, movie_slug: str, rating: str) -> dict:
         try:
-            movie = Movie.objects.get(slug=movie_slug)
+            movie = Movie.objects.select_related(None).get(slug=movie_slug)
         except Movie.DoesNotExist:
             raise MovieNotFoundException("Movie not found")
 
