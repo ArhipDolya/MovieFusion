@@ -3,7 +3,7 @@ from django.contrib.auth import get_user_model
 from rest_framework import serializers
 from rest_framework.validators import UniqueValidator
 
-from .services_authentication import UserService
+from .services.services_authentication import UserService
 
 from .models import Comment
 

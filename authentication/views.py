@@ -10,7 +10,7 @@ from rest_framework import viewsets
 
 from .serializers import RegistrationSerializer, LoginSerializer, CommentSerializer
 from .models import Comment
-from .tasks import process_and_publish_new_comments
+from authentication.services.services_comment import CommentService
 
 from loguru import logger
 
@@ -73,32 +73,19 @@ class CommentViewSet(viewsets.ModelViewSet):
     serializer_class = CommentSerializer
 
     def create(self, request, *args, **kwargs):
-        serializer = self.get_serializer(data=request.data)
-        if serializer.is_valid():
-            comment = serializer.save()
-
-            # Assuming that the movie_slug is provided in the request
-            movie_slug = comment.movie.slug
-
-            # Enqueue the Celery task to update the cache
-            process_and_publish_new_comments.delay(movie_slug)
-
-            # Retrieve the latest comments for the specified movie slug
-            comments = Comment.objects.filter(movie__slug=movie_slug)
-            serialized_comments = CommentSerializer(comments, many=True).data
-
+        data = request.data
+        serialized_comments = CommentService.create_comment(data)
+        if serialized_comments:
             return Response(serialized_comments, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
+        return Response(CommentService.get_serializer_errors(data), status=status.HTTP_400_BAD_REQUEST)
+    
 
 @api_view(['GET'])
 def get_comments_for_movie(request, movie_slug):
     try:
         # Retrieve comments for the specified movie slug from the database
-        comments = Comment.objects.filter(movie__slug=movie_slug)
-        serialized_comments = CommentSerializer(comments, many=True).data
+        serialized_comments  = CommentService.get_comments(movie_slug)
         logger.info(f"Get comments from {request.user}")
-
         return Response(serialized_comments)
     
     except Comment.DoesNotExist:
