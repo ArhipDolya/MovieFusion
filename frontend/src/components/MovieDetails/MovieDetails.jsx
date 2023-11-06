@@ -103,6 +103,9 @@ const MovieDetails = () => {
         console.log('Rating sent to the backend:', response.data);
       } catch (error) {
         console.error('Error sending rating to the backend:', error);
+        if (error.response && error.response.status === 401) {
+          navigate('/authentication')
+        }
       }
   };
 

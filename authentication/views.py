@@ -84,7 +84,7 @@ class CommentViewSet(viewsets.ModelViewSet):
 def get_comments_for_movie(request, movie_slug):
     try:
         # Retrieve comments for the specified movie slug from the database
-        serialized_comments  = CommentService.get_comments(movie_slug)
+        serialized_comments = CommentService.get_comments(movie_slug)
         logger.info(f"Get comments from {request.user}")
         return Response(serialized_comments)
     

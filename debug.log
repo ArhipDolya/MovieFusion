@@ -598,3 +598,95 @@
 2023-11-06T08:43:01.295129+0000 INFO Get comments from AnonymousUser
 2023-11-06T08:43:01.441244+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
 2023-11-06T08:43:01.441244+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-06T08:52:53.459140+0000 INFO Get comments from AnonymousUser
+2023-11-06T08:52:53.459140+0000 INFO Get comments from AnonymousUser
+2023-11-06T08:52:53.587011+0000 INFO Get comments from AnonymousUser
+2023-11-06T08:52:53.600537+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-06T08:52:53.587011+0000 INFO Get comments from AnonymousUser
+2023-11-06T08:52:53.600537+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-06T08:52:53.916491+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-06T08:52:53.916491+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-06T08:52:59.970953+0000 INFO Get comments from AnonymousUser
+2023-11-06T08:52:59.970953+0000 INFO Get comments from AnonymousUser
+2023-11-06T08:53:00.054289+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-06T08:53:00.054289+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-06T08:53:00.054916+0000 INFO Get comments from AnonymousUser
+2023-11-06T08:53:00.054916+0000 INFO Get comments from AnonymousUser
+2023-11-06T08:53:00.225247+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-06T08:53:00.225247+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-06T08:53:03.609555+0000 INFO Get comments from AnonymousUser
+2023-11-06T08:53:03.609555+0000 INFO Get comments from AnonymousUser
+2023-11-06T08:53:03.698319+0000 INFO Get comments from AnonymousUser
+2023-11-06T08:53:03.698319+0000 INFO Get comments from AnonymousUser
+2023-11-06T08:53:03.748927+0000 INFO Retrieved average rating for movie 'pulp-fiction': 4.5000000000000000
+2023-11-06T08:53:03.748927+0000 INFO Retrieved average rating for movie 'pulp-fiction': 4.5000000000000000
+2023-11-06T08:53:03.870949+0000 INFO Retrieved average rating for movie 'pulp-fiction': 4.5000000000000000
+2023-11-06T08:53:03.870949+0000 INFO Retrieved average rating for movie 'pulp-fiction': 4.5000000000000000
+2023-11-06T08:53:06.124516+0000 INFO Get comments from AnonymousUser
+2023-11-06T08:53:06.124516+0000 INFO Get comments from AnonymousUser
+2023-11-06T08:53:06.251530+0000 INFO Get comments from AnonymousUser
+2023-11-06T08:53:06.251530+0000 INFO Get comments from AnonymousUser
+2023-11-06T08:53:06.280115+0000 INFO Retrieved average rating for movie 'pulp-fiction': 4.5000000000000000
+2023-11-06T08:53:06.280115+0000 INFO Retrieved average rating for movie 'pulp-fiction': 4.5000000000000000
+2023-11-06T08:53:06.520951+0000 INFO Retrieved average rating for movie 'pulp-fiction': 4.5000000000000000
+2023-11-06T08:53:06.520951+0000 INFO Retrieved average rating for movie 'pulp-fiction': 4.5000000000000000
+2023-11-06T08:53:08.949465+0000 INFO Get comments from AnonymousUser
+2023-11-06T08:53:08.949465+0000 INFO Get comments from AnonymousUser
+2023-11-06T08:53:09.055212+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-06T08:53:09.055212+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-06T08:53:09.108186+0000 INFO Get comments from AnonymousUser
+2023-11-06T08:53:09.108186+0000 INFO Get comments from AnonymousUser
+2023-11-06T08:53:09.186182+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-06T08:53:09.186182+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-06T08:53:11.718846+0000 INFO Request for list of movie categories
+2023-11-06T08:53:11.718846+0000 INFO Request for list of movie categories
+2023-11-06T08:53:11.761311+0000 INFO Response for list of movie categories
+2023-11-06T08:53:11.761311+0000 INFO Response for list of movie categories
+2023-11-06T08:53:11.805512+0000 INFO Using cached movie categories data
+2023-11-06T08:53:11.805512+0000 INFO Using cached movie categories data
+2023-11-06T08:53:14.440487+0000 INFO Get comments from AnonymousUser
+2023-11-06T08:53:14.440487+0000 INFO Get comments from AnonymousUser
+2023-11-06T08:53:14.548012+0000 INFO Get comments from AnonymousUser
+2023-11-06T08:53:14.548012+0000 INFO Get comments from AnonymousUser
+2023-11-06T08:53:14.566175+0000 INFO Retrieved average rating for movie 'pulp-fiction': 4.5000000000000000
+2023-11-06T08:53:14.566175+0000 INFO Retrieved average rating for movie 'pulp-fiction': 4.5000000000000000
+2023-11-06T08:53:14.656165+0000 INFO Retrieved average rating for movie 'pulp-fiction': 4.5000000000000000
+2023-11-06T08:53:14.656165+0000 INFO Retrieved average rating for movie 'pulp-fiction': 4.5000000000000000
+2023-11-06T08:53:17.535237+0000 INFO Rating created by user Arhip for movie pulp-fiction
+2023-11-06T08:53:17.535237+0000 INFO Rating created by user Arhip for movie pulp-fiction
+2023-11-06T08:53:19.206026+0000 INFO Get comments from AnonymousUser
+2023-11-06T08:53:19.206026+0000 INFO Get comments from AnonymousUser
+2023-11-06T08:53:19.331071+0000 INFO Retrieved average rating for movie 'pulp-fiction': 5.0000000000000000
+2023-11-06T08:53:19.331071+0000 INFO Retrieved average rating for movie 'pulp-fiction': 5.0000000000000000
+2023-11-06T08:53:19.339860+0000 INFO Get comments from AnonymousUser
+2023-11-06T08:53:19.339860+0000 INFO Get comments from AnonymousUser
+2023-11-06T08:53:19.533313+0000 INFO Retrieved average rating for movie 'pulp-fiction': 5.0000000000000000
+2023-11-06T08:53:19.533313+0000 INFO Retrieved average rating for movie 'pulp-fiction': 5.0000000000000000
+2023-11-06T08:53:22.771361+0000 INFO Get comments from AnonymousUser
+2023-11-06T08:53:22.771361+0000 INFO Get comments from AnonymousUser
+2023-11-06T08:53:22.852906+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-06T08:53:22.852906+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-06T08:53:22.922284+0000 INFO Get comments from AnonymousUser
+2023-11-06T08:53:22.922284+0000 INFO Get comments from AnonymousUser
+2023-11-06T08:53:23.077398+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-06T08:53:23.077398+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-06T08:53:27.753200+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-06T08:53:27.753200+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-06T08:53:27.856166+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-06T08:53:27.856166+0000 INFO Retrieved favorite movies for user 'Arhip'
+2023-11-06T08:53:30.105226+0000 INFO Get comments from AnonymousUser
+2023-11-06T08:53:30.105226+0000 INFO Get comments from AnonymousUser
+2023-11-06T08:53:30.187550+0000 INFO Get comments from AnonymousUser
+2023-11-06T08:53:30.187550+0000 INFO Get comments from AnonymousUser
+2023-11-06T08:53:30.207274+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-06T08:53:30.207274+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-06T08:53:30.296893+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-06T08:53:30.296893+0000 INFO Retrieved average rating for movie 'Interstellar': 5.0000000000000000
+2023-11-06T09:38:01.527365+0000 INFO Get comments from AnonymousUser
+2023-11-06T09:38:01.527365+0000 INFO Get comments from AnonymousUser
+2023-11-06T09:38:01.678132+0000 INFO Get comments from AnonymousUser
+2023-11-06T09:38:01.678132+0000 INFO Get comments from AnonymousUser
+2023-11-06T09:38:01.896191+0000 INFO Retrieved average rating for movie 'pulp-fiction': 5.0000000000000000
+2023-11-06T09:38:01.896191+0000 INFO Retrieved average rating for movie 'pulp-fiction': 5.0000000000000000
+2023-11-06T09:38:02.159824+0000 INFO Retrieved average rating for movie 'pulp-fiction': 5.0000000000000000
+2023-11-06T09:38:02.159824+0000 INFO Retrieved average rating for movie 'pulp-fiction': 5.0000000000000000
