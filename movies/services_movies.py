@@ -21,7 +21,7 @@ def get_movie_ratings(movie_slug: str) -> QuerySet[Rating]:
     ratings = Rating.objects.filter(movie__slug=movie_slug)
 
     cache.set(cache_key, ratings, 120)
-
+    
     return ratings
 
 
