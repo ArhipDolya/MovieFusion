@@ -23,10 +23,18 @@ class RegistrationSerializer(serializers.ModelSerializer):
         fields = ('username', 'email', 'password', 'password2')
         extra_kwargs = {'password': {'write_only': True}}
 
-    def validate(self, data):
+
+    def validate_password_lentgh(self, password):
+        if len(password) < 8:
+            raise serializers.ValidationError("Password must be at least 8 characters long.")
+        return password
+    
+
+    def validate_passwords_uniqueness(self, data):
         if data['password'] != data['password2']:
             raise serializers.ValidationError('Passwords do not match.')
         return data
+    
 
     def create(self, validation_data):
         username = validation_data['username']
