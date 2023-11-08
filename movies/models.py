@@ -49,6 +49,9 @@ class Movie(models.Model):
 
     def __str__(self):
         return f'{self.title}'
+    
+    def __repr__(self) -> str:
+        return f'{self.title}'
 
     def calculating_average_rating(self):
         return Rating.objects.filter(movie=self).aggregate(Avg('rating'))['rating__avg'] or 0
@@ -70,6 +73,9 @@ class Rating(models.Model):
 
     def __str__(self):
         return f'Rating for {self.movie.title} by {self.user.username}'
+    
+    def __repr__(self):
+        return f'Rating for {self.movie.title} by {self.user.username}'
 
 
 class FavoriteMovie(models.Model):
@@ -85,4 +91,7 @@ class FavoriteMovie(models.Model):
     movie = models.ForeignKey(Movie, on_delete=models.CASCADE, db_index=True)
 
     def __str__(self):
+        return f'{self.user.username} - {self.movie.title}'
+
+    def __repr__(self):
         return f'{self.user.username} - {self.movie.title}'

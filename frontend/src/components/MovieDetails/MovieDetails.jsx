@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 
 import './MovieDetails.css';
 import { Rating } from 'react-simple-star-rating';
@@ -9,7 +9,6 @@ import apiConfig from '../../utils/apiConfig';
 import { getMovieDetails, addToFavorites } from '../../api/MovieDetailsApi/movies';
 import { addRating, getAverageRating } from '../../api/MovieDetailsApi/rating';
 
-import axios from 'axios';
 import { jwtDecode } from "jwt-decode";
 import { deleteComment, getComments, createComment } from '../../api/MovieDetailsApi/comments';
 
@@ -27,6 +26,7 @@ const MovieDetails = () => {
   const [averageRating, setAverageRating] = useState(0);
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState('');
+  const [isAuthenticated, setIsAuthenticated] = useState(!!localStorage.getItem('access_token'));
 
   const navigate = useNavigate()
 
@@ -229,6 +229,12 @@ const MovieDetails = () => {
         <div className="w-full bg-white rounded-lg border p-2 my-4  mt-20">
           
           <h3 className="font-bold">Comments</h3>
+
+          {!isAuthenticated ? (
+            <p className="mt-2">To add a comment, <Link to="/authentication" className="text-blue-500 hover:underline">Authorize</Link></p>
+          ) : (
+            <p></p>
+          )}
 
           <form onSubmit={handleCreateComment}>
 
