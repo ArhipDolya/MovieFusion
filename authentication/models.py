@@ -1,5 +1,6 @@
 from django.contrib.auth.models import AbstractUser
-from django.db import models
+from django.db import models, transaction
+from django.db.models import F
 
 
 class User(AbstractUser):
@@ -33,9 +34,44 @@ class Comment(models.Model):
     movie = models.ForeignKey('movies.Movie', on_delete=models.CASCADE, related_name='comments', to_field='slug')
     text = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
+    likes = models.IntegerField(default=0)
+
+    @transaction.atomic
+    def like_comment(self, user):
+        if not self.is_liked_by(user):
+            Like.objects.create(user=user, comment=self)
+            self.likes += 1
+            self.save()
+            self.refresh_from_db()
+
+    @transaction.atomic
+    def unlike_comment(self, user):
+        like = Like.objects.filter(user=user, comment=self).first()
+        if like:
+            like.delete()
+            self.likes -= 1
+            self.save()
+            self.refresh_from_db()
+
+
+    def is_liked_by(self, user):
+        return self.likes > 0
+
 
     def __str__(self):
         return self.text
 
     def __repr__(self):
         return self.text
+
+
+class Like(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    comment = models.ForeignKey(Comment, on_delete=models.CASCADE)
+
+
+    def __str__(self):
+        return self.user.username
+    
+    def __repr__(self):
+        return self.user.username

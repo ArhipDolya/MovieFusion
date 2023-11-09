@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import { useParams, useNavigate, Link, useSubmit } from 'react-router-dom';
 
 import './MovieDetails.css';
 import { Rating } from 'react-simple-star-rating';
@@ -11,6 +11,9 @@ import { addRating, getAverageRating } from '../../api/MovieDetailsApi/rating';
 
 import { jwtDecode } from "jwt-decode";
 import { deleteComment, getComments, createComment } from '../../api/MovieDetailsApi/comments';
+import { likeComment, unlikeComment } from '../../api/MovieDetailsApi/likes';
+
+import Comment from './comment/comment';
 
 
 const tooltipArray = ["Terrible", "Terrible+", "Bad", "Bad+", "Average", "Average+", "Great", "Great+", "Awesome", "Awesome+"];
@@ -27,6 +30,7 @@ const MovieDetails = () => {
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState('');
   const [isAuthenticated, setIsAuthenticated] = useState(!!localStorage.getItem('access_token'));
+  const [commentLikes, setCommentLikes] = useState({});
 
   const navigate = useNavigate()
 
@@ -38,8 +42,6 @@ const MovieDetails = () => {
         setMovie(movieData);
 
         const commentsResponse = await fetchCommentsForMovie(id);
-        console.log(commentsResponse)
-        console.log(id)
         setComments(commentsResponse);
 
         setIsLoading(false);
@@ -112,7 +114,16 @@ const MovieDetails = () => {
   const fetchCommentsForMovie = async (movieId) => {
     try {
       const response = await getComments(movieId)
-      return response.data;
+      const commentsData = response.data
+
+      const initialCommentLikes = {};
+      commentsData.forEach((comment) => {
+        initialCommentLikes[comment.id] = comment.likes;
+      })
+
+      setCommentLikes(initialCommentLikes)
+
+      return commentsData;
     } catch (error) {
       console.error('Error fetching comments:', error);
     }
@@ -156,6 +167,41 @@ const MovieDetails = () => {
       console.error('Error deleting comment:', error);
     }
   }
+
+  const handleToggleLike = async (commentId) => {
+    try {
+      const storedAccessToken = localStorage.getItem('access_token');
+      if (storedAccessToken) {
+        if (commentLikes[commentId]) {
+          // Unlike the comment
+          const response = await unlikeComment(commentId, storedAccessToken);
+          if (response.data.message === 'Comment unliked successfully') {
+            setCommentLikes((prevLikes) => ({
+              ...prevLikes,
+              [commentId]: prevLikes[commentId] - 1,
+            }));
+          }
+        } else {
+          // Like the comment
+          const response = await likeComment(commentId, storedAccessToken);
+          if (response.data.message === 'Comment liked successfully') {
+            setCommentLikes((prevLikes) => ({
+              ...prevLikes,
+              [commentId]: (prevLikes[commentId] || 0) + 1,
+            }));
+          }
+        }
+        // Reload the page to reflect the updated likes
+        window.location.reload();
+      } else {
+        navigate('/authentication');
+      }
+    } catch (error) {
+      console.error('Error liking/unliking comment:', error);
+    }
+  };
+  
+  
 
   if (isLoading) {
     return (
@@ -226,63 +272,50 @@ const MovieDetails = () => {
           </div>
         )}
 
-        <div className="w-full bg-white rounded-lg border p-2 my-4  mt-20">
-          
-          <h3 className="font-bold">Comments</h3>
-
-          {!isAuthenticated ? (
-            <p className="mt-2">To add a comment, <Link to="/authentication" className="text-blue-500 hover:underline">Authorize</Link></p>
-          ) : (
-            <p></p>
-          )}
-
-          <form onSubmit={handleCreateComment}>
-
-            <div className="flex flex-col">
-              {comments &&
-                comments.map((comment) => (
-                  <div className="border rounded-md p-3 ml-3 my-3" key={comment.id}>
-                    <div className="flex gap-3 items-center">
-                      <img
-                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrmaYAWRAbOZOfFEX8mnY1G9lBIVLZq4DKog&usqp=CAU"
-                        className="object-cover w-8 h-8 rounded-full border-2 border-emerald-400 shadow-emerald-400"
-                        alt="User Avatar"
-                      />
-                      <h3 className="font-bold">{comment.author_username}</h3>
-                    </div>
-                    <p className="text-gray-600 mt-2">{comment.text}</p>
-                    
-                     <button onClick={() => handleDeleteComment(comment.id)}
-                      className="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
-                      Delete
-                    </button>
-
-                  </div>
-                ))}
-            </div>
-
-            <div className="w-full px-3 my-2">
-              <textarea
-                className="bg-gray-100 rounded border border-gray-400 leading-normal resize-none w-full h-20 py-2 px-3 font-medium placeholder-gray-700 focus:outline-none focus:bg-white"
-                name="body"
-                placeholder="Type Your Comment"
-                required
-                value={newComment}
-                onChange={(e) => setNewComment(e.target.value)}
-              ></textarea>
-            </div>
-
-            <div className="w-full flex justify-end px-3">
-              <input
-                type="submit"
-                className="px-2.5 py-1.5 rounded-md text-white text-sm bg-indigo-500"
-                value="Post Comment"
+      <div className="w-full bg-white rounded-lg border p-2 my-4 mt-20">
+        <h3 className="font-bold">Comments</h3>
+              
+        {!isAuthenticated ? (
+          <p className="mt-2">To add a comment, <Link to="/authentication" className="text-blue-500 hover:underline">Authorize</Link></p>
+        ) : (
+          <p></p>
+        )}
+      
+      <div className="flex flex-col">
+          {comments &&
+            comments.map((comment) => (
+              <Comment
+                key={comment.id}
+                comment={comment}
+                commentLikes={commentLikes}
+                handleToggleLike={handleToggleLike}
+                handleDeleteComment={handleDeleteComment}
               />
-            </div>
-
-          </form>
-
+            ))}
         </div>
+            
+        <form onSubmit={handleCreateComment}>
+          <div className="w-full px-3 my-2">
+            <textarea
+              className="bg-gray-100 rounded border border-gray-400 leading-normal resize-none w-full h-20 py-2 px-3 font-medium placeholder-gray-700 focus:outline-none focus:bg-white"
+              name="body"
+              placeholder="Type Your Comment"
+              required
+              value={newComment}
+              onChange={(e) => setNewComment(e.target.value)}
+            ></textarea>
+          </div>
+            
+          <div className="w-full flex justify-end px-3">
+            <input
+              type="submit"
+              className="px-2.5 py-1.5 rounded-md text-white text-sm bg-indigo-500"
+              value="Post Comment"
+            />
+          </div>
+        </form>
+            
+      </div>
 
       </div>
     </div>

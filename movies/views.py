@@ -37,7 +37,6 @@ class CategoryListView(ListAPIView):
     cache_key = 'movie_categories'
 
     def list(self, request, *args: Any, **kwargs: Any) -> Response:
-        # Try to get the data from the cache
         cached_data = cache.get(self.cache_key)
 
         if cached_data is not None:
@@ -48,7 +47,7 @@ class CategoryListView(ListAPIView):
         response = super().list(request, *args, **kwargs)
         logger.info("Response for list of movie categories")
         
-        # Cache the data for future use
+
         cache.set(self.cache_key, response.data, timeout=260)
 
         return response

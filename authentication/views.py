@@ -91,3 +91,26 @@ def get_comments_for_movie(request, movie_slug):
     except Comment.DoesNotExist:
         logger.error(f"Failed to retrieve comments for movie slug {movie_slug}: {e}")
         return Response(status=404)
+    
+
+@api_view(["POST"])
+def like_comment(request, comment_id):
+    try:
+        comment = Comment.objects.get(id=comment_id)
+        user = request.user
+        comment.like_comment(user)
+        likes = comment.likes
+        return Response({'message': 'Comment liked successfully', 'likes': likes}, status=status.HTTP_200_OK)
+    except Comment.DoesNotExist:
+        return Response({'error': 'Comment not found'}, status=status.HTTP_404_NOT_FOUND)
+
+@api_view(['POST'])
+def unlike_comment(request, comment_id):
+    try:
+        comment = Comment.objects.get(id=comment_id)
+        user = request.user
+        comment.unlike_comment(user)
+        likes = comment.likes
+        return Response({'message': 'Comment unliked successfully', 'likes': likes}, status=status.HTTP_200_OK)
+    except Comment.DoesNotExist:
+        return Response({'error': 'Comment not found'}, status=status.HTTP_404_NOT_FOUND)

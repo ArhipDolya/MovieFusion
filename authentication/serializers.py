@@ -1,4 +1,5 @@
 from django.contrib.auth import get_user_model
+from django.db.models import F
 
 from rest_framework import serializers
 from rest_framework.validators import UniqueValidator
@@ -65,7 +66,8 @@ class LoginSerializer(serializers.Serializer):
 
 class CommentSerializer(serializers.ModelSerializer):
     author_username = serializers.ReadOnlyField(source='author.username')
+    likes = serializers.IntegerField(read_only=True)
 
     class Meta:
         model = Comment
-        fields = ['id', 'author', 'movie', 'text', 'created_at', 'author_username']
+        fields = ['id', 'author', 'movie', 'text', 'created_at', 'author_username', 'likes']
