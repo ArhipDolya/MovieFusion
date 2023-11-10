@@ -97,7 +97,7 @@ class MovieDetailsView(RetrieveAPIView):
     def get_serializer_context(self) -> Dict[str, Any]:
         context: Dict[str, Any] = super().get_serializer_context()
         movie_slug = self.kwargs.get('slug')
-        context['ratings'] = get_movie_ratings(movie_slug)
+        context['ratings'] = RatingService.get_movie_ratings(movie_slug)
         return context
 
 

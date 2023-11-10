@@ -16,6 +16,7 @@ class UserService:
         user.save()
         return user
 
+
     @classmethod
     def login_user(cls, email: str, password: str) -> str:
         user = User.objects.filter(email=email).first()

@@ -10,20 +10,6 @@ from .models import Movie, FavoriteMovie, Rating
 from .exceptions import MovieNotFoundException
 
 
-def get_movie_ratings(movie_slug: str) -> QuerySet[Rating]:
-    cache_key = f'movie_ratings_{movie_slug}'
-
-    cached_ratings = cache.get(cache_key)
-
-    if cached_ratings is not None:
-        return cached_ratings
-
-    ratings = Rating.objects.filter(movie__slug=movie_slug).prefetch_related('movie')
-
-    cache.set(cache_key, ratings, 120)
-    
-    return ratings
-
 
 def add_movie_to_favorites(user: Model, movie_slug: str) -> Tuple[bool, Union[str, FavoriteMovie]]:
     movie = get_object_or_404(Movie, slug=movie_slug)
@@ -60,6 +46,7 @@ def get_user_favorite_movie(user: Model) -> dict:
 
 
 class RatingService:
+    
     def create_or_update_rating(self, user: Model, movie_slug: str, rating: str) -> dict:
         try:
             movie = Movie.objects.select_related(None).get(slug=movie_slug)
@@ -78,3 +65,18 @@ class RatingService:
             serializer = RatingSerializer(new_rating)
 
         return serializer.data
+    
+
+    def get_movie_ratings(movie_slug: str) -> QuerySet[Rating]:
+        cache_key = f'movie_ratings_{movie_slug}'
+
+        cached_ratings = cache.get(cache_key)
+
+        if cached_ratings is not None:
+            return cached_ratings
+
+        ratings = Rating.objects.filter(movie__slug=movie_slug).prefetch_related('movie')
+
+        cache.set(cache_key, ratings, 120)
+
+        return ratings

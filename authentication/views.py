@@ -11,6 +11,7 @@ from rest_framework import viewsets
 from .serializers import RegistrationSerializer, LoginSerializer, CommentSerializer
 from .models import Comment
 from authentication.services.services_comment import CommentService
+from .services.services_comment import CommentService
 
 from loguru import logger
 
@@ -96,21 +97,20 @@ def get_comments_for_movie(request, movie_slug):
 @api_view(["POST"])
 def like_comment(request, comment_id):
     try:
-        comment = Comment.objects.get(id=comment_id)
         user = request.user
-        comment.like_comment(user)
-        likes = comment.likes
-        return Response({'message': 'Comment liked successfully', 'likes': likes}, status=status.HTTP_200_OK)
+        comment = CommentService.get_comment_by_id_or_404(comment_id)
+        result, status = CommentService.like_comment(comment, user)
+        return Response(result, status=status)
     except Comment.DoesNotExist:
         return Response({'error': 'Comment not found'}, status=status.HTTP_404_NOT_FOUND)
+    
 
 @api_view(['POST'])
 def unlike_comment(request, comment_id):
     try:
-        comment = Comment.objects.get(id=comment_id)
         user = request.user
-        comment.unlike_comment(user)
-        likes = comment.likes
-        return Response({'message': 'Comment unliked successfully', 'likes': likes}, status=status.HTTP_200_OK)
+        comment = CommentService.get_comment_by_id_or_404(comment_id)
+        result, status = CommentService.unlike_comment(comment, user)
+        return Response(result, status=status)
     except Comment.DoesNotExist:
         return Response({'error': 'Comment not found'}, status=status.HTTP_404_NOT_FOUND)
