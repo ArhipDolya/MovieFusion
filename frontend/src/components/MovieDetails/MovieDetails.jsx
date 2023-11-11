@@ -209,6 +209,8 @@ const MovieDetails = () => {
       if (storedAccessToken) {
         const response = await updateCommentText(commentId, newText, storedAccessToken)
         console.log('Comment updated:', response.data);
+        // Reload the page to reflect the updated text
+        window.location.reload()
       } else {
         navigate('/authentication')
       }
