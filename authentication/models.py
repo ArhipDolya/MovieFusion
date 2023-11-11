@@ -54,6 +54,15 @@ class Comment(models.Model):
             self.refresh_from_db()
 
 
+    def update_comment_text(self, new_text, user):
+        if user == self.author:
+            self.text = new_text
+            self.save()
+            return True
+        
+        return False
+
+
     def is_liked_by(self, user):
         return self.likes > 0
 

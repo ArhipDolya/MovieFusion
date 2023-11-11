@@ -12,7 +12,7 @@ from rest_framework.views import APIView
 from .exceptions import MovieNotFoundException
 from .models import Movie, Category, Rating, FavoriteMovie
 from .serializers import MovieSerializer, CategorySerializer, RatingSerializer, FavoriteMovieSerializer
-from .services_movies import get_movie_ratings, add_movie_to_favorites, remove_movie_from_favorites, \
+from .services_movies import add_movie_to_favorites, remove_movie_from_favorites, \
     get_user_favorite_movie, RatingService
 
 from typing import Any, Dict, Type

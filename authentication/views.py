@@ -1,5 +1,4 @@
 from django.contrib.auth import get_user_model
-from django.core.cache import cache
 
 from rest_framework import generics
 from rest_framework.decorators import api_view
@@ -8,7 +7,7 @@ from rest_framework import status
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework import viewsets
 
-from .serializers import RegistrationSerializer, LoginSerializer, CommentSerializer
+from .serializers import RegistrationSerializer, LoginSerializer, CommentSerializer, CommentUpdateSerializer
 from .models import Comment
 from authentication.services.services_comment import CommentService
 from .services.services_comment import CommentService
@@ -114,3 +113,20 @@ def unlike_comment(request, comment_id):
         return Response(result, status=status)
     except Comment.DoesNotExist:
         return Response({'error': 'Comment not found'}, status=status.HTTP_404_NOT_FOUND)
+    
+
+@api_view(['PATCH'])
+def update_comment_text(request, comment_id):
+    comment = CommentService.get_comment_by_id_or_404(comment_id)
+    user = request.user
+
+    # Ensure that the user is the author of the comment
+    if comment.author != user:
+        return Response({'error': 'You are not the author of this comment'}, status.HTTP_403_FORBIDDEN)
+    
+    serializer = CommentUpdateSerializer(data=request.data)
+    if serializer.is_valid():
+        result, status = CommentService.update_comment_text(comment, serializer.validated_data['text'], user)
+        return Response(result, status)
+    else:
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

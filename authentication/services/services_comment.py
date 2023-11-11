@@ -65,3 +65,11 @@ class CommentService:
             return {'message': 'Comment unliked successfully', 'likes': likes}, status.HTTP_200_OK
         except Comment.DoesNotExist:
             return {'error': 'Comment not found'}, status.HTTP_404_NOT_FOUND
+        
+
+    @staticmethod
+    def update_comment_text(comment, new_text, user):
+        if comment.update_comment_text(new_text, user):
+            return {'message': 'Comment text updated successfully'}, status.HTTP_200_OK
+        else:
+            return {'error': 'You are not allowed to update this comment'}, status.HTTP_403_FORBIDDEN

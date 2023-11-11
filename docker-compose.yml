@@ -5,7 +5,7 @@ services:
     build: 
       context: .
     ports:
-      - "8000:8000"
+      - "8000:8000" # REBUILD DOCKER COMPOSE
     volumes:
       - ./MovieFusion:/MovieFusion
     environment:
@@ -61,7 +61,7 @@ services:
     depends_on:
       - redis
     ports:
-      - "5555:5555"
+      - "5556:5556"
 
   pgadmin:
     image: dpage/pgadmin4

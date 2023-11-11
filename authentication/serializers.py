@@ -71,3 +71,7 @@ class CommentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Comment
         fields = ['id', 'author', 'movie', 'text', 'created_at', 'author_username', 'likes']
+
+
+class CommentUpdateSerializer(serializers.Serializer):
+    text = serializers.CharField()

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { AiTwotoneLike, AiTwotoneDislike } from 'react-icons/ai';
 
 const Comment = ({
@@ -6,7 +6,18 @@ const Comment = ({
   commentLikes,
   handleToggleLike,
   handleDeleteComment,
+  handleEditComment,
 }) => {
+
+  const [isEditing, setIsEditing] = useState(false)
+  const [editedCommentText, setEditedCommentText] = useState(comment.text)
+  
+
+  const handleSaveEdit = () => {
+    handleEditComment(comment.id, editedCommentText)
+    setIsEditing(false)
+  }
+
   return (
     <div className="border rounded-md p-3 ml-3 my-3 relative" key={comment.id}>
       <div className="flex gap-3 items-center">
@@ -49,6 +60,16 @@ const Comment = ({
       >
         Delete
       </button>
+
+      <button onClick={() => {setIsEditing(true)}}>Edit</button>
+      
+      {isEditing && (
+        <div>
+          <textarea value={editedCommentText} onChange={(event) => setEditedCommentText(event.target.value)} />
+          <button onClick={handleSaveEdit}>Save</button>
+        </div>
+      )}
+
     </div>
   );
 };

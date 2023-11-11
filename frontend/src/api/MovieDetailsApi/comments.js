@@ -37,3 +37,19 @@ export const createComment = async (storedAccessToken, userComment) => {
     }
   );
 };
+
+
+export const updateCommentText = async (commentId, newText, accessToken) => {
+  try {
+    const headers = apiConfig.createHeaders(accessToken)
+
+    const response = await axios.patch(`${BASE_API_URL}/movie/comments/${commentId}/update/`, {
+      text: newText,
+    }, { headers })
+
+    return response
+
+  } catch (error) {
+    throw error
+  }
+}

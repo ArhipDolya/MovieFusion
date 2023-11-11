@@ -10,7 +10,7 @@ import { getMovieDetails, addToFavorites } from '../../api/MovieDetailsApi/movie
 import { addRating, getAverageRating } from '../../api/MovieDetailsApi/rating';
 
 import { jwtDecode } from "jwt-decode";
-import { deleteComment, getComments, createComment } from '../../api/MovieDetailsApi/comments';
+import { deleteComment, getComments, createComment, updateCommentText } from '../../api/MovieDetailsApi/comments';
 import { likeComment, unlikeComment } from '../../api/MovieDetailsApi/likes';
 
 import Comment from './comment/comment';
@@ -200,7 +200,23 @@ const MovieDetails = () => {
       console.error('Error liking/unliking comment:', error);
     }
   };
-  
+
+
+  const handleEditComment = async (commentId, newText) => {
+    try {
+      const storedAccessToken = localStorage.getItem('access_token')
+
+      if (storedAccessToken) {
+        const response = await updateCommentText(commentId, newText, storedAccessToken)
+        console.log('Comment updated:', response.data);
+      } else {
+        navigate('/authentication')
+      }
+
+    } catch (error) {
+      console.error('Error updating comment:', error);
+    }
+  }
   
 
   if (isLoading) {
@@ -290,6 +306,7 @@ const MovieDetails = () => {
                 commentLikes={commentLikes}
                 handleToggleLike={handleToggleLike}
                 handleDeleteComment={handleDeleteComment}
+                handleEditComment={handleEditComment}
               />
             ))}
         </div>
