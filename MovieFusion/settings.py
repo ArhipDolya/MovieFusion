@@ -8,9 +8,6 @@ from datetime import timedelta
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
-
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config('SECRET_KEY')
 
@@ -26,6 +23,7 @@ INTERNAL_IPS = ["127.0.0.1",]
 SITE_ID = 4
 
 INSTALLED_APPS = [
+    'silk',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -76,6 +74,7 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'allauth.account.middleware.AccountMiddleware',
     "debug_toolbar.middleware.DebugToolbarMiddleware",
+    'silk.middleware.SilkyMiddleware',
 ]
 
 REST_FRAMEWORK = {
@@ -232,6 +231,7 @@ LOGOUT_REDIRECT_URL = '/'
 
 CELERY_BROKER_URL = 'redis://redis:6379/0'
 
+
 CACHES = {
     "default": {
         "BACKEND": "django.core.cache.backends.redis.RedisCache",
@@ -244,31 +244,44 @@ CACHES = {
 
 
 # Enable query logging
-#LOGGING = {
-#    'version': 1,
-#    'disable_existing_loggers': False,
-#    'handlers': {
-#        'console': {
-#            'class': 'logging.StreamHandler',
-#        },
-#    },
-#    'root': {
-#        'handlers': ['console'],
-#        'level': 'DEBUG',
-#    },
-#    'loggers': {
-#        'django.db.backends': {
-#            'handlers': ['console'],
-#            'level': 'DEBUG',
-#            'propagate': False,
-#        },
-#    },
-#}
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+
+    'formatters': {
+        "console": {
+            "format": "[{module} {asctime} {levelname}] {message}",
+            "style": "{",
+        },
+    },
+
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+            'formatter': 'console',
+        },
+    },
+
+    'root': {
+        'handlers': ['console'],
+        'level': 'DEBUG',
+    },
+
+    'loggers': {
+        'django.db.backends': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
+    },
+}
+
 
 KAFKA_BOOTSTRAP_SERVERS = 'kafka:9092'  # Kafka broker address
 
-# Define a Kafka producer configuration
 KAFKA_PRODUCER_CONFIG = {
     'acks': 'all',
     'bootstrap.servers': KAFKA_BOOTSTRAP_SERVERS,
 }
+
+SILKY_PYTHON_PROFILER = True

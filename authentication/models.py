@@ -1,6 +1,5 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models, transaction
-from django.db.models import F
 
 
 class User(AbstractUser):
@@ -18,6 +17,7 @@ class User(AbstractUser):
 
     def __repr__(self):
         return self.username
+    
 
 class Comment(models.Model):
     """
@@ -35,6 +35,7 @@ class Comment(models.Model):
     text = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     likes = models.IntegerField(default=0)
+
 
     @transaction.atomic
     def like_comment(self, user):

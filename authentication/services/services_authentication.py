@@ -8,6 +8,13 @@ User = get_user_model()
 
 
 class UserService:
+    """
+    Service class for user-related operations.
+
+    Methods:
+        - register_user: Register a new user with the provided username, email, and password.
+        - login_user: Log in a user with the provided email and password, returning a JWT token upon success.
+    """
 
     @classmethod
     def register_user(cls, username: str, email: str, password: str) -> User:

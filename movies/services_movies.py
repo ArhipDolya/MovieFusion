@@ -10,39 +10,40 @@ from .models import Movie, FavoriteMovie, Rating
 from .exceptions import MovieNotFoundException
 
 
+class FavoriteMovieService:
 
-def add_movie_to_favorites(user: Model, movie_slug: str) -> Tuple[bool, Union[str, FavoriteMovie]]:
-    movie = get_object_or_404(Movie, slug=movie_slug)
+    def add_movie_to_favorites(user: Model, movie_slug: str) -> Tuple[bool, Union[str, FavoriteMovie]]:
+        movie = get_object_or_404(Movie, slug=movie_slug)
 
-    # Check if the movie is already in the user's favorites
-    existing_favorite_movie = FavoriteMovie.objects.filter(user=user, movie=movie).first()
+        # Check if the movie is already in the user's favorites
+        existing_favorite_movie = FavoriteMovie.objects.filter(user=user, movie=movie).first()
 
-    if existing_favorite_movie:
-        return False, 'Movie is already in favorites.'
+        if existing_favorite_movie:
+            return False, 'Movie is already in favorites.'
 
-    favorite_movie = FavoriteMovie.objects.create(user=user, movie=movie)
+        favorite_movie = FavoriteMovie.objects.create(user=user, movie=movie)
 
-    return True, favorite_movie
-
-
-def remove_movie_from_favorites(user: Model, movie_slug: str) -> Tuple[bool, Optional[str]]:
-    movie = get_object_or_404(Movie, slug=movie_slug)
-
-    favorite_movie = FavoriteMovie.objects.filter(user=user, movie=movie).first()
-
-    if favorite_movie:
-        favorite_movie.delete()
-        return True, None
-
-    return False, 'Movie not in favorites'
+        return True, favorite_movie
 
 
-def get_user_favorite_movie(user: Model) -> dict:
-    favorite_movie = FavoriteMovie.objects.filter(user=user).prefetch_related('movie')
-    serializer = FavoriteMovieSerializer(favorite_movie, many=True)
-    favorite_movie_data = serializer.data
+    def remove_movie_from_favorites(user: Model, movie_slug: str) -> Tuple[bool, Optional[str]]:
+        movie = get_object_or_404(Movie, slug=movie_slug)
 
-    return favorite_movie_data
+        favorite_movie = FavoriteMovie.objects.filter(user=user, movie=movie).first()
+
+        if favorite_movie:
+            favorite_movie.delete()
+            return True, None
+
+        return False, 'Movie not in favorites'
+
+
+    def get_user_favorite_movies(user: Model) -> dict:
+        favorite_movie = FavoriteMovie.objects.filter(user=user).prefetch_related('movie')
+        serializer = FavoriteMovieSerializer(favorite_movie, many=True)
+        favorite_movie_data = serializer.data
+
+        return favorite_movie_data
 
 
 class RatingService:

@@ -7,6 +7,19 @@ from authentication.tasks import process_and_publish_new_comments
 
 
 class CommentService:
+    """
+    Service class for handling comments on movies.
+
+    Methods:
+        - create_comment: Create a new comment, update the cache, and retrieve all comments for a movie.
+        - update_cache: Update the cache for a specific movie's comments.
+        - get_comments: Retrieve all comments for a specific movie.
+        - get_serializer_errors: Get errors from the comment serializer.
+        - get_comment_by_id_or_404: Retrieve a comment by its ID or return a 404 response if not found.
+        - like_comment: Like a comment and return the updated likes count.
+        - unlike_comment: Unlike a comment and return the updated likes count.
+        - update_comment_text: Update the text of a comment if the user has the necessary permissions.
+    """
 
     @staticmethod
     def create_comment(data):

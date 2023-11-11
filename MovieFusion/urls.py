@@ -9,11 +9,11 @@ from drf_yasg import openapi
 
 schema_view = get_schema_view(
     openapi.Info(
-        title="Your API",
+        title="MovieFusion API",
         default_version='v1',
-        description="Your API Description",
+        description="API for MovieFusion project",
         contact=openapi.Contact(email="contact@yourapp.com"),
-        license=openapi.License(name="Your License"),
+        license=openapi.License(name="MovieFusionLicence"),
     ),
     public=True,
 )
@@ -30,4 +30,5 @@ urlpatterns = [
          name='schema-swagger-ui'),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0),
          name='schema-redoc'),
+    path('silk/', include('silk.urls', namespace='silk')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

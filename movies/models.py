@@ -18,6 +18,8 @@ class Category(models.Model):
     def __str__(self):
         return f'{self.name}'
 
+    def __repr__(self):
+        return f'{self.name}'
 
 class Movie(models.Model):
     """

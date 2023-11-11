@@ -77,6 +77,7 @@ class CommentViewSet(viewsets.ModelViewSet):
         serialized_comments = CommentService.create_comment(data)
         if serialized_comments:
             return Response(serialized_comments, status=status.HTTP_201_CREATED)
+        
         return Response(CommentService.get_serializer_errors(data), status=status.HTTP_400_BAD_REQUEST)
     
 

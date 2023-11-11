@@ -1,5 +1,4 @@
 from django.contrib.auth import get_user_model
-from django.db.models import F
 
 from rest_framework import serializers
 from rest_framework.validators import UniqueValidator
@@ -25,7 +24,7 @@ class RegistrationSerializer(serializers.ModelSerializer):
         extra_kwargs = {'password': {'write_only': True}}
 
 
-    def validate_password_lentgh(self, password):
+    def validate_password_length(self, password):
         if len(password) < 8:
             raise serializers.ValidationError("Password must be at least 8 characters long.")
         return password

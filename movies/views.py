@@ -12,8 +12,7 @@ from rest_framework.views import APIView
 from .exceptions import MovieNotFoundException
 from .models import Movie, Category, Rating, FavoriteMovie
 from .serializers import MovieSerializer, CategorySerializer, RatingSerializer, FavoriteMovieSerializer
-from .services_movies import add_movie_to_favorites, remove_movie_from_favorites, \
-    get_user_favorite_movie, RatingService
+from .services_movies import FavoriteMovieService, RatingService
 
 from typing import Any, Dict, Type
 from loguru import logger
@@ -123,7 +122,7 @@ class FavoriteMovieViewSet(viewsets.ModelViewSet):
 
     def create(self, request, *args, **kwargs):
         movie_slug = request.data.get('movie_slug')
-        success, result = add_movie_to_favorites(user=request.user, movie_slug=movie_slug)
+        success, result = FavoriteMovieService.add_movie_to_favorites(user=request.user, movie_slug=movie_slug)
 
         if success:
             favorite_movie = FavoriteMovieSerializer(result).data
@@ -133,9 +132,10 @@ class FavoriteMovieViewSet(viewsets.ModelViewSet):
             logger.error(f"Failed to add movie '{movie_slug}' to favorites for user '{request.user}': {result}")
             return Response({'detail': result}, status=status.HTTP_400_BAD_REQUEST)
 
+
     def destroy(self, request, *args, **kwargs):
         movie_slug = request.data.get('movie_slug')
-        success, result = remove_movie_from_favorites(user=request.user, movie_slug=movie_slug)
+        success, result = FavoriteMovieService.remove_movie_from_favorites(user=request.user, movie_slug=movie_slug)
 
         if success:
             logger.info(f"Movie '{movie_slug}' removed from favorites for user '{request.user}'")
@@ -144,8 +144,9 @@ class FavoriteMovieViewSet(viewsets.ModelViewSet):
             logger.error(f"Failed to remove movie '{movie_slug}' from favorites for user '{request.user}': {result}")
             return NotFound(result)
 
+
     def list(self, request, *args, **kwargs):
-        favorite_movies = get_user_favorite_movie(user=request.user)
+        favorite_movies = FavoriteMovieService.get_user_favorite_movies(user=request.user)
         logger.info(f"Retrieved favorite movies for user '{request.user}'")
         return Response(favorite_movies)
 
