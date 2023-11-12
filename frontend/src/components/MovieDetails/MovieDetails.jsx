@@ -239,18 +239,27 @@ const MovieDetails = () => {
     <div className="movie-details-container">
       <h1 className="movie-details-h1">{movie.title}</h1>
       <img className="movie-details-img" src={movie.image} alt={movie.title} />
+      
       <div className="movie-details">
-        <h3 className="movie-details-heading">Category:</h3>
-        <p className="movie-details-info">{movie.categories.map(category => category.name).join(', ')}</p>
-
-        <h3 className="movie-details-heading">Release Date:</h3>
-        <p className="movie-details-info">{movie.release_date}</p>
-
-        <h3 className="movie-details-heading">Director:</h3>
-        <p className="movie-details-info">{movie.director}</p>
-
-        <h3 className="movie-details-heading">Actors:</h3>
-        <p className="movie-details-info mb-4">{movie.actors}</p>
+        <div className="movie-details-info-group">
+          <h3 className="movie-details-heading">Category:</h3>
+          <p className="movie-details-info">{movie.categories.map(category => category.name).join(', ')}</p>
+        </div>
+      
+        <div className="movie-details-info-group">
+          <h3 className="movie-details-heading">Release Date:</h3>
+          <p className="movie-details-info">{movie.release_date}</p>
+        </div>
+      
+        <div className="movie-details-info-group">
+          <h3 className="movie-details-heading">Director:</h3>
+          <p className="movie-details-info">{movie.director}</p>
+        </div>
+      
+        <div className="movie-details-info-group">
+          <h3 className="movie-details-heading">Actors:</h3>
+          <p className="movie-details-info mb-4">{movie.actors}</p>
+        </div>
           
         <div className="rating bg-gray-100 p-4 rounded-lg shadow-lg mb-4">
 
