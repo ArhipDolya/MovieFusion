@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import './css/movies.css';
 import MovieList from './movieList';
 import Pagination from './pagination';
@@ -72,7 +71,7 @@ export const Movies = () => {
         placeholder="Search by movie title"
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
-        className="search-bar mt-3 mb-5 p-2 border border-gray-300 rounded-md text-sm"
+        className="search-bar mt-3 mb-5 p-2 border border-gray-300 rounded-md text-sm"  
       />
 
       <MovieList movies={currentMovies} searchQuery={searchQuery} />

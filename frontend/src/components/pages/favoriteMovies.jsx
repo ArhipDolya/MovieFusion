@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 
 import 'tailwindcss/tailwind.css';
 import { Link } from "react-router-dom";
 import { deleteFavoriteMovie, fetchFavoriteMovies } from "../../api/moviesApi/movies";
+import { getAccessToken } from "../../api/authApi/get_access_token";
+
+
+const baseImageUrl = "http://localhost:8000";
 
 
 const FavoriteMovies = () => {
@@ -13,17 +16,17 @@ const FavoriteMovies = () => {
 
   useEffect(() => {
     const fetchFavoriteMoviesAsync = async () => {
-      const accessToken = localStorage.getItem("access_token");
+      const accessToken = getAccessToken();
       const favoriteMovies = await fetchFavoriteMovies(accessToken);
       setFavoriteMovies(favoriteMovies);
       setIsLoading(false);
     };
   
     fetchFavoriteMoviesAsync();
-  }, [localStorage.getItem("access_token")]);
+  }, [getAccessToken()]);
 
   const removeFavoriteMovie = async (movieSlug) => {
-    const accessToken = localStorage.getItem("access_token");
+    const accessToken = getAccessToken();
     await deleteFavoriteMovie(accessToken, movieSlug);
   
     // Remove the deleted movie from the list
@@ -49,7 +52,7 @@ const FavoriteMovies = () => {
               <Link to={`/movie/${favoriteMovie.movie.slug}/`}>
               <div className="movie-image-container">
                   <img
-                    src={`http://localhost:8000${favoriteMovie.movie.image}`}
+                    src={`${baseImageUrl}${favoriteMovie.movie.image}`}
                     alt={favoriteMovie.movie.title}
                     className="object-cover h-40 w-full"
                   />
