@@ -14,6 +14,7 @@ import { deleteComment, getComments, createComment, updateCommentText } from '..
 import { likeComment, unlikeComment } from '../../api/MovieDetailsApi/likes';
 
 import Comment from './comment/comment';
+import { getAccessToken } from '../../api/authApi/get_access_token';
 
 
 const tooltipArray = ["Terrible", "Terrible+", "Bad", "Bad+", "Average", "Average+", "Great", "Great+", "Awesome", "Awesome+"];
@@ -65,6 +66,7 @@ const MovieDetails = () => {
     fetchMovieDetails();
   }, [id]);
 
+
   const fetchAverageRating = async () => {
     try {
       const response = await getAverageRating(id);
@@ -74,9 +76,10 @@ const MovieDetails = () => {
     }
   }
 
+
   const handleAddToFavorites = async () => {
     try {
-      const storedAccessToken = localStorage.getItem('access_token');
+      const storedAccessToken = getAccessToken()
       if (storedAccessToken) {
         const headers = apiConfig.createHeaders(storedAccessToken);
         await addToFavorites(movie.slug, headers);
@@ -90,10 +93,11 @@ const MovieDetails = () => {
     }
   };
 
+
   const handleRatingChange = async (newRating) => {
     try {
         const ratingValue = newRating.toString();
-        const storedAccessToken = localStorage.getItem('access_token');
+        const storedAccessToken = getAccessToken()
         const headers = apiConfig.createHeaders(storedAccessToken)
 
         setRating(newRating)
@@ -110,6 +114,7 @@ const MovieDetails = () => {
         }
       }
   };
+
 
   const fetchCommentsForMovie = async (movieId) => {
     try {
@@ -129,9 +134,10 @@ const MovieDetails = () => {
     }
   };
 
+
   const handleCreateComment = async () => {
     try {
-      const storedAccessToken = localStorage.getItem('access_token')
+      const storedAccessToken = getAccessToken()
       if (storedAccessToken) {       
         const decodedToken = jwtDecode(storedAccessToken)
 
@@ -156,6 +162,7 @@ const MovieDetails = () => {
     } 
   }
 
+
   const handleDeleteComment = async (commentId) => {
     try {
       await deleteComment(commentId);
@@ -168,9 +175,10 @@ const MovieDetails = () => {
     }
   }
 
+
   const handleToggleLike = async (commentId) => {
     try {
-      const storedAccessToken = localStorage.getItem('access_token');
+      const storedAccessToken = getAccessToken();
       if (storedAccessToken) {
         if (commentLikes[commentId]) {
           // Unlike the comment
@@ -204,7 +212,7 @@ const MovieDetails = () => {
 
   const handleEditComment = async (commentId, newText) => {
     try {
-      const storedAccessToken = localStorage.getItem('access_token')
+      const storedAccessToken = getAccessToken()
 
       if (storedAccessToken) {
         const response = await updateCommentText(commentId, newText, storedAccessToken)

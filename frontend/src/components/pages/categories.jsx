@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 
 import './css/categories.css'
+
 import { getMovies } from '../../api/moviesApi/movies';
 import { getCategories } from '../../api/categoriesApi/categoriesApi';
 
@@ -13,6 +14,7 @@ export const Categories = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(true)
+
 
   useEffect(() => {
     // Fetch categories from API on component mount
