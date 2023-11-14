@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import './css/movies.css';
 import MovieList from './movieList';
 import Pagination from './pagination';
-import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
-import { getMovies } from '../../api/moviesApi/movies';
+import { getMovies } from '../api/moviesApi/movies';
+
+import LoadingSpinner from '../components/LoadingSpinner/LoadingSpinner';
+
+import './css/movies.css';
+
 
 export const Movies = () => {
   const [movies, setMovies] = useState([]);
