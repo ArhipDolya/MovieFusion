@@ -1,68 +1,81 @@
-import json
+# movies/tests/test_services.py
 from django.test import TestCase
-from django.urls import reverse
-from rest_framework import status
-from rest_framework.test import APIClient
-from .models import Movie, Category, Rating
-from .serializers import MovieSerializer, CategorySerializer, RatingSerializer
+from django.contrib.auth.models import User
 
-class MovieListViewTests(TestCase):
+from .models import Movie, FavoriteMovie, Rating
+from .services_movies import FavoriteMovieService, RatingService
+
+
+class FavoriteMovieServiceTests(TestCase):
+
     def setUp(self):
-        self.client = APIClient()
-        self.url = reverse('movie-list')  # Assuming you have 'movie-list' URL pattern defined
-        self.category = Category.objects.create(name='Action')
-        self.movie = Movie.objects.create(title='Test Movie', description='Test Description', image='movie_images/Watch-Interstellar-on-Netflix.jpg', release_date='2023-01-01', category=self.category)
+        self.user = User.objects.create_user(username='testuser', password='testpassword')
+        self.movie = Movie.objects.create(title='Test Movie', slug='test-movie')
 
-    def test_movie_list_view(self):
-        response = self.client.get(self.url)
-        self.assertEqual(response.status_code, status.HTTP_200_OK)
+    def test_add_movie_to_favorites(self):
+        result, data = FavoriteMovieService.add_movie_to_favorites(self.user, self.movie.slug)
+        self.assertTrue(result)
+        self.assertIsInstance(data, FavoriteMovie)
 
-        # Deserialize the response content as JSON
-        response_data = json.loads(response.content)
+        # Try adding the same movie again
+        result, message = FavoriteMovieService.add_movie_to_favorites(self.user, self.movie.slug)
+        self.assertFalse(result)
+        self.assertEqual(message, 'Movie is already in favorites.')
 
-        # Serialize the expected data to JSON
-        serializer = MovieSerializer(self.movie)
-        expected_data = json.loads(json.dumps(serializer.data))  # Convert to dictionary
+    def test_remove_movie_from_favorites(self):
+        # Add the movie to favorites first
+        FavoriteMovie.objects.create(user=self.user, movie=self.movie)
 
-        self.assertEqual(response_data, [expected_data])
+        result, message = FavoriteMovieService.remove_movie_from_favorites(self.user, self.movie.slug)
+        self.assertTrue(result)
+        self.assertIsNone(message)
+
+        # Try removing a movie not in favorites
+        result, message = FavoriteMovieService.remove_movie_from_favorites(self.user, self.movie.slug)
+        self.assertFalse(result)
+        self.assertEqual(message, 'Movie not in favorites')
+
+    def test_get_user_favorite_movies(self):
+        FavoriteMovie.objects.create(user=self.user, movie=self.movie)
+
+        favorite_movies = FavoriteMovieService.get_user_favorite_movies(self.user)
+        self.assertEqual(len(favorite_movies), 1)
+        self.assertEqual(favorite_movies[0]['movie']['slug'], self.movie.slug)
 
 
-class CategoryListViewTests(TestCase):
+class RatingServiceTests(TestCase):
+
     def setUp(self):
-        self.client = APIClient()
-        self.url = reverse('category-list')  # Assuming you have 'category-list' URL pattern defined
-        self.category = Category.objects.create(name='Action')
+        self.user = User.objects.create_user(username='testuser', password='testpassword')
+        self.movie = Movie.objects.create(title='Test Movie', slug='test-movie')
 
-    def test_category_list_view(self):
-        response = self.client.get(self.url)
-        self.assertEqual(response.status_code, status.HTTP_200_OK)
+    def test_create_or_update_rating(self):
+        # Create a new rating
+        result = RatingService().create_or_update_rating(self.user, self.movie.slug, '5')
+        self.assertEqual(result['user'], self.user.id)
+        self.assertEqual(result['movie']['slug'], self.movie.slug)
+        self.assertEqual(result['rating'], '5')
 
-        # Deserialize the response content as JSON
-        response_data = json.loads(response.content)
+        # Update the existing rating
+        result = RatingService().create_or_update_rating(self.user, self.movie.slug, '4')
+        self.assertEqual(result['user'], self.user.id)
+        self.assertEqual(result['movie']['slug'], self.movie.slug)
+        self.assertEqual(result['rating'], '4')
 
-        # Serialize the expected data to JSON
-        serializer = CategorySerializer(self.category)
-        expected_data = serializer.data
+    def test_get_movie_ratings(self):
+        Rating.objects.create(user=self.user, movie=self.movie, rating='5')
 
-        self.assertEqual(response_data, [expected_data])
+        # Cache should be empty initially
+        self.assertIsNone(RatingService().get_movie_ratings(self.movie.slug))
 
-class RatingListViewTests(TestCase):
-    def setUp(self):
-        self.client = APIClient()
-        self.url = reverse('rating-list')  # Assuming you have 'rating-list' URL pattern defined
-        self.category = Category.objects.create(name='Action')
-        self.movie = Movie.objects.create(title='Test Movie', description='Test Description', image='test_image.jpg', release_date='2023-01-01', category=self.category)
-        self.rating = Rating.objects.create(movie=self.movie, rating=4.5)
+        # Fetch ratings (caching them)
+        ratings = RatingService().get_movie_ratings(self.movie.slug)
+        self.assertEqual(len(ratings), 1)
+        self.assertEqual(ratings[0].user, self.user)
+        self.assertEqual(ratings[0].movie, self.movie)
 
-    def test_rating_list_view(self):
-        response = self.client.get(self.url)
-        self.assertEqual(response.status_code, status.HTTP_200_OK)
-
-        # Deserialize the response content as JSON
-        response_data = json.loads(response.content)
-
-        # Serialize the expected data to JSON
-        serializer = RatingSerializer(self.rating)
-        expected_data = serializer.data
-
-        self.assertEqual(response_data, [expected_data])
+        # Fetch ratings from cache
+        cached_ratings = RatingService().get_movie_ratings(self.movie.slug)
+        self.assertEqual(len(cached_ratings), 1)
+        self.assertEqual(cached_ratings[0].user, self.user)
+        self.assertEqual(cached_ratings[0].movie, self.movie)

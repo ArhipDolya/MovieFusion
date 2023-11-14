@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
+import LoadingSpinner from '../components/LoadingSpinner/LoadingSpinner';
 
 import './css/categories.css'
 
-import { getMovies } from '../../api/moviesApi/movies';
-import { getCategories } from '../../api/categoriesApi/categoriesApi';
+import { getMovies } from '../api/moviesApi/movies';
+import { getCategories } from '../api/categoriesApi/categoriesApi';
 
 
 export const Categories = () => {

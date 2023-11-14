@@ -1,8 +1,9 @@
 import React from "react";
 import { Route, Routes, Navigate } from 'react-router-dom';
 import { Home, Movies, Categories, AuthenticationForm } from './index'
-import MovieDetails from "../MovieDetails/MovieDetails";
+import MovieDetails from "../components/MovieDetails/MovieDetails";
 import FavoriteMovies from "./favoriteMovies";
+
 
 const AppRouter = () => {
     return (

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
+import LoadingSpinner from "../components/LoadingSpinner/LoadingSpinner";
 
 import 'tailwindcss/tailwind.css';
 import { Link } from "react-router-dom";
-import { deleteFavoriteMovie, fetchFavoriteMovies } from "../../api/moviesApi/movies";
-import { getAccessToken } from "../../api/authApi/get_access_token";
+import { deleteFavoriteMovie, fetchFavoriteMovies } from "../api/moviesApi/movies";
+import { getAccessToken } from "../api/authApi/get_access_token";
 
 
 const baseImageUrl = "http://localhost:8000";

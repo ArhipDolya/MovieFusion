@@ -1,4 +1,5 @@
 from django.contrib.auth import get_user_model
+from django.http import JsonResponse
 
 from rest_framework import generics
 from rest_framework.decorators import api_view
@@ -55,11 +56,16 @@ class LoginView(generics.CreateAPIView):
 
             if user and user.check_password(password):
                 refresh = RefreshToken.for_user(user)
-                logger.info(f"User {user} successfully registered")
-                return Response({
+
+                response = JsonResponse({
                     'access_token': str(refresh.access_token),
-                    'refresh_token': str(refresh)
-                }, status=status.HTTP_200_OK)
+                })
+
+                response.set_cookie(key='refresh_token', value=str(refresh), httponly=True)
+
+                logger.info(f"User {user} successfully logged in")
+
+                return response
             else:
                 logger.error("Login failed")
                 return Response({'detail': 'Invalid email or password.'}, status=status.HTTP_401_UNAUTHORIZED)

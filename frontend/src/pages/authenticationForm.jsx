@@ -3,8 +3,8 @@ import './css/login.css';
 import * as Components from './Components';
 
 import ReCAPTCHA from 'react-google-recaptcha';
-import { registerUser } from '../../api/authApi/register';
-import { loginUser } from '../../api/authApi/login';
+import { registerUser } from '../api/authApi/register';
+import { loginUser } from '../api/authApi/login';
 
 
 export const AuthenticationForm = () => {

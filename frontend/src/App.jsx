@@ -1,9 +1,10 @@
 import React from 'react';
 import axios from 'axios';
-import Navbar from './components/navbar/navbar'
-import Footer from './components/footer/Footer';
-import AppRouter from './components/pages/appRouter';
-import './App.css';
+import Navbar from './layouts/navbar/navbar'
+import Footer from './layouts/footer/Footer';
+import AppRouter from './pages/appRouter'
+
+import './assets/App.css'
 
 
 class App extends React.Component {

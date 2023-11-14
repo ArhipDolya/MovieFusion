@@ -2,8 +2,10 @@ import React, { useEffect, useState } from "react";
 import "./css/home.css";
 import { Link } from "react-router-dom";
 
-import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
-import { getMovies } from "../../api/moviesApi/movies";
+import { getMovies } from "../api/moviesApi/movies";
+
+import LoadingSpinner from "../components/LoadingSpinner/LoadingSpinner";
+
 
 export const Home = () => {
   const [movies, setMovies] = useState([]);
