@@ -1,5 +1,5 @@
 from django.contrib.auth import get_user_model
-from django.http import JsonResponse
+from django.core.mail import send_mail, BadHeaderError
 
 from rest_framework import generics
 from rest_framework.decorators import api_view
@@ -12,6 +12,8 @@ from .serializers import RegistrationSerializer, LoginSerializer, CommentSeriali
 from .models import Comment
 from authentication.services.services_comment import CommentService
 from .services.services_comment import CommentService
+from .services.services_authentication import EmailService
+
 
 from loguru import logger
 
@@ -29,7 +31,10 @@ class RegistrationView(generics.CreateAPIView):
         serializer = self.get_serializer(data=request.data)
 
         if serializer.is_valid():
-            serializer.save()
+            user = serializer.save()
+
+            # Send an email to the user
+            EmailService.send_registration_email(user)
 
             # Log a successful registration
             logger.info(f"User registered successfully: {serializer.validated_data['username']}")
