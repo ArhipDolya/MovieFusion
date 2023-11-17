@@ -10,8 +10,11 @@ EXPOSE 8000
 
 RUN apk add postgresql-client build-base postgresql-dev
 
+RUN apk add entr
+
 RUN pip install -r requirements.txt
 
+CMD ["sh", "-c", "find . -name '*.py' | entr -r python manage.py runserver 0.0.0.0:8000"]
 
 
 

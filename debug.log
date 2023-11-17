@@ -1,0 +1,171 @@
+2023-11-17T19:38:38.823061+0200 INFO Rating created by user testuser for movie test-movie
+2023-11-17T19:38:38.823061+0200 INFO Rating created by user testuser for movie test-movie
+2023-11-17T19:38:38.823061+0200 INFO Rating created by user testuser for movie test-movie
+2023-11-17T19:38:39.218247+0200 ERROR Movie not found: Movie not found
+2023-11-17T19:38:39.218247+0200 ERROR Movie not found: Movie not found
+2023-11-17T19:38:39.218247+0200 ERROR Movie not found: Movie not found
+2023-11-17T19:38:57.032521+0200 INFO Rating created by user testuser for movie test-movie
+2023-11-17T19:38:57.032521+0200 INFO Rating created by user testuser for movie test-movie
+2023-11-17T19:38:57.032521+0200 INFO Rating created by user testuser for movie test-movie
+2023-11-17T19:38:57.416361+0200 ERROR Movie not found: Movie not found
+2023-11-17T19:38:57.416361+0200 ERROR Movie not found: Movie not found
+2023-11-17T19:38:57.416361+0200 ERROR Movie not found: Movie not found
+2023-11-17T19:46:09.638719+0200 INFO Rating created by user testuser for movie test-movie
+2023-11-17T19:46:09.638719+0200 INFO Rating created by user testuser for movie test-movie
+2023-11-17T19:46:09.638719+0200 INFO Rating created by user testuser for movie test-movie
+2023-11-17T19:46:10.051589+0200 ERROR Movie not found: Movie not found
+2023-11-17T19:46:10.051589+0200 ERROR Movie not found: Movie not found
+2023-11-17T19:46:10.051589+0200 ERROR Movie not found: Movie not found
+2023-11-17T19:49:27.527267+0200 INFO Rating created by user testuser for movie test-movie
+2023-11-17T19:49:27.527267+0200 INFO Rating created by user testuser for movie test-movie
+2023-11-17T19:49:27.527267+0200 INFO Rating created by user testuser for movie test-movie
+2023-11-17T19:49:27.846340+0200 ERROR Movie not found: Movie not found
+2023-11-17T19:49:27.846340+0200 ERROR Movie not found: Movie not found
+2023-11-17T19:49:27.846340+0200 ERROR Movie not found: Movie not found
+2023-11-17T19:50:26.243265+0200 INFO Rating created by user testuser for movie test-movie
+2023-11-17T19:50:26.243265+0200 INFO Rating created by user testuser for movie test-movie
+2023-11-17T19:50:26.243265+0200 INFO Rating created by user testuser for movie test-movie
+2023-11-17T19:50:26.563946+0200 ERROR Movie not found: Movie not found
+2023-11-17T19:50:26.563946+0200 ERROR Movie not found: Movie not found
+2023-11-17T19:50:26.563946+0200 ERROR Movie not found: Movie not found
+2023-11-17T19:53:35.519074+0200 INFO Movie 'test-movie' added to favorites for user 'testuser'
+2023-11-17T19:53:35.519074+0200 INFO Movie 'test-movie' added to favorites for user 'testuser'
+2023-11-17T19:53:35.519074+0200 INFO Movie 'test-movie' added to favorites for user 'testuser'
+2023-11-17T19:53:35.888960+0200 INFO Retrieved favorite movies for user 'testuser'
+2023-11-17T19:53:35.888960+0200 INFO Retrieved favorite movies for user 'testuser'
+2023-11-17T19:53:35.888960+0200 INFO Retrieved favorite movies for user 'testuser'
+2023-11-17T19:53:36.256468+0200 INFO Movie 'test-movie' removed from favorites for user 'testuser'
+2023-11-17T19:53:36.256468+0200 INFO Movie 'test-movie' removed from favorites for user 'testuser'
+2023-11-17T19:53:36.256468+0200 INFO Movie 'test-movie' removed from favorites for user 'testuser'
+2023-11-17T19:53:37.003152+0200 INFO Rating created by user testuser for movie test-movie
+2023-11-17T19:53:37.003152+0200 INFO Rating created by user testuser for movie test-movie
+2023-11-17T19:53:37.003152+0200 INFO Rating created by user testuser for movie test-movie
+2023-11-17T19:53:37.325803+0200 ERROR Movie not found: Movie not found
+2023-11-17T19:53:37.325803+0200 ERROR Movie not found: Movie not found
+2023-11-17T19:53:37.325803+0200 ERROR Movie not found: Movie not found
+2023-11-17T19:57:22.864929+0200 INFO Retrieved average rating for movie 'test-movie': 3.33333333333333
+2023-11-17T19:57:22.864929+0200 INFO Retrieved average rating for movie 'test-movie': 3.33333333333333
+2023-11-17T19:57:22.864929+0200 INFO Retrieved average rating for movie 'test-movie': 3.33333333333333
+2023-11-17T19:57:23.176587+0200 WARNING Movie with slug 'non-existing-movie' not found.
+2023-11-17T19:57:23.176587+0200 WARNING Movie with slug 'non-existing-movie' not found.
+2023-11-17T19:57:23.176587+0200 WARNING Movie with slug 'non-existing-movie' not found.
+2023-11-17T19:57:23.567413+0200 INFO Movie 'test-movie' added to favorites for user 'testuser'
+2023-11-17T19:57:23.567413+0200 INFO Movie 'test-movie' added to favorites for user 'testuser'
+2023-11-17T19:57:23.567413+0200 INFO Movie 'test-movie' added to favorites for user 'testuser'
+2023-11-17T19:57:23.906932+0200 INFO Retrieved favorite movies for user 'testuser'
+2023-11-17T19:57:23.906932+0200 INFO Retrieved favorite movies for user 'testuser'
+2023-11-17T19:57:23.906932+0200 INFO Retrieved favorite movies for user 'testuser'
+2023-11-17T19:57:24.233969+0200 INFO Movie 'test-movie' removed from favorites for user 'testuser'
+2023-11-17T19:57:24.233969+0200 INFO Movie 'test-movie' removed from favorites for user 'testuser'
+2023-11-17T19:57:24.233969+0200 INFO Movie 'test-movie' removed from favorites for user 'testuser'
+2023-11-17T19:57:25.076280+0200 INFO Rating created by user testuser for movie test-movie
+2023-11-17T19:57:25.076280+0200 INFO Rating created by user testuser for movie test-movie
+2023-11-17T19:57:25.076280+0200 INFO Rating created by user testuser for movie test-movie
+2023-11-17T19:57:25.408196+0200 ERROR Movie not found: Movie not found
+2023-11-17T19:57:25.408196+0200 ERROR Movie not found: Movie not found
+2023-11-17T19:57:25.408196+0200 ERROR Movie not found: Movie not found
+2023-11-17T19:58:27.663123+0200 INFO Retrieved average rating for movie 'test-movie': 3.33333333333333
+2023-11-17T19:58:27.663123+0200 INFO Retrieved average rating for movie 'test-movie': 3.33333333333333
+2023-11-17T19:58:27.663123+0200 INFO Retrieved average rating for movie 'test-movie': 3.33333333333333
+2023-11-17T19:58:27.972341+0200 WARNING Movie with slug 'non-existing-movie' not found.
+2023-11-17T19:58:27.972341+0200 WARNING Movie with slug 'non-existing-movie' not found.
+2023-11-17T19:58:27.972341+0200 WARNING Movie with slug 'non-existing-movie' not found.
+2023-11-17T19:58:28.354642+0200 INFO Movie 'test-movie' added to favorites for user 'testuser'
+2023-11-17T19:58:28.354642+0200 INFO Movie 'test-movie' added to favorites for user 'testuser'
+2023-11-17T19:58:28.354642+0200 INFO Movie 'test-movie' added to favorites for user 'testuser'
+2023-11-17T19:58:28.692579+0200 INFO Retrieved favorite movies for user 'testuser'
+2023-11-17T19:58:28.692579+0200 INFO Retrieved favorite movies for user 'testuser'
+2023-11-17T19:58:28.692579+0200 INFO Retrieved favorite movies for user 'testuser'
+2023-11-17T19:58:29.015680+0200 INFO Movie 'test-movie' removed from favorites for user 'testuser'
+2023-11-17T19:58:29.015680+0200 INFO Movie 'test-movie' removed from favorites for user 'testuser'
+2023-11-17T19:58:29.015680+0200 INFO Movie 'test-movie' removed from favorites for user 'testuser'
+2023-11-17T19:58:29.787905+0200 INFO Rating created by user testuser for movie test-movie
+2023-11-17T19:58:29.787905+0200 INFO Rating created by user testuser for movie test-movie
+2023-11-17T19:58:29.787905+0200 INFO Rating created by user testuser for movie test-movie
+2023-11-17T19:58:30.182200+0200 ERROR Movie not found: Movie not found
+2023-11-17T19:58:30.182200+0200 ERROR Movie not found: Movie not found
+2023-11-17T19:58:30.182200+0200 ERROR Movie not found: Movie not found
+2023-11-17T19:58:46.654538+0200 INFO Retrieved average rating for movie 'test-movie': 3.33333333333333
+2023-11-17T19:58:46.654538+0200 INFO Retrieved average rating for movie 'test-movie': 3.33333333333333
+2023-11-17T19:58:46.654538+0200 INFO Retrieved average rating for movie 'test-movie': 3.33333333333333
+2023-11-17T19:58:46.960747+0200 WARNING Movie with slug 'non-existing-movie' not found.
+2023-11-17T19:58:46.960747+0200 WARNING Movie with slug 'non-existing-movie' not found.
+2023-11-17T19:58:46.960747+0200 WARNING Movie with slug 'non-existing-movie' not found.
+2023-11-17T19:58:47.382295+0200 INFO Movie 'test-movie' added to favorites for user 'testuser'
+2023-11-17T19:58:47.382295+0200 INFO Movie 'test-movie' added to favorites for user 'testuser'
+2023-11-17T19:58:47.382295+0200 INFO Movie 'test-movie' added to favorites for user 'testuser'
+2023-11-17T19:58:47.769822+0200 INFO Retrieved favorite movies for user 'testuser'
+2023-11-17T19:58:47.769822+0200 INFO Retrieved favorite movies for user 'testuser'
+2023-11-17T19:58:47.769822+0200 INFO Retrieved favorite movies for user 'testuser'
+2023-11-17T19:58:48.103498+0200 INFO Movie 'test-movie' removed from favorites for user 'testuser'
+2023-11-17T19:58:48.103498+0200 INFO Movie 'test-movie' removed from favorites for user 'testuser'
+2023-11-17T19:58:48.103498+0200 INFO Movie 'test-movie' removed from favorites for user 'testuser'
+2023-11-17T19:58:48.819383+0200 INFO Rating created by user testuser for movie test-movie
+2023-11-17T19:58:48.819383+0200 INFO Rating created by user testuser for movie test-movie
+2023-11-17T19:58:48.819383+0200 INFO Rating created by user testuser for movie test-movie
+2023-11-17T19:58:49.147854+0200 ERROR Movie not found: Movie not found
+2023-11-17T19:58:49.147854+0200 ERROR Movie not found: Movie not found
+2023-11-17T19:58:49.147854+0200 ERROR Movie not found: Movie not found
+2023-11-17T19:59:02.950677+0200 INFO Retrieved average rating for movie 'test-movie': 3.33333333333333
+2023-11-17T19:59:02.950677+0200 INFO Retrieved average rating for movie 'test-movie': 3.33333333333333
+2023-11-17T19:59:02.950677+0200 INFO Retrieved average rating for movie 'test-movie': 3.33333333333333
+2023-11-17T19:59:03.249530+0200 WARNING Movie with slug 'non-existing-movie' not found.
+2023-11-17T19:59:03.249530+0200 WARNING Movie with slug 'non-existing-movie' not found.
+2023-11-17T19:59:03.249530+0200 WARNING Movie with slug 'non-existing-movie' not found.
+2023-11-17T19:59:03.581394+0200 INFO Movie 'test-movie' added to favorites for user 'testuser'
+2023-11-17T19:59:03.581394+0200 INFO Movie 'test-movie' added to favorites for user 'testuser'
+2023-11-17T19:59:03.581394+0200 INFO Movie 'test-movie' added to favorites for user 'testuser'
+2023-11-17T19:59:03.914697+0200 INFO Retrieved favorite movies for user 'testuser'
+2023-11-17T19:59:03.914697+0200 INFO Retrieved favorite movies for user 'testuser'
+2023-11-17T19:59:03.914697+0200 INFO Retrieved favorite movies for user 'testuser'
+2023-11-17T19:59:04.239739+0200 INFO Movie 'test-movie' removed from favorites for user 'testuser'
+2023-11-17T19:59:04.239739+0200 INFO Movie 'test-movie' removed from favorites for user 'testuser'
+2023-11-17T19:59:04.239739+0200 INFO Movie 'test-movie' removed from favorites for user 'testuser'
+2023-11-17T19:59:05.112897+0200 INFO Rating created by user testuser for movie test-movie
+2023-11-17T19:59:05.112897+0200 INFO Rating created by user testuser for movie test-movie
+2023-11-17T19:59:05.112897+0200 INFO Rating created by user testuser for movie test-movie
+2023-11-17T19:59:05.436574+0200 ERROR Movie not found: Movie not found
+2023-11-17T19:59:05.436574+0200 ERROR Movie not found: Movie not found
+2023-11-17T19:59:05.436574+0200 ERROR Movie not found: Movie not found
+2023-11-17T19:59:47.369141+0200 INFO Retrieved average rating for movie 'test-movie': 3.33333333333333
+2023-11-17T19:59:47.369141+0200 INFO Retrieved average rating for movie 'test-movie': 3.33333333333333
+2023-11-17T19:59:47.369141+0200 INFO Retrieved average rating for movie 'test-movie': 3.33333333333333
+2023-11-17T19:59:47.676477+0200 WARNING Movie with slug 'non-existing-movie' not found.
+2023-11-17T19:59:47.676477+0200 WARNING Movie with slug 'non-existing-movie' not found.
+2023-11-17T19:59:47.676477+0200 WARNING Movie with slug 'non-existing-movie' not found.
+2023-11-17T19:59:48.035319+0200 INFO Movie 'test-movie' added to favorites for user 'testuser'
+2023-11-17T19:59:48.035319+0200 INFO Movie 'test-movie' added to favorites for user 'testuser'
+2023-11-17T19:59:48.035319+0200 INFO Movie 'test-movie' added to favorites for user 'testuser'
+2023-11-17T19:59:48.380143+0200 INFO Retrieved favorite movies for user 'testuser'
+2023-11-17T19:59:48.380143+0200 INFO Retrieved favorite movies for user 'testuser'
+2023-11-17T19:59:48.380143+0200 INFO Retrieved favorite movies for user 'testuser'
+2023-11-17T19:59:48.744700+0200 INFO Movie 'test-movie' removed from favorites for user 'testuser'
+2023-11-17T19:59:48.744700+0200 INFO Movie 'test-movie' removed from favorites for user 'testuser'
+2023-11-17T19:59:48.744700+0200 INFO Movie 'test-movie' removed from favorites for user 'testuser'
+2023-11-17T19:59:49.510472+0200 INFO Rating created by user testuser for movie test-movie
+2023-11-17T19:59:49.510472+0200 INFO Rating created by user testuser for movie test-movie
+2023-11-17T19:59:49.510472+0200 INFO Rating created by user testuser for movie test-movie
+2023-11-17T19:59:49.846456+0200 ERROR Movie not found: Movie not found
+2023-11-17T19:59:49.846456+0200 ERROR Movie not found: Movie not found
+2023-11-17T19:59:49.846456+0200 ERROR Movie not found: Movie not found
+2023-11-17T20:00:45.726148+0200 INFO Retrieved average rating for movie 'test-movie': 3.33333333333333
+2023-11-17T20:00:45.726148+0200 INFO Retrieved average rating for movie 'test-movie': 3.33333333333333
+2023-11-17T20:00:45.726148+0200 INFO Retrieved average rating for movie 'test-movie': 3.33333333333333
+2023-11-17T20:00:46.028635+0200 WARNING Movie with slug 'non-existing-movie' not found.
+2023-11-17T20:00:46.028635+0200 WARNING Movie with slug 'non-existing-movie' not found.
+2023-11-17T20:00:46.028635+0200 WARNING Movie with slug 'non-existing-movie' not found.
+2023-11-17T20:00:46.352539+0200 INFO Movie 'test-movie' added to favorites for user 'testuser'
+2023-11-17T20:00:46.352539+0200 INFO Movie 'test-movie' added to favorites for user 'testuser'
+2023-11-17T20:00:46.352539+0200 INFO Movie 'test-movie' added to favorites for user 'testuser'
+2023-11-17T20:00:46.735067+0200 INFO Retrieved favorite movies for user 'testuser'
+2023-11-17T20:00:46.735067+0200 INFO Retrieved favorite movies for user 'testuser'
+2023-11-17T20:00:46.735067+0200 INFO Retrieved favorite movies for user 'testuser'
+2023-11-17T20:00:47.140781+0200 INFO Movie 'test-movie' removed from favorites for user 'testuser'
+2023-11-17T20:00:47.140781+0200 INFO Movie 'test-movie' removed from favorites for user 'testuser'
+2023-11-17T20:00:47.140781+0200 INFO Movie 'test-movie' removed from favorites for user 'testuser'
+2023-11-17T20:00:47.895501+0200 INFO Rating created by user testuser for movie test-movie
+2023-11-17T20:00:47.895501+0200 INFO Rating created by user testuser for movie test-movie
+2023-11-17T20:00:47.895501+0200 INFO Rating created by user testuser for movie test-movie
+2023-11-17T20:00:48.244824+0200 ERROR Movie not found: Movie not found
+2023-11-17T20:00:48.244824+0200 ERROR Movie not found: Movie not found
+2023-11-17T20:00:48.244824+0200 ERROR Movie not found: Movie not found

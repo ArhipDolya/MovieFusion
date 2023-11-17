@@ -1,5 +1,4 @@
 from django.contrib.auth import get_user_model
-from django.core.mail import send_mail, BadHeaderError
 
 from rest_framework import generics
 from rest_framework.decorators import api_view
