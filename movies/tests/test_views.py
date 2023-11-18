@@ -31,38 +31,6 @@ class MovieListViewTest(TestCase):
         self.assertEqual(response.data, expected_data)
 
 
-#class CategoryListViewTest(TestCase):
-#    def setUp(self):
-#        # Create some Category instances for testing
-#        Category.objects.create(name="Category 1")
-#        Category.objects.create(name="Category 2")
-#
-#
-#    def test_category_list_view_with_cache(self):
-#        # Create an instance of the Django test client
-#        client = APIClient()
-#
-#        # Make a GET request to the CategoryListView
-#        response = client.get('/api/v1/categories/')
-#
-#        # Assert that the response status code is 200 (OK)
-#        self.assertEqual(response.status_code, status.HTTP_200_OK)
-#
-#        # Get the expected serialized data for the categories
-#        expected_data = response.data
-#
-#        # Assert that the response data matches the expected data
-#        self.assertEqual(response.data, expected_data)
-#
-#        # Make another GET request to the CategoryListView
-#        response_cached = client.get('/api/v1/categories/')
-#
-#        # Assert that the response status code is 200 (OK) for the cached request
-#        self.assertEqual(response_cached.status_code, status.HTTP_200_OK)
-#
-#        # Assert that the cached response data matches the expected data
-#        self.assertEqual(response_cached.data, expected_data)
-
 
 class RatingViewSetTest(TestCase):
     def setUp(self):

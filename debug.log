@@ -169,3 +169,207 @@
 2023-11-17T20:00:48.244824+0200 ERROR Movie not found: Movie not found
 2023-11-17T20:00:48.244824+0200 ERROR Movie not found: Movie not found
 2023-11-17T20:00:48.244824+0200 ERROR Movie not found: Movie not found
+2023-11-18T11:21:23.387960+0200 INFO Retrieved average rating for movie 'test-movie': 3.33333333333333
+2023-11-18T11:21:23.387960+0200 INFO Retrieved average rating for movie 'test-movie': 3.33333333333333
+2023-11-18T11:21:23.387960+0200 INFO Retrieved average rating for movie 'test-movie': 3.33333333333333
+2023-11-18T11:21:23.769858+0200 WARNING Movie with slug 'non-existing-movie' not found.
+2023-11-18T11:21:23.769858+0200 WARNING Movie with slug 'non-existing-movie' not found.
+2023-11-18T11:21:23.769858+0200 WARNING Movie with slug 'non-existing-movie' not found.
+2023-11-18T11:21:24.240273+0200 INFO Movie 'test-movie' added to favorites for user 'testuser'
+2023-11-18T11:21:24.240273+0200 INFO Movie 'test-movie' added to favorites for user 'testuser'
+2023-11-18T11:21:24.240273+0200 INFO Movie 'test-movie' added to favorites for user 'testuser'
+2023-11-18T11:21:24.609606+0200 INFO Retrieved favorite movies for user 'testuser'
+2023-11-18T11:21:24.609606+0200 INFO Retrieved favorite movies for user 'testuser'
+2023-11-18T11:21:24.609606+0200 INFO Retrieved favorite movies for user 'testuser'
+2023-11-18T11:21:25.010815+0200 INFO Movie 'test-movie' removed from favorites for user 'testuser'
+2023-11-18T11:21:25.010815+0200 INFO Movie 'test-movie' removed from favorites for user 'testuser'
+2023-11-18T11:21:25.010815+0200 INFO Movie 'test-movie' removed from favorites for user 'testuser'
+2023-11-18T11:21:25.760172+0200 INFO Rating created by user testuser for movie test-movie
+2023-11-18T11:21:25.760172+0200 INFO Rating created by user testuser for movie test-movie
+2023-11-18T11:21:25.760172+0200 INFO Rating created by user testuser for movie test-movie
+2023-11-18T11:21:26.118041+0200 ERROR Movie not found: Movie not found
+2023-11-18T11:21:26.118041+0200 ERROR Movie not found: Movie not found
+2023-11-18T11:21:26.118041+0200 ERROR Movie not found: Movie not found
+2023-11-18T11:23:41.601086+0200 INFO Retrieved average rating for movie 'test-movie': 3.33333333333333
+2023-11-18T11:23:41.601086+0200 INFO Retrieved average rating for movie 'test-movie': 3.33333333333333
+2023-11-18T11:23:41.601086+0200 INFO Retrieved average rating for movie 'test-movie': 3.33333333333333
+2023-11-18T11:23:41.911658+0200 WARNING Movie with slug 'non-existing-movie' not found.
+2023-11-18T11:23:41.911658+0200 WARNING Movie with slug 'non-existing-movie' not found.
+2023-11-18T11:23:41.911658+0200 WARNING Movie with slug 'non-existing-movie' not found.
+2023-11-18T11:23:42.235972+0200 INFO Movie 'test-movie' added to favorites for user 'testuser'
+2023-11-18T11:23:42.235972+0200 INFO Movie 'test-movie' added to favorites for user 'testuser'
+2023-11-18T11:23:42.235972+0200 INFO Movie 'test-movie' added to favorites for user 'testuser'
+2023-11-18T11:23:42.594971+0200 INFO Retrieved favorite movies for user 'testuser'
+2023-11-18T11:23:42.594971+0200 INFO Retrieved favorite movies for user 'testuser'
+2023-11-18T11:23:42.594971+0200 INFO Retrieved favorite movies for user 'testuser'
+2023-11-18T11:23:42.913326+0200 INFO Movie 'test-movie' removed from favorites for user 'testuser'
+2023-11-18T11:23:42.913326+0200 INFO Movie 'test-movie' removed from favorites for user 'testuser'
+2023-11-18T11:23:42.913326+0200 INFO Movie 'test-movie' removed from favorites for user 'testuser'
+2023-11-18T11:23:43.629592+0200 INFO Rating created by user testuser for movie test-movie
+2023-11-18T11:23:43.629592+0200 INFO Rating created by user testuser for movie test-movie
+2023-11-18T11:23:43.629592+0200 INFO Rating created by user testuser for movie test-movie
+2023-11-18T11:23:43.956898+0200 ERROR Movie not found: Movie not found
+2023-11-18T11:23:43.956898+0200 ERROR Movie not found: Movie not found
+2023-11-18T11:23:43.956898+0200 ERROR Movie not found: Movie not found
+2023-11-18T11:25:31.726677+0200 INFO Retrieved average rating for movie 'test-movie': 3.33333333333333
+2023-11-18T11:25:31.726677+0200 INFO Retrieved average rating for movie 'test-movie': 3.33333333333333
+2023-11-18T11:25:31.726677+0200 INFO Retrieved average rating for movie 'test-movie': 3.33333333333333
+2023-11-18T11:25:32.034451+0200 WARNING Movie with slug 'non-existing-movie' not found.
+2023-11-18T11:25:32.034451+0200 WARNING Movie with slug 'non-existing-movie' not found.
+2023-11-18T11:25:32.034451+0200 WARNING Movie with slug 'non-existing-movie' not found.
+2023-11-18T11:25:32.357335+0200 INFO Movie 'test-movie' added to favorites for user 'testuser'
+2023-11-18T11:25:32.357335+0200 INFO Movie 'test-movie' added to favorites for user 'testuser'
+2023-11-18T11:25:32.357335+0200 INFO Movie 'test-movie' added to favorites for user 'testuser'
+2023-11-18T11:25:32.941367+0200 INFO Retrieved favorite movies for user 'testuser'
+2023-11-18T11:25:32.941367+0200 INFO Retrieved favorite movies for user 'testuser'
+2023-11-18T11:25:32.941367+0200 INFO Retrieved favorite movies for user 'testuser'
+2023-11-18T11:25:33.614394+0200 INFO Movie 'test-movie' removed from favorites for user 'testuser'
+2023-11-18T11:25:33.614394+0200 INFO Movie 'test-movie' removed from favorites for user 'testuser'
+2023-11-18T11:25:33.614394+0200 INFO Movie 'test-movie' removed from favorites for user 'testuser'
+2023-11-18T11:25:34.544882+0200 INFO Rating created by user testuser for movie test-movie
+2023-11-18T11:25:34.544882+0200 INFO Rating created by user testuser for movie test-movie
+2023-11-18T11:25:34.544882+0200 INFO Rating created by user testuser for movie test-movie
+2023-11-18T11:25:34.884198+0200 ERROR Movie not found: Movie not found
+2023-11-18T11:25:34.884198+0200 ERROR Movie not found: Movie not found
+2023-11-18T11:25:34.884198+0200 ERROR Movie not found: Movie not found
+2023-11-18T11:25:51.533877+0200 INFO Retrieved average rating for movie 'test-movie': 3.33333333333333
+2023-11-18T11:25:51.533877+0200 INFO Retrieved average rating for movie 'test-movie': 3.33333333333333
+2023-11-18T11:25:51.533877+0200 INFO Retrieved average rating for movie 'test-movie': 3.33333333333333
+2023-11-18T11:25:51.837356+0200 WARNING Movie with slug 'non-existing-movie' not found.
+2023-11-18T11:25:51.837356+0200 WARNING Movie with slug 'non-existing-movie' not found.
+2023-11-18T11:25:51.837356+0200 WARNING Movie with slug 'non-existing-movie' not found.
+2023-11-18T11:25:52.297329+0200 INFO Movie 'test-movie' added to favorites for user 'testuser'
+2023-11-18T11:25:52.297329+0200 INFO Movie 'test-movie' added to favorites for user 'testuser'
+2023-11-18T11:25:52.297329+0200 INFO Movie 'test-movie' added to favorites for user 'testuser'
+2023-11-18T11:25:52.647755+0200 INFO Retrieved favorite movies for user 'testuser'
+2023-11-18T11:25:52.647755+0200 INFO Retrieved favorite movies for user 'testuser'
+2023-11-18T11:25:52.647755+0200 INFO Retrieved favorite movies for user 'testuser'
+2023-11-18T11:25:52.987446+0200 INFO Movie 'test-movie' removed from favorites for user 'testuser'
+2023-11-18T11:25:52.987446+0200 INFO Movie 'test-movie' removed from favorites for user 'testuser'
+2023-11-18T11:25:52.987446+0200 INFO Movie 'test-movie' removed from favorites for user 'testuser'
+2023-11-18T11:25:54.005793+0200 INFO Rating created by user testuser for movie test-movie
+2023-11-18T11:25:54.005793+0200 INFO Rating created by user testuser for movie test-movie
+2023-11-18T11:25:54.005793+0200 INFO Rating created by user testuser for movie test-movie
+2023-11-18T11:25:54.340096+0200 ERROR Movie not found: Movie not found
+2023-11-18T11:25:54.340096+0200 ERROR Movie not found: Movie not found
+2023-11-18T11:25:54.340096+0200 ERROR Movie not found: Movie not found
+2023-11-18T12:17:10.866382+0200 ERROR Registration failed: {'email': [ErrorDetail(string='This field is required.', code='required')], 'password2': [ErrorDetail(string='This field is required.', code='required')]}
+2023-11-18T12:17:10.866382+0200 ERROR Registration failed: {'email': [ErrorDetail(string='This field is required.', code='required')], 'password2': [ErrorDetail(string='This field is required.', code='required')]}
+2023-11-18T12:17:10.866382+0200 ERROR Registration failed: {'email': [ErrorDetail(string='This field is required.', code='required')], 'password2': [ErrorDetail(string='This field is required.', code='required')]}
+2023-11-18T12:17:11.018331+0200 ERROR Registration failed: {'password2': [ErrorDetail(string='This field is required.', code='required')]}
+2023-11-18T12:17:11.018331+0200 ERROR Registration failed: {'password2': [ErrorDetail(string='This field is required.', code='required')]}
+2023-11-18T12:17:11.018331+0200 ERROR Registration failed: {'password2': [ErrorDetail(string='This field is required.', code='required')]}
+2023-11-18T12:17:46.790020+0200 ERROR Registration failed: {'email': [ErrorDetail(string='This field is required.', code='required')], 'password2': [ErrorDetail(string='This field is required.', code='required')]}
+2023-11-18T12:17:46.790020+0200 ERROR Registration failed: {'email': [ErrorDetail(string='This field is required.', code='required')], 'password2': [ErrorDetail(string='This field is required.', code='required')]}
+2023-11-18T12:17:46.790020+0200 ERROR Registration failed: {'email': [ErrorDetail(string='This field is required.', code='required')], 'password2': [ErrorDetail(string='This field is required.', code='required')]}
+2023-11-18T12:17:46.851848+0200 ERROR Registration failed: {'password': [ErrorDetail(string='This field is required.', code='required')]}
+2023-11-18T12:17:46.851848+0200 ERROR Registration failed: {'password': [ErrorDetail(string='This field is required.', code='required')]}
+2023-11-18T12:17:46.851848+0200 ERROR Registration failed: {'password': [ErrorDetail(string='This field is required.', code='required')]}
+2023-11-18T12:20:07.397340+0200 ERROR Registration failed: {'email': [ErrorDetail(string='This field is required.', code='required')], 'password2': [ErrorDetail(string='This field is required.', code='required')]}
+2023-11-18T12:20:07.397340+0200 ERROR Registration failed: {'email': [ErrorDetail(string='This field is required.', code='required')], 'password2': [ErrorDetail(string='This field is required.', code='required')]}
+2023-11-18T12:20:07.397340+0200 ERROR Registration failed: {'email': [ErrorDetail(string='This field is required.', code='required')], 'password2': [ErrorDetail(string='This field is required.', code='required')]}
+2023-11-18T12:20:07.770328+0200 INFO Email sent successfully to testuser@example.com
+2023-11-18T12:20:07.770328+0200 INFO Email sent successfully to testuser@example.com
+2023-11-18T12:20:07.770328+0200 INFO Email sent successfully to testuser@example.com
+2023-11-18T12:20:07.772511+0200 INFO User registered successfully: testuser
+2023-11-18T12:20:07.772511+0200 INFO User registered successfully: testuser
+2023-11-18T12:20:07.772511+0200 INFO User registered successfully: testuser
+2023-11-18T12:21:03.585786+0200 ERROR Registration failed: {'email': [ErrorDetail(string='This field is required.', code='required')], 'password2': [ErrorDetail(string='This field is required.', code='required')]}
+2023-11-18T12:21:03.585786+0200 ERROR Registration failed: {'email': [ErrorDetail(string='This field is required.', code='required')], 'password2': [ErrorDetail(string='This field is required.', code='required')]}
+2023-11-18T12:21:03.585786+0200 ERROR Registration failed: {'email': [ErrorDetail(string='This field is required.', code='required')], 'password2': [ErrorDetail(string='This field is required.', code='required')]}
+2023-11-18T12:21:03.933437+0200 INFO Email sent successfully to testuser@example.com
+2023-11-18T12:21:03.933437+0200 INFO Email sent successfully to testuser@example.com
+2023-11-18T12:21:03.933437+0200 INFO Email sent successfully to testuser@example.com
+2023-11-18T12:21:03.935818+0200 INFO User registered successfully: testuser
+2023-11-18T12:21:03.935818+0200 INFO User registered successfully: testuser
+2023-11-18T12:21:03.935818+0200 INFO User registered successfully: testuser
+2023-11-18T12:23:29.079102+0200 ERROR Registration failed: {'email': [ErrorDetail(string='This field is required.', code='required')], 'password2': [ErrorDetail(string='This field is required.', code='required')]}
+2023-11-18T12:23:29.079102+0200 ERROR Registration failed: {'email': [ErrorDetail(string='This field is required.', code='required')], 'password2': [ErrorDetail(string='This field is required.', code='required')]}
+2023-11-18T12:23:29.079102+0200 ERROR Registration failed: {'email': [ErrorDetail(string='This field is required.', code='required')], 'password2': [ErrorDetail(string='This field is required.', code='required')]}
+2023-11-18T12:23:29.433118+0200 INFO Email sent successfully to testuser@example.com
+2023-11-18T12:23:29.433118+0200 INFO Email sent successfully to testuser@example.com
+2023-11-18T12:23:29.433118+0200 INFO Email sent successfully to testuser@example.com
+2023-11-18T12:23:29.434206+0200 INFO User registered successfully: testuser
+2023-11-18T12:23:29.434206+0200 INFO User registered successfully: testuser
+2023-11-18T12:23:29.434206+0200 INFO User registered successfully: testuser
+2023-11-18T12:25:25.399731+0200 ERROR Login failed
+2023-11-18T12:25:25.399731+0200 ERROR Login failed
+2023-11-18T12:25:25.399731+0200 ERROR Login failed
+2023-11-18T12:25:25.441394+0200 ERROR Login failed
+2023-11-18T12:25:25.441394+0200 ERROR Login failed
+2023-11-18T12:25:25.441394+0200 ERROR Login failed
+2023-11-18T12:25:25.472139+0200 ERROR Login failed
+2023-11-18T12:25:25.472139+0200 ERROR Login failed
+2023-11-18T12:25:25.472139+0200 ERROR Login failed
+2023-11-18T12:25:25.506696+0200 ERROR Login failed
+2023-11-18T12:25:25.506696+0200 ERROR Login failed
+2023-11-18T12:25:25.506696+0200 ERROR Login failed
+2023-11-18T12:25:25.555646+0200 ERROR Registration failed: {'email': [ErrorDetail(string='This field is required.', code='required')], 'password2': [ErrorDetail(string='This field is required.', code='required')]}
+2023-11-18T12:25:25.555646+0200 ERROR Registration failed: {'email': [ErrorDetail(string='This field is required.', code='required')], 'password2': [ErrorDetail(string='This field is required.', code='required')]}
+2023-11-18T12:25:25.555646+0200 ERROR Registration failed: {'email': [ErrorDetail(string='This field is required.', code='required')], 'password2': [ErrorDetail(string='This field is required.', code='required')]}
+2023-11-18T12:25:25.901402+0200 INFO Email sent successfully to testuser@example.com
+2023-11-18T12:25:25.901402+0200 INFO Email sent successfully to testuser@example.com
+2023-11-18T12:25:25.901402+0200 INFO Email sent successfully to testuser@example.com
+2023-11-18T12:25:25.902413+0200 INFO User registered successfully: testuser
+2023-11-18T12:25:25.902413+0200 INFO User registered successfully: testuser
+2023-11-18T12:25:25.902413+0200 INFO User registered successfully: testuser
+2023-11-18T12:27:47.181962+0200 ERROR Registration failed: {'email': [ErrorDetail(string='This field is required.', code='required')], 'password2': [ErrorDetail(string='This field is required.', code='required')]}
+2023-11-18T12:27:47.181962+0200 ERROR Registration failed: {'email': [ErrorDetail(string='This field is required.', code='required')], 'password2': [ErrorDetail(string='This field is required.', code='required')]}
+2023-11-18T12:27:47.181962+0200 ERROR Registration failed: {'email': [ErrorDetail(string='This field is required.', code='required')], 'password2': [ErrorDetail(string='This field is required.', code='required')]}
+2023-11-18T12:27:47.547348+0200 INFO Email sent successfully to testuser@example.com
+2023-11-18T12:27:47.547348+0200 INFO Email sent successfully to testuser@example.com
+2023-11-18T12:27:47.547348+0200 INFO Email sent successfully to testuser@example.com
+2023-11-18T12:27:47.548361+0200 INFO User registered successfully: testuser
+2023-11-18T12:27:47.548361+0200 INFO User registered successfully: testuser
+2023-11-18T12:27:47.548361+0200 INFO User registered successfully: testuser
+2023-11-18T12:27:57.963662+0200 ERROR Login failed
+2023-11-18T12:27:57.963662+0200 ERROR Login failed
+2023-11-18T12:27:57.963662+0200 ERROR Login failed
+2023-11-18T12:27:58.006665+0200 ERROR Login failed
+2023-11-18T12:27:58.006665+0200 ERROR Login failed
+2023-11-18T12:27:58.006665+0200 ERROR Login failed
+2023-11-18T12:27:58.050518+0200 ERROR Registration failed: {'email': [ErrorDetail(string='This field is required.', code='required')], 'password2': [ErrorDetail(string='This field is required.', code='required')]}
+2023-11-18T12:27:58.050518+0200 ERROR Registration failed: {'email': [ErrorDetail(string='This field is required.', code='required')], 'password2': [ErrorDetail(string='This field is required.', code='required')]}
+2023-11-18T12:27:58.050518+0200 ERROR Registration failed: {'email': [ErrorDetail(string='This field is required.', code='required')], 'password2': [ErrorDetail(string='This field is required.', code='required')]}
+2023-11-18T12:27:58.385587+0200 INFO Email sent successfully to testuser@example.com
+2023-11-18T12:27:58.385587+0200 INFO Email sent successfully to testuser@example.com
+2023-11-18T12:27:58.385587+0200 INFO Email sent successfully to testuser@example.com
+2023-11-18T12:27:58.386167+0200 INFO User registered successfully: testuser
+2023-11-18T12:27:58.386167+0200 INFO User registered successfully: testuser
+2023-11-18T12:27:58.386167+0200 INFO User registered successfully: testuser
+2023-11-18T12:40:31.080194+0200 ERROR Login failed
+2023-11-18T12:40:31.080194+0200 ERROR Login failed
+2023-11-18T12:40:31.080194+0200 ERROR Login failed
+2023-11-18T12:40:31.139774+0200 ERROR Login failed
+2023-11-18T12:40:31.139774+0200 ERROR Login failed
+2023-11-18T12:40:31.139774+0200 ERROR Login failed
+2023-11-18T12:40:31.182711+0200 ERROR Registration failed: {'email': [ErrorDetail(string='This field is required.', code='required')], 'password2': [ErrorDetail(string='This field is required.', code='required')]}
+2023-11-18T12:40:31.182711+0200 ERROR Registration failed: {'email': [ErrorDetail(string='This field is required.', code='required')], 'password2': [ErrorDetail(string='This field is required.', code='required')]}
+2023-11-18T12:40:31.182711+0200 ERROR Registration failed: {'email': [ErrorDetail(string='This field is required.', code='required')], 'password2': [ErrorDetail(string='This field is required.', code='required')]}
+2023-11-18T12:40:31.530121+0200 INFO Email sent successfully to testuser@example.com
+2023-11-18T12:40:31.530121+0200 INFO Email sent successfully to testuser@example.com
+2023-11-18T12:40:31.530121+0200 INFO Email sent successfully to testuser@example.com
+2023-11-18T12:40:31.531247+0200 INFO User registered successfully: testuser
+2023-11-18T12:40:31.531247+0200 INFO User registered successfully: testuser
+2023-11-18T12:40:31.531247+0200 INFO User registered successfully: testuser
+2023-11-18T12:40:38.423063+0200 INFO Retrieved average rating for movie 'test-movie': 3.33333333333333
+2023-11-18T12:40:38.423063+0200 INFO Retrieved average rating for movie 'test-movie': 3.33333333333333
+2023-11-18T12:40:38.423063+0200 INFO Retrieved average rating for movie 'test-movie': 3.33333333333333
+2023-11-18T12:40:38.724915+0200 WARNING Movie with slug 'non-existing-movie' not found.
+2023-11-18T12:40:38.724915+0200 WARNING Movie with slug 'non-existing-movie' not found.
+2023-11-18T12:40:38.724915+0200 WARNING Movie with slug 'non-existing-movie' not found.
+2023-11-18T12:40:41.602565+0200 INFO Movie 'test-movie' added to favorites for user 'testuser'
+2023-11-18T12:40:41.602565+0200 INFO Movie 'test-movie' added to favorites for user 'testuser'
+2023-11-18T12:40:41.602565+0200 INFO Movie 'test-movie' added to favorites for user 'testuser'
+2023-11-18T12:40:41.991436+0200 INFO Retrieved favorite movies for user 'testuser'
+2023-11-18T12:40:41.991436+0200 INFO Retrieved favorite movies for user 'testuser'
+2023-11-18T12:40:41.991436+0200 INFO Retrieved favorite movies for user 'testuser'
+2023-11-18T12:40:42.370623+0200 INFO Movie 'test-movie' removed from favorites for user 'testuser'
+2023-11-18T12:40:42.370623+0200 INFO Movie 'test-movie' removed from favorites for user 'testuser'
+2023-11-18T12:40:42.370623+0200 INFO Movie 'test-movie' removed from favorites for user 'testuser'
+2023-11-18T12:40:43.194855+0200 INFO Rating created by user testuser for movie test-movie
+2023-11-18T12:40:43.194855+0200 INFO Rating created by user testuser for movie test-movie
+2023-11-18T12:40:43.194855+0200 INFO Rating created by user testuser for movie test-movie
+2023-11-18T12:40:43.563567+0200 ERROR Movie not found: Movie not found
+2023-11-18T12:40:43.563567+0200 ERROR Movie not found: Movie not found
+2023-11-18T12:40:43.563567+0200 ERROR Movie not found: Movie not found
