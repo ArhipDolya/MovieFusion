@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+
 const MovieList = ({ movies, searchQuery }) => {
   return (
     <ul className={`movie-list ${searchQuery ? 'list-with-animation' : ''}`}>

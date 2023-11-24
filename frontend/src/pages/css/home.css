@@ -1,6 +1,5 @@
 .home-container {
   text-align: center;
-  padding: 20px;
 }
 
 .movie-list {
@@ -94,7 +93,6 @@
   border-radius: 5px;
   border: 2px solid #fff;
 }
-
 
 .show-more-button {
   font-family: 'Roboto', sans-serif;
