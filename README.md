@@ -34,14 +34,18 @@ MovieFusion is a web application that allows users to explore movies, rate them,
 
 2. Set up environment variables:
     Create a .env file in the root directory with the following content:
+    ```bash
         DB_HOST=database
         DB_NAME=dbname
         DB_USER=dbuser
         DB_PASS=pass
+    ```
 
 3. Run Docker Compose:
-    docker-compose up --build
-
+    ```bash
+        docker-compose up --build
+    ```
+    
 4. Open your browser and visit http://localhost:8000 to access MovieFusion.
 
 
