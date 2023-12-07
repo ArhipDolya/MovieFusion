@@ -91,11 +91,6 @@ export const AuthenticationForm = () => {
         });
   };
 
-  useEffect(() => {
-    const storedAccessToken = localStorage.getItem('access_token');
-    if (storedAccessToken) {
-      setToken(storedAccessToken);
-    }
 
 
   const onSuccess = (res) => {
