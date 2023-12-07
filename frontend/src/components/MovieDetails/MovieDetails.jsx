@@ -165,15 +165,32 @@ const MovieDetails = () => {
 
   const handleDeleteComment = async (commentId) => {
     try {
-      await deleteComment(commentId);
+      const storedAccessToken = getAccessToken();
       
-      // Update the comments state by filtering out the deleted comment
-      const updatedComments = comments.filter((comment) => comment.id !== commentId);
-      setComments(updatedComments);
+      if (storedAccessToken) {
+
+        const decodedToken = jwtDecode(storedAccessToken)
+
+        // Check if the comment to be deleted belongs to the currently authenticated user
+        const commentToDelete = comments.find(comment => comment.id === commentId);
+  
+        if (commentToDelete && commentToDelete.author === decodedToken.user_id) {
+          // Only proceed with deletion if the comment belongs to the authenticated user
+          await deleteComment(commentId);
+          
+          // Update the comments state by filtering out the deleted comment
+          const updatedComments = comments.filter((comment) => comment.id !== commentId);
+          setComments(updatedComments);
+        } else {
+          console.error('You are not authorized to delete this comment.');
+        }
+      } else {
+        navigate('/authentication');
+      }
     } catch (error) {
       console.error('Error deleting comment:', error);
     }
-  }
+  };
 
 
   const handleToggleLike = async (commentId) => {

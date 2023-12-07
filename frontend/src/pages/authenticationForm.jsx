@@ -6,6 +6,12 @@ import ReCAPTCHA from 'react-google-recaptcha';
 import { registerUser } from '../api/authApi/register';
 import { loginUser } from '../api/authApi/login';
 
+import GoogleLogin from 'react-google-login';
+import { gapi } from "gapi-script"
+
+
+const clientId = "366032509809-284qmloofa33t2a8c5i693jdp92eb6gn.apps.googleusercontent.com"
+
 
 export const AuthenticationForm = () => {
   const [signIn, toggleSignIn] = useState(true);
@@ -90,8 +96,28 @@ export const AuthenticationForm = () => {
     if (storedAccessToken) {
       setToken(storedAccessToken);
     }
-  }, []);
 
+
+  const onSuccess = (res) => {
+    console.log('SUCCESS', res.profileObj);
+  };
+
+  const onFailure = (res) => {
+    console.log('FAILURE', res);
+  };
+
+  <div id="signInButton" style={{ marginTop: '10px' }}>
+        <GoogleLogin
+          clientId={clientId}
+          buttonText="Login"
+          onSuccess={onSuccess}
+          onFailure={onFailure}
+          cookiesPolicy={"single_host_origin"}
+          isSignedIn={true}
+        />
+      </div>
+
+  
   return (
     <Components.FullScreenContainer>
       <Components.Container>
@@ -168,6 +194,7 @@ export const AuthenticationForm = () => {
                   required
                 />
                 <Components.Button onClick={handleLoginSubmit}>Sign In</Components.Button>
+
               </Components.Form>
             </Components.SignInContainer>
 

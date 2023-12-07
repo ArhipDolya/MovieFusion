@@ -31,7 +31,6 @@ services:
     image: redis:7.0.5-alpine
     hostname: redis
 
-
   worker:
     build: 
       context: .
